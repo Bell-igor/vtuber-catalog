@@ -41,7 +41,19 @@
       langSwitch: "English version",
       langCode: "EN",
       watch: "Смотреть видео",
-      madeNote: "Статичный сайт без внешних сервисов — открывается и в СНГ, и за рубежом."
+      madeNote: "Статичный сайт без внешних сервисов — открывается и в СНГ, и за рубежом.",
+      liveNow: "Сейчас в эфире",
+      offline: "Не в эфире",
+      watchStream: "Смотреть стрим",
+      viewers: "смотрят",
+      lastStream: "Последний стрим",
+      offlineHint: "Как только стрим начнётся, здесь загорится значок «В эфире». Расписание — в анонсах ниже.",
+      followers: "фолловеров на Twitch",
+      tgSubs: "подписчиков в Telegram",
+      dcMembers: "участников в Discord",
+      newsTitle: "Анонсы и события",
+      newsMore: "Читать в Telegram",
+      openAll: "Все анонсы"
     },
     en: {
       navGallery: "Art & model",
@@ -70,7 +82,19 @@
       langSwitch: "Русская версия",
       langCode: "RU",
       watch: "Watch video",
-      madeNote: "A static site with no external services — reachable both in CIS and abroad."
+      madeNote: "A static site with no external services — reachable both in CIS and abroad.",
+      liveNow: "Live now",
+      offline: "Offline",
+      watchStream: "Watch stream",
+      viewers: "watching",
+      lastStream: "Last stream",
+      offlineHint: "The “Live” badge lights up here as soon as the stream starts. Schedule is in the news below.",
+      followers: "Twitch followers",
+      tgSubs: "Telegram subscribers",
+      dcMembers: "Discord members",
+      newsTitle: "News & events",
+      newsMore: "Read in Telegram",
+      openAll: "All news"
     }
   };
 
@@ -202,7 +226,8 @@
       el("div", { class: "hero__cta" }, [
         el("a", { class: "btn btn--primary", href: "#gallery", text: ui("navGallery") }),
         el("a", { class: "btn btn--ghost", href: "#credits", text: ui("creditsTitle") })
-      ])
+      ]),
+      el("div", { class: "status", id: "heroStatus" })
     ]);
 
     sec.appendChild(el("div", { class: "wrap hero__inner" }, [text, art]));
@@ -554,6 +579,223 @@
     else if (k === "0") { resetZoom(true); e.preventDefault(); }
   }
 
+  /* -------------------- живой статус стрима и анонсы ----------------------- */
+  var LIVE = CFG.live || {};
+  var NEWS = CFG.news || {};
+  var baseTitle = document.title;
+  var live = {
+    on: false, title: "", game: "", startedAt: null, viewers: null,
+    followers: null, last: null, tg: null, dc: null, ready: false
+  };
+  var newsScrolled = false;
+
+  function fetchJSON(url) {
+    return fetch(url, { cache: "no-store" }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).catch(function () { return null; });
+  }
+  function plural(n, one, few, many) {
+    var m10 = n % 10, m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return one;
+    if (m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20)) return few;
+    return many;
+  }
+  function formatNum(n) {
+    try { return new Intl.NumberFormat(state.lang === "ru" ? "ru-RU" : "en-US").format(n); }
+    catch (e) { return String(n); }
+  }
+  function durationText(iso) {
+    var ms = Date.now() - new Date(iso).getTime();
+    if (!isFinite(ms) || ms < 0) ms = 0;
+    var min = Math.floor(ms / 60000), h = Math.floor(min / 60);
+    min = min % 60;
+    if (state.lang !== "ru") return h > 0 ? h + "h " + min + "m" : min + "m";
+    return h > 0 ? h + " " + plural(h, "час", "часа", "часов") + " " + min + " мин" : min + " мин";
+  }
+  function timeAgo(iso) {
+    var min = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (min < 1) return state.lang === "ru" ? "только что" : "just now";
+    if (min < 60) return state.lang === "ru" ? min + " мин назад" : min + " min ago";
+    var h = Math.round(min / 60);
+    if (h < 24) return state.lang === "ru" ? h + " " + plural(h, "час", "часа", "часов") + " назад" : h + "h ago";
+    var d = Math.round(h / 24);
+    return state.lang === "ru" ? d + " " + plural(d, "день", "дня", "дней") + " назад" : d + "d ago";
+  }
+  function shorten(text, n) {
+    var t = String(text || "").replace(/\s+/g, " ").trim();
+    return t.length > n ? t.slice(0, n).replace(/\s+\S*$/, "") + "…" : t;
+  }
+  function formatDate(iso) {
+    try {
+      return new Date(iso).toLocaleString(state.lang === "ru" ? "ru-RU" : "en-GB",
+        { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+    } catch (e) { return ""; }
+  }
+
+  function applyStatus(data) {
+    if (!data) return;
+    var tw = data.twitch || {};
+    if (typeof tw.live === "boolean") live.on = tw.live;
+    if (tw.live) {
+      live.title = tw.title || live.title;
+      live.game = tw.game || live.game;
+      live.startedAt = tw.startedAt || live.startedAt;
+      if (typeof tw.viewers === "number") live.viewers = tw.viewers;
+    }
+    if (typeof tw.followers === "number") live.followers = tw.followers;
+    if (tw.lastBroadcast) live.last = tw.lastBroadcast;
+    if (data.telegram) live.tg = data.telegram;
+    if (data.discord) live.dc = data.discord;
+    live.ready = true;
+    paintLive();
+    renderNews();
+  }
+
+  // быстрая проверка (несколько секунд вместо пяти минут), необязательная
+  function applyFast(data) {
+    if (!data) return;
+    var u = Array.isArray(data) ? data[0] : data;
+    if (!u || !("stream" in u)) return;
+    var s = u.stream;
+    if (s) {
+      live.on = true;
+      live.title = s.title || live.title;
+      live.game = (s.game && s.game.name) || live.game;
+      live.startedAt = s.createdAt || live.startedAt;
+      if (typeof s.viewersCount === "number") live.viewers = s.viewersCount;
+    } else {
+      live.on = false;
+      live.startedAt = null;
+      live.viewers = null;
+    }
+    if (typeof u.followers === "number") live.followers = u.followers;
+    if (u.lastBroadcast && !live.last) live.last = u.lastBroadcast;
+    paintLive();
+  }
+
+  function refreshLive() {
+    if (document.visibilityState === "hidden") return;
+    var file = LIVE.statusFile || "status.json";
+    fetchJSON(file + "?t=" + Date.now()).then(applyStatus);
+    if (LIVE.fastCheck) {
+      fetchJSON(LIVE.fastCheck + (LIVE.fastCheck.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now()).then(applyFast);
+    }
+  }
+
+  function paintLive() {
+    renderLiveBadge();
+    renderStatusCard();
+    document.documentElement.classList.toggle("is-live", live.on);
+  }
+
+  function renderLiveBadge() {
+    var box = document.getElementById("navLive");
+    if (!box) return;
+    clear(box);
+    if (!live.on) {
+      box.hidden = true;
+      document.title = baseTitle;
+      return;
+    }
+    box.hidden = false;
+    box.appendChild(el("a", {
+      class: "livepill", href: LIVE.twitchUrl || "#", target: "_blank", rel: "noopener noreferrer",
+      title: ui("watchStream"), "aria-label": ui("liveNow")
+    }, [
+      el("span", { class: "livepill__dot", "aria-hidden": "true" }),
+      el("span", { class: "livepill__text", text: ui("liveNow") })
+    ]));
+    document.title = "🔴 " + ui("liveNow") + " — " + (OWNER.name || "");
+  }
+
+  function statItem(value, label) {
+    return el("li", { class: "stats__item" }, [
+      el("b", { class: "stats__num", text: value }),
+      el("span", { class: "stats__label", text: label })
+    ]);
+  }
+
+  function renderStatusCard() {
+    var box = document.getElementById("heroStatus");
+    if (!box) return;
+    clear(box);
+    box.className = "status" + (live.on ? " is-live" : "");
+    box.appendChild(el("div", { class: "status__head" }, [
+      el("span", { class: "status__dot", "aria-hidden": "true" }),
+      el("span", { class: "status__label", text: live.on ? ui("liveNow") : ui("offline") }),
+      live.on && live.startedAt ? el("span", { class: "status__timer", id: "liveTimer", text: durationText(live.startedAt) }) : null
+    ]));
+    if (live.on) {
+      if (live.title) box.appendChild(el("p", { class: "status__title", text: live.title }));
+      var meta = [];
+      if (live.game) meta.push(live.game);
+      if (typeof live.viewers === "number") meta.push(formatNum(live.viewers) + " " + ui("viewers"));
+      if (meta.length) box.appendChild(el("p", { class: "status__meta", text: meta.join(" · ") }));
+      box.appendChild(el("a", {
+        class: "btn btn--primary status__btn", href: LIVE.twitchUrl, target: "_blank", rel: "noopener noreferrer", text: ui("watchStream")
+      }));
+    } else {
+      if (live.last && live.last.title) {
+        box.appendChild(el("p", { class: "status__meta", text: ui("lastStream") + ": " + live.last.title + (live.last.startedAt ? " · " + timeAgo(live.last.startedAt) : "") }));
+      }
+      box.appendChild(el("p", { class: "status__hint", text: ui("offlineHint") }));
+      if (LIVE.telegramUrl) {
+        box.appendChild(el("a", {
+          class: "btn btn--ghost status__btn", href: LIVE.telegramUrl, target: "_blank", rel: "noopener noreferrer", text: ui("openAll")
+        }));
+      }
+    }
+    var stats = [];
+    if (typeof live.followers === "number") stats.push(statItem(formatNum(live.followers), ui("followers")));
+    if (live.tg && typeof live.tg.subscribers === "number") stats.push(statItem(formatNum(live.tg.subscribers), ui("tgSubs")));
+    if (live.dc && typeof live.dc.members === "number") stats.push(statItem(formatNum(live.dc.members), ui("dcMembers")));
+    if (stats.length) box.appendChild(el("ul", { class: "stats" }, stats));
+  }
+
+  function renderNews() {
+    var sec = document.getElementById("news");
+    var head = clear(document.getElementById("newsHead"));
+    var list = clear(document.getElementById("newsList"));
+    if (!sec || !head || !list) return;
+    var posts = (live.tg && live.tg.posts) || [];
+    if (!posts.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    // если на страницу пришли по ссылке …#news — доскроллить (раздел появляется асинхронно)
+    if (!newsScrolled && window.location.hash === "#news") {
+      newsScrolled = true;
+      try { sec.scrollIntoView({ block: "start" }); } catch (e) { sec.scrollIntoView(); }
+    }
+    head.appendChild(el("h2", { class: "section__title", text: tr(NEWS.title, ui("newsTitle")) }));
+    head.appendChild(el("p", { class: "section__sub", text: tr(NEWS.sub, "") }));
+    if (LIVE.telegramUrl) {
+      head.appendChild(el("a", {
+        class: "section__link", href: LIVE.telegramUrl, target: "_blank", rel: "noopener noreferrer",
+        text: tr(NEWS.moreLabel, ui("openAll")) + " ↗"
+      }));
+    }
+    posts.slice(0, NEWS.count || 3).forEach(function (post) {
+      var media = post.photo
+        ? el("img", {
+            class: "news__img", src: post.photo, alt: "", loading: "lazy", decoding: "async",
+            onerror: function () { this.remove(); }
+          })
+        : null;
+      list.appendChild(el("a", { class: "news", href: post.url, target: "_blank", rel: "noopener noreferrer" }, [
+        media,
+        el("div", { class: "news__body" }, [
+          el("time", { class: "news__date", text: post.date ? formatDate(post.date) : "" }),
+          el("p", { class: "news__text", text: shorten(post.text, 280) }),
+          el("span", { class: "news__more", text: ui("newsMore") + " ↗" })
+        ])
+      ]));
+    });
+  }
+
+  function tickTimer() {
+    var t = document.getElementById("liveTimer");
+    if (t && live.on && live.startedAt) t.textContent = durationText(live.startedAt);
+  }
+
   /* --------------------------- язык и запуск ------------------------------- */
   function storeLang(lang) {
     try { window.localStorage.setItem("belligor-lang", lang); } catch (err) { /* режим инкогнито / file:// */ }
@@ -590,6 +832,8 @@
       document.getElementById("lbOriginal").textContent = ui("original");
     }
     if (lb.item) lbCaption(lb.item);
+    paintLive();
+    renderNews();
   }
 
   function init() {
@@ -604,9 +848,17 @@
     }
     renderAll();
     bindLightbox();
+
+    // живой статус: сразу при открытии, дальше раз в минуту
+    refreshLive();
+    var every = Math.max(30, Number(LIVE.refreshSeconds) || 60) * 1000;
+    setInterval(refreshLive, every);
+    setInterval(tickTimer, 20000);
+    document.addEventListener("visibilitychange", refreshLive);
+
     if (CFG.demo) {
       // подсказка разработчику в консоли — не видна зрителям
-      try { console.info("Belligor: демо-режим включён. Заполните assets/js/config.js и поставьте demo: false."); } catch (err) {}
+      try { console.info("Timora: демо-режим включён. Заполните assets/js/config.js и поставьте demo: false."); } catch (err) {}
     }
   }
 

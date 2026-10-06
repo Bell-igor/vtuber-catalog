@@ -1,0 +1,45 @@
+name: Обновление статуса стрима
+
+# Раз в 5 минут проверяет Twitch, Telegram и Discord и обновляет status.json.
+# Если ничего не изменилось — коммита не будет.
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/update-status.mjs"
+      - ".github/workflows/status.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status-update
+  cancel-in-progress: false
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Собрать статус
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: node .github/scripts/update-status.mjs
+
+      - name: Закоммитить, если что-то изменилось
+        run: |
+          git config user.name "status-bot"
+          git config user.email "status-bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain status.json assets/img/avatar-twitch.png)" ]; then
+            git add status.json assets/img/avatar-twitch.png
+            git commit -m "Автообновление статуса стрима"
+            git push
+          else
+            echo "Изменений нет — коммит не нужен"
+          fi

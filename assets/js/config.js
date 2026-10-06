@@ -1,5 +1,5 @@
 /* ============================================================================
-   BELLIGOR — КОНТЕНТ САЙТА
+   TIMORA — КОНТЕНТ САЙТА
    ============================================================================
    Это ЕДИНСТВЕННЫЙ файл, который нужно править, чтобы наполнить сайт.
    Ничего не удаляйте целиком: просто меняйте текст между кавычками.
@@ -22,20 +22,21 @@ window.SITE = {
 
   /* ---------------- Кто вы ---------------- */
   owner: {
-    name: "Belligor",
+    name: "Timora",
     // подпись под именем
-    role: { ru: "VTuber · архивариус с крыльями", en: "VTuber · winged archivist" },
+    role: { ru: "VTuber · TimoraVoo", en: "VTuber · TimoraVoo" },
     // короткий слоган
     tagline: {
-      ru: "Стримы, истории и книги из библиотеки, которой нет конца",
-      en: "Streams, stories and books from a library without end"
+      ru: "Стримы, чтение книг и общение с чатом",
+      en: "Streams, book reading and chatting with you"
     },
     // пара предложений о себе (можно оставить пустым)
     about: {
-      ru: "Добро пожаловать в каталог. Здесь собраны арт, референсы моей модели и люди, благодаря которым это всё существует.",
-      en: "Welcome to the catalog. Here you'll find art, references of my model and the people who made all of it possible."
+      ru: "Добро пожаловать! Здесь собраны арт, референсы моей модели и люди, благодаря которым всё это существует.",
+      en: "Welcome! Here you'll find art, references of my model and the people who made all of it possible."
     },
-    avatar: "assets/img/avatar.webp",
+    // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
+    avatar: "assets/img/avatar-twitch.png",
     // большая картинка справа на первом экране (обычно — арт модели в полный рост)
     hero: "assets/img/gallery/model-wings.webp"
   },
@@ -44,12 +45,13 @@ window.SITE = {
      accent — цвет кнопки: yt | twitch | tg | x | discord | vk | boosty | tiktok | inst | site
      url: "#название" = заглушка, кнопка будет помечена как «демо».      */
   links: [
-    { label: "YouTube",   url: "#youtube",   accent: "yt" },
-    { label: "Twitch",    url: "#twitch",    accent: "twitch" },
-    { label: "Telegram",  url: "#telegram",  accent: "tg" },
-    { label: "X",         url: "#x",         accent: "x" },
-    { label: "Discord",   url: "#discord",   accent: "discord" },
-    { label: "Boosty",    url: "#boosty",    accent: "boosty" }
+    { label: "Twitch",   url: "https://www.twitch.tv/timoravoo", accent: "twitch" },
+    { label: "Telegram", url: "https://t.me/timora_tv",          accent: "tg" },
+    { label: "Discord",  url: "https://discord.gg/zgbhEWNeCZ",   accent: "discord" }
+    // Если появятся другие соцсети — добавьте строки по образцу выше:
+    // { label: "YouTube", url: "https://youtube.com/@канал", accent: "yt" },
+    // { label: "Boosty",  url: "https://boosty.to/ник",      accent: "boosty" },
+    // { label: "X",       url: "https://x.com/ник",          accent: "x" }
   ],
 
   /* ---------------- Разделы галереи (кнопки-фильтры) ---------------- */
@@ -198,6 +200,33 @@ window.SITE = {
     ]
   },
 
+  /* ---------------- Живой статус стрима ----------------
+     Файл status.json обновляет GitHub каждые 5 минут: идёт ли стрим, что за
+     игра, когда начался, свежие анонсы из Telegram, подписчики и Discord.
+     Здесь ничего менять не нужно, пока не изменились ники.               */
+  live: {
+    twitchLogin: "timoravoo",
+    twitchUrl: "https://www.twitch.tv/timoravoo",
+    telegramUrl: "https://t.me/timora_tv",
+    discordUrl: "https://discord.gg/zgbhEWNeCZ",
+    statusFile: "status.json",
+    // быстрая проверка эфира прямо из браузера: если она недоступна,
+    // сайт просто покажет данные из status.json — ничего не сломается
+    fastCheck: "https://api.ivr.fi/v2/twitch/user?login=timoravoo",
+    refreshSeconds: 60
+  },
+
+  /* ---------------- Анонсы из Telegram ---------------- */
+  news: {
+    title: { ru: "Анонсы и события", en: "News & events" },
+    sub: {
+      ru: "Последние посты из Telegram-канала: расписание стримов, события и всякое интересное.",
+      en: "Latest posts from the Telegram channel: stream schedule, events and more."
+    },
+    count: 3,
+    moreLabel: { ru: "Все анонсы в Telegram", en: "All news in Telegram" }
+  },
+
   /* ---------------- Подвал ---------------- */
   footer: {
     note: {
@@ -206,6 +235,6 @@ window.SITE = {
     },
     // ссылка на зеркало сайта (если сделаете второе зеркало — впишите адрес)
     mirror: { label: { ru: "Зеркало сайта", en: "Site mirror" }, url: "" },
-    contact: { label: { ru: "Написать мне", en: "Contact me" }, url: "#contact" }
+    contact: { label: { ru: "Написать в Telegram", en: "Message me on Telegram" }, url: "https://t.me/timora_tv" }
   }
 };
