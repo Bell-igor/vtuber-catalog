@@ -10,7 +10,70 @@
     "lastBroadcast": {
       "title": "ПОКАЖИ СВОЕГО ПАТРОНУСА! | Гарри Поттер и Узник Азкабана в переводе Росмэн | !funpay !сервер",
       "startedAt": "2026-10-04T18:45:55.802665Z"
-    }
+    },
+    "videos": [],
+    "clips": [
+      {
+        "id": "3046402664",
+        "kind": "clip",
+        "title": "Милота",
+        "date": "2023-08-16T17:03:15Z",
+        "seconds": 40,
+        "views": 308,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/ff5ced9d-5644-4d2d-975c-78cfa5d7d6ed/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/FreezingFurryAlbatrossPhilosoraptor-nsFi8VBAr71zQ4xv"
+      },
+      {
+        "id": "1192999838",
+        "kind": "clip",
+        "title": "ммм, какие стоны",
+        "date": "2024-09-23T17:47:18Z",
+        "seconds": 6,
+        "views": 188,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/831cbfec-57e7-4782-bc24-d289a4cdcd67/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/BoxyDifferentWebDuDudu-DolxyN4eUO56i5go"
+      },
+      {
+        "id": "2764847703",
+        "kind": "clip",
+        "title": "Помощник",
+        "date": "2026-09-26T13:10:42Z",
+        "seconds": 28,
+        "views": 168,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/d36ba974-a666-4f40-a348-0170e7b68f0a/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/LachrymoseBlatantCrocodileFeelsBadMan-T5Q8ttYj-AWCznKA"
+      },
+      {
+        "id": "911914658",
+        "kind": "clip",
+        "title": "епта",
+        "date": "2026-06-08T19:22:55Z",
+        "seconds": 14,
+        "views": 143,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/2dd97125-364e-4023-b319-8e5ee674c248/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/ConfidentTriumphantDragonfruitOneHand-uZ2kjIBeNubcEOXu"
+      },
+      {
+        "id": "1095141366",
+        "kind": "clip",
+        "title": "Он же дракон XD",
+        "date": "2024-02-09T19:46:46Z",
+        "seconds": 22,
+        "views": 130,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/88bf93f6-57f9-4bb1-ac6d-bb3c792ac72d/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/SteamyNurturingWombatKappaWealth-EALHfL0onLYkbYqE"
+      },
+      {
+        "id": "3725077051",
+        "kind": "clip",
+        "title": "Как быть дотером",
+        "date": "2026-09-17T15:22:05Z",
+        "seconds": 7,
+        "views": 124,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/ffd9329c-d53c-45d3-99c4-82ee7e8a09a2/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/SavoryAntediluvianShrimpChefFrank-a_mPAhbnKHlTnumH"
+      }
+    ]
   },
   "telegram": {
     "channel": "timora_tv",
