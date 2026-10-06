@@ -169,6 +169,12 @@
   function renderNav() {
     var nameNode = document.getElementById("navName");
     if (nameNode) nameNode.textContent = OWNER.name || "VTuber";
+    var logo = document.getElementById("navLogo");
+    if (logo && OWNER.avatar) {
+      logo.src = OWNER.avatar;
+      logo.hidden = false;
+      logo.onerror = function () { this.hidden = true; };
+    }
     var links = clear(document.getElementById("navLinks"));
     if (!links) return;
     [["gallery", ui("navGallery")], ["credits", ui("navCredits")]].forEach(function (pair) {
@@ -222,15 +228,31 @@
         ])
       : null;
 
-    var avatar = OWNER.avatar
-      ? el("div", { class: "hero__avatar-wrap" }, [
-          el("img", {
-            class: "hero__avatar", src: OWNER.avatar, alt: OWNER.name || "",
-            width: 300, height: 300, decoding: "async",
-            onerror: function () { this.style.display = "none"; }
-          })
-        ])
-      : null;
+    // модель: тело + голова + кисть. Голова поворачивается, кисть машет (CSS-анимация)
+    var MODEL = CFG.model || {};
+    var model = null;
+    if (MODEL.body) {
+      var vars = "--head-pivot:" + (MODEL.headPivot ? MODEL.headPivot[0] + "% " + MODEL.headPivot[1] + "%" : "50% 26%") + ";" +
+                 "--hand-pivot:" + (MODEL.handPivot ? MODEL.handPivot[0] + "% " + MODEL.handPivot[1] + "%" : "29% 50%") + ";" +
+                 "--head-angle:" + (MODEL.headAngle || 6) + "deg;" +
+                 "--hand-angle:" + (MODEL.handAngle || 18) + "deg;";
+      model = el("div", { class: "model", style: vars }, [
+        el("span", { class: "model__glow", "aria-hidden": "true" }),
+        el("img", {
+          class: "model__layer", src: MODEL.body, alt: tr(MODEL.alt, OWNER.name || ""),
+          width: 640, height: 1280, decoding: "async"
+        }),
+        MODEL.head ? el("img", {
+          class: "model__layer model__layer--head", src: MODEL.head, alt: "", "aria-hidden": "true",
+          width: 640, height: 1280, decoding: "async"
+        }) : null,
+        MODEL.hand ? el("img", {
+          class: "model__layer model__layer--hand", src: MODEL.hand, alt: "", "aria-hidden": "true",
+          width: 640, height: 1280, decoding: "async"
+        }) : null,
+        el("span", { class: "model__shadow", "aria-hidden": "true" })
+      ]);
+    }
 
     var list = el("ul", { class: "links" }, (CFG.links || []).map(function (l) {
       var accent = l.accent || "site";
@@ -262,7 +284,7 @@
 
     sec.appendChild(el("div", { class: "wrap" }, [
       banner,
-      el("div", { class: "hero__inner" }, [avatar, text])
+      el("div", { class: "hero__inner" }, [model, text])
     ]));
   }
 

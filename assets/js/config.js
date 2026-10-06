@@ -63,11 +63,42 @@ window.SITE = {
     photo: { ru: "Фото",    en: "Photo" }
   },
 
+  /* ---------------- Модель на первом экране ----------------
+     Три слоя одной картинки: тело, голова и кисть. Голова поворачивается
+     влево-вправо, кисть машет. Точки вращения — в процентах от картинки:
+     шея и центр кисти. Если модель заменят, новые проценты смотрите
+     в инструменте tools/build-model.py.                                     */
+  model: {
+    body: "assets/img/model-body.webp",
+    head: "assets/img/model-head.webp",
+    hand: "assets/img/model-hand.webp",
+    full: "assets/img/model-full.webp",
+    headPivot: [50.3, 26.4],   // шея
+    handPivot: [29.2, 50.0],   // центр кисти
+    headAngle: 7,              // градус поворота головы
+    handAngle: 22,             // градус взмаха кисти
+    alt: { ru: "Модель Timora в полный рост", en: "Timora's full-body model" }
+  },
+
   /* ---------------- Арт и модель ----------------
      Здесь размещается арт по её модели. Пока список пуст — её арты ещё не
      присылали. Когда файлы появятся, положите их в assets/img/gallery/
      и добавьте блок по образцу из комментария ниже.                          */
   gallery: [
+    {
+      kind: "model",
+      title: { ru: "Модель в полный рост", en: "Full-body model" },
+      alt: {
+        ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
+        en: "Timora's full-body model: lilac dress, round glasses, headphones"
+      },
+      thumb: "assets/img/model-card.webp",
+      src: "assets/img/model-full.webp",
+      w: 640, h: 1280
+      // автора модели впишите, когда будет известен:
+      // artist: { name: "Ник художника", url: "https://x.com/ник" }
+    }
+    // Другие арты добавляйте по образцу:
     // {
     //   kind: "art",                                  // art | model | photo
     //   title: { ru: "Арт от Кая", en: "Art by Kai" },
