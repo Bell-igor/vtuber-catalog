@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belligor — VTuber: арт, модель и кредитсы</title>
+
+<!-- Поиск и соцсети. Замените адрес на свой после публикации. -->
+<meta name="description" content="Каталог арта, референсов модели и кредитсов VTuber Belligor: работы и ссылки на авторов.">
+<link rel="canonical" href="https://example.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Belligor — VTuber: арт, модель и кредитсы">
+<meta property="og:description" content="Арт, референсы модели и люди, которые их создали.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0d12">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#gallery">Перейти к галерее</a>
+
+<div id="demoBar" class="demobar" hidden></div>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top">
+      <span class="nav__logo" aria-hidden="true"></span>
+      <span id="navName">Belligor</span>
+    </a>
+    <nav id="navLinks" class="nav__links" aria-label="Разделы сайта"></nav>
+    <button id="langBtn" class="lang" type="button" aria-label="English version"><span id="langLabel">EN</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Первый экран: баннер-арт, имя и ссылки на автора -->
+  <section class="hero" id="hero" aria-label="О себе"></section>
+
+  <!-- Галерея: арт, модель, референсы, видео -->
+  <section class="section" id="gallery" aria-label="Галерея">
+    <div class="wrap">
+      <div id="galleryHead"></div>
+      <div id="filters" class="filters" role="group" aria-label="Разделы галереи"></div>
+      <div id="grid" class="grid"></div>
+      <p id="galleryEmpty" class="grid__empty" hidden>В этом разделе пока ничего нет.</p>
+    </div>
+  </section>
+
+  <!-- Кредитсы -->
+  <section class="section section--alt" id="credits" aria-label="Кредитсы">
+    <div class="wrap">
+      <div id="creditsHead"></div>
+      <div id="creditsBody" class="credits"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="footer"></footer>
+
+<!-- Просмотр картинок: увеличение, перетаскивание, стрелки -->
+<dialog id="lb" class="lb" aria-label="Просмотр изображения">
+  <div id="lbStage" class="lb__stage">
+    <img id="lbImg" class="lb__img" alt="" draggable="false">
+  </div>
+  <button id="lbClose" class="lb__close" type="button" aria-label="Закрыть">✕</button>
+  <button id="lbPrev" class="lb__nav lb__nav--prev" type="button" aria-label="Предыдущее">‹</button>
+  <button id="lbNext" class="lb__nav lb__nav--next" type="button" aria-label="Следующее">›</button>
+  <div class="lb__bar">
+    <div id="lbCaption" class="lb__caption"></div>
+    <div class="lb__tools">
+      <span id="lbCount" class="lb__count"></span>
+      <button id="lbOut" type="button" aria-label="Уменьшить" title="Уменьшить">−</button>
+      <button id="lbReset" type="button" aria-label="Сбросить масштаб" title="Сбросить масштаб">100%</button>
+      <button id="lbIn" type="button" aria-label="Увеличить" title="Увеличить">+</button>
+      <a id="lbOriginal" class="lb__orig" href="#" target="_blank" rel="noopener">Открыть оригинал</a>
+    </div>
+  </div>
+</dialog>
+
+<noscript>
+  <div class="wrap" style="padding:40px 0">
+    <h2>Включите JavaScript</h2>
+    <p>Сайт показывает галерею и кредитсы скриптом. Включите JavaScript в браузере —
+       и страница откроется полностью. Все ссылки авторов также перечислены в файле
+       <code>assets/js/config.js</code>.</p>
+  </div>
+</noscript>
+
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
