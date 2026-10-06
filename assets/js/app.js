@@ -228,10 +228,30 @@
         ])
       : null;
 
-    // модель: тело + голова + кисть. Голова поворачивается, кисть машет (CSS-анимация)
+    // модель: готовая анимация (машет рукой) или сборка из слоёв
     var MODEL = CFG.model || {};
     var model = null;
-    if (MODEL.body) {
+    if (MODEL.animation) {
+      var animBox = el("div", { class: "model model--anim" }, [
+        el("span", { class: "model__glow", "aria-hidden": "true" }),
+        el("img", {
+          class: "model__poster", src: MODEL.poster || MODEL.full, alt: tr(MODEL.alt, OWNER.name || ""),
+          width: 300, height: 621, decoding: "async"
+        }),
+        el("span", { class: "model__shadow", "aria-hidden": "true" })
+      ]);
+      var animImg = el("img", {
+        class: "model__anim", alt: "", "aria-hidden": "true",
+        width: 300, height: 621, decoding: "async",
+        onload: function () { animBox.classList.add("is-ready"); }
+      });
+      animBox.appendChild(animImg);
+      // анимация весит больше статичного кадра, поэтому грузим её после отрисовки страницы
+      var startAnim = function () { animImg.src = MODEL.animation; };
+      if (document.readyState === "complete") setTimeout(startAnim, 120);
+      else window.addEventListener("load", function () { setTimeout(startAnim, 120); });
+      model = animBox;
+    } else if (MODEL.body) {
       var vars = "--head-pivot:" + (MODEL.headPivot ? MODEL.headPivot[0] + "% " + MODEL.headPivot[1] + "%" : "50% 26%") + ";" +
                  "--hand-pivot:" + (MODEL.handPivot ? MODEL.handPivot[0] + "% " + MODEL.handPivot[1] + "%" : "29% 50%") + ";" +
                  "--head-angle:" + (MODEL.headAngle || 6) + "deg;" +

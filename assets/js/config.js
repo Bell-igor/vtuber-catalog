@@ -69,14 +69,18 @@ window.SITE = {
      шея и центр кисти. Если модель заменят, новые проценты смотрите
      в инструменте tools/build-model.py.                                     */
   model: {
+    // готовая анимация: она поднимает руку и машет. Петля сходится сама,
+    // поэтому «обрыва» нет. Если убрать эту строку — соберётся из слоёв ниже.
+    animation: "assets/img/model-idle.webp",
+    poster: "assets/img/model-idle-poster.webp",
     body: "assets/img/model-body.webp",
     head: "assets/img/model-head.webp",
     hand: "assets/img/model-hand.webp",
     full: "assets/img/model-full.webp",
     headPivot: [50.3, 26.6],   // шея
     handPivot: [30.6, 38.4],   // плечо руки, которая машет
-    headAngle: 7,              // градус поворота головы
-    handAngle: 12,             // градус взмаха руки
+    headAngle: 7,              // градус поворота головы (для варианта из слоёв)
+    handAngle: 12,             // градус взмаха руки (для варианта из слоёв)
     alt: { ru: "Модель Timora в полный рост", en: "Timora's full-body model" }
   },
 

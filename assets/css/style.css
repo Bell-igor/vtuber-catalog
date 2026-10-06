@@ -142,6 +142,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   animation: modelBob 7.5s ease-in-out infinite;
 }
 .model__layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* вариант с готовой анимацией: кадры уже с прозрачным фоном */
+.model--anim { aspect-ratio: auto; animation: none; max-width: 310px; }
+.model__poster { position: relative; display: block; width: 100%; height: auto; }
+.model__anim {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; transition: opacity 0.6s ease;
+}
+.model--anim.is-ready .model__anim { opacity: 1; }
+.model--anim.is-ready .model__poster { opacity: 0; }
 .model__layer--head {
   transform-origin: var(--head-pivot, 50% 27%);
   animation: headTurn 9.5s ease-in-out infinite;
@@ -457,6 +467,7 @@ html.is-live .nav { border-bottom-color: rgba(255, 79, 122, 0.35); }
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: 1fr; gap: 18px; }
   .model { max-width: 210px; }
+  .model--anim { max-width: 240px; }
   .hero__banner-img { border-radius: 16px; }
   .nav__links { display: none; }
   .nav__live { margin-left: auto; }
@@ -474,7 +485,10 @@ html.is-live .nav { border-bottom-color: rgba(255, 79, 122, 0.35); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .card { animation: none; }
-  .model, .model__layer--head, .model__layer--hand { animation: none; }
+  .model, .model__layer--head, .model__layer--hand, .model--anim { animation: none; }
+  /* при «уменьшить движение» показываем статичный кадр вместо анимации */
+  .model--anim.is-ready .model__anim { opacity: 0; }
+  .model--anim.is-ready .model__poster { opacity: 1; }
   .livepill, .livepill__dot, .status.is-live .status__dot { animation: none; }
   .card__img, .lb__img { transition: none !important; }
   .btn:hover, .credit:hover, .card:hover, .news:hover { transform: none; }
