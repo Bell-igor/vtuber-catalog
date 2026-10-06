@@ -77,8 +77,15 @@
   },
   "telegram": {
     "channel": "timora_tv",
-    "subscribers": 427,
+    "subscribers": 428,
     "posts": [
+      {
+        "id": 1910,
+        "url": "https://t.me/timora_tv/1910",
+        "date": "2026-10-06T18:40:33+00:00",
+        "text": "Панда... спасибо большое, ёпта 🖐 🖐 🖐",
+        "photo": "https://cdn4.telesco.pe/file/sCI7C3TdLXx5X-rtnvRVYTNxmxHummuJGnN-E4fYANQbqzpdOvptwVnj3gZYvUo8_FmoeZGeWEQQ-DPHK6Dq4r2cxI_ULfBx0RSwV8G6D8oMJCAEkz6-DAum14X1rarcZe8bmeKa6MEsl1mKAT3vLsDt0OKCVjW2ZcxtDw5UWwuLUrFkE0r9VoAVsOGLiRm_4wTBYiwjp0JF51V2JKglh3S4Y8ekHJhLLDO76NGwlWcowvVC_bx0GXEGWQg-IxmxbaXjLD8sUl3ef-feakCElu9tgCZ6vXmMXKFB6Uz91XRxDQRWlyxRUusprsgRzCGikR5LKtt5IirhimhKgK0O3A"
+      },
       {
         "id": 1909,
         "url": "https://t.me/timora_tv/1909",
@@ -92,13 +99,6 @@
         "date": "2026-10-06T15:59:44+00:00",
         "text": "Товарищи, напоминаю, что через 5 минут ваш енот запустит так называемую Помойку 2. Просьба явиться и поглазеть\n\nhttps://www.twitch.tv/vekavesker_voo\nhttps://www.twitch.tv/vekavesker_voo\nhttps://www.twitch.tv/vekavesker_voo",
         "photo": "https://cdn4.telesco.pe/file/ANRl-Y7Ww0yIOSLzlsxDJwGA2DvpvT9FvrhV7TLYwBVZZ828cSPpfBP7ha2jzSMMHkytkEXmqwnDPbX-qmoo_TzJAKXp6DvgOs5Y69Q6ImXfo3q3b4BbW-naDoWe-ZBGjiBjsDGJHGkaksu7tRP4t_i8FsBcTx60Qbi1N-Owqjudtacz0Z0lEMJ5xDVCLSzaBfs-8dSK8cZpGMV1gaGmiHQoJ9Czw3s045oIhIoLAQiRZxHW57Dm2t81JyKYeUxyaS96FUvARYyUWfkmznsQXdDhlKMm62qCYuIj6OfrZGbDcHF52jTtNTwkTRCsT_YFXNHvt04oMyCP9aDIqw-7AQ.jpg"
-      },
-      {
-        "id": 1906,
-        "url": "https://t.me/timora_tv/1906",
-        "date": "2026-10-06T07:42:06+00:00",
-        "text": "Буду крайне признательна, если пройдете небольшой опрос на тему использования ИИ в стриминге - от силы 5 минут времени займет\n\nОчень много слышу всякого вокруг этой темы и хочется посмотреть и узнать, какое мнение у большинства. После проведения опроса сделаю, наверное, видео на эту тему с результатами опроса (опять же, не претендую на то, что он будет прям репрезентативным и с социологической точки зрения корректным, но думаю, что позволит посмотреть на данный вопрос шире, чем посты отдельных…",
-        "photo": "https://cdn4.telesco.pe/file/vpZ0c6br3FQtSe1Kh4InbtZdIy423v7Zhw7-M0CScZHB1JeWCi5QzmBQaBWlMQozs27aj8144iyDF8ZDL-bbuoKnQNhEeO6UmazZVmX8c3UNEvdAkIwqpNkntQD5l7QBqDwIGSZ7qnQ0XcoWh9DANwPjt9hLYtCmTfyVIq0ZmmofkUoRQ5TDHXLr2ukp5uFz0NTxq_fsFdUFjjiviaZqpWTqaX-WrK0TpWyhSaHme4qwJ7P-GyZDzVhAGRNK29IiyVw6sLP9C95ApBU9WGEb1zN7fN74d_LbZvxLauKcPiNzg6lPrDUW7vJOYapQrBLy6RtCr8p7enCPb8U0sxcM2w.jpg"
       }
     ]
   },
