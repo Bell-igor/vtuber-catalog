@@ -35,7 +35,7 @@ jobs:
       - name: Сжать картинки с Twitch в webp
         continue-on-error: true
         run: |
-          python3 -m pip install --quiet --disable-pip-version-check Pillow
+          python3 -c "import PIL" 2>/dev/null || python3 -m pip install --quiet --disable-pip-version-check --break-system-packages Pillow || python3 -m pip install --quiet --disable-pip-version-check Pillow
           python3 .github/scripts/make-webp.py
 
       - name: Закоммитить, если что-то изменилось
@@ -43,10 +43,20 @@ jobs:
           git config user.name "status-bot"
           git config user.email "status-bot@users.noreply.github.com"
           ASSETS="status.json assets/img/avatar-twitch.png assets/img/banner-twitch.png assets/img/avatar-twitch.webp assets/img/banner-twitch.webp"
-          if [ -n "$(git status --porcelain $ASSETS)" ]; then
-            git add $ASSETS
-            git commit -m "Автообновление статуса стрима"
-            git push
-          else
+          CHANGED="$(git status --porcelain -- $ASSETS)"
+          echo "изменения: [$CHANGED]"
+          if [ -z "$CHANGED" ]; then
             echo "Изменений нет — коммит не нужен"
+            exit 0
+          fi
+          git add -- $ASSETS
+          git commit -m "Автообновление статуса стрима"
+          if git push; then
+            echo "запушено"
+          else
+            # параллельный запуск успел закоммитить раньше — не страшно,
+            # данные всё равно обновляются каждые 5 минут
+            echo "push отклонён (гонка с другим запуском) — подтягиваю версию из репозитория"
+            git fetch origin main
+            git reset --hard origin/main
           fi
