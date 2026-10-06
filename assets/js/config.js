@@ -73,10 +73,10 @@ window.SITE = {
     head: "assets/img/model-head.webp",
     hand: "assets/img/model-hand.webp",
     full: "assets/img/model-full.webp",
-    headPivot: [50.3, 26.4],   // шея
-    handPivot: [29.2, 50.0],   // центр кисти
+    headPivot: [50.3, 26.6],   // шея
+    handPivot: [30.6, 38.4],   // плечо руки, которая машет
     headAngle: 7,              // градус поворота головы
-    handAngle: 22,             // градус взмаха кисти
+    handAngle: 12,             // градус взмаха руки
     alt: { ru: "Модель Timora в полный рост", en: "Timora's full-body model" }
   },
 
