@@ -115,7 +115,7 @@ window.SITE = {
      Если у канала появятся записи эфиров, они встанут первыми.               */
   clips: {
     count: 6,
-    title: { ru: "Видео с эфиров", en: "Stream videos" },
+    title: { ru: "Модель, арт и эфиры", en: "Model, art & streams" },
     allLabel: { ru: "Все видео на Twitch", en: "All videos on Twitch" },
     allUrl: "https://www.twitch.tv/timoravoo/videos"
   },
