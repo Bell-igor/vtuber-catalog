@@ -15,17 +15,16 @@
   /* --------------------------- тексты интерфейса --------------------------- */
   var UI = {
     ru: {
-      navGallery: "Арт и модель",
       navCredits: "Кредитсы",
       heroArt: "Арт модели",
-      galleryTitle: "Арт, модель и референсы",
-      gallerySub: "Нажмите на картинку, чтобы рассмотреть подробнее. Колесо мыши или кнопки «+» / «−» масштабируют, перетаскивание сдвигает, Esc закрывает.",
+      galleryTitle: "Видео с эфиров и арт",
+      gallerySub: "Клипы подтягиваются с Twitch автоматически. Арт и референсы модели живут в этом же разделе — нажмите на картинку, чтобы рассмотреть поближе.",
       creditsTitle: "Кредитсы",
       creditsSub: "Люди, благодаря которым всё это существует.",
       thanks: "Отдельное спасибо",
       empty: "В этом разделе пока ничего нет.",
       demoTitle: "Это демонстрационное наполнение.",
-      demoText: "Тексты, ссылки и картинки — примеры. Свои данные впишите в файл assets/js/config.js, а потом поставьте demo: false — напоминание исчезнет.",
+      demoText: "Кредитсы пока заполнены примерами. Впишите реальные имена и ссылки в файл assets/js/config.js, а потом поставьте demo: false — напоминание исчезнет.",
       demoHide: "Понятно",
       demoBadge: "демо",
       demoHint: "демо-ссылка: замените в config.js",
@@ -41,6 +40,17 @@
       langSwitch: "English version",
       langCode: "EN",
       watch: "Смотреть видео",
+      watchClip: "Смотреть клип",
+      watchVod: "Смотреть запись",
+      clipBadge: "Клип",
+      vodBadge: "Запись",
+      navGallery: "Видео и арт",
+      clipFallback: "Клип с эфира",
+      vodFallback: "Запись эфира",
+      view1: "просмотр",
+      view2: "просмотра",
+      view5: "просмотров",
+      bannerAlt: "баннер канала",
       madeNote: "Статичный сайт без внешних сервисов — открывается и в СНГ, и за рубежом.",
       liveNow: "Сейчас в эфире",
       offline: "Не в эфире",
@@ -56,17 +66,16 @@
       openAll: "Все анонсы"
     },
     en: {
-      navGallery: "Art & model",
       navCredits: "Credits",
       heroArt: "Model art",
-      galleryTitle: "Art, model & references",
-      gallerySub: "Click an image to take a closer look. Mouse wheel or “+” / “−” to zoom, drag to pan, Esc to close.",
+      galleryTitle: "Stream videos & art",
+      gallerySub: "Clips are pulled from Twitch automatically. Art and model references live in this section too — click an image to take a closer look.",
       creditsTitle: "Credits",
       creditsSub: "The people who make all of this possible.",
       thanks: "Special thanks",
       empty: "Nothing here yet.",
       demoTitle: "This is demo content.",
-      demoText: "All texts, links and images are samples. Put your own data into assets/js/config.js and set demo: false to hide this note.",
+      demoText: "The credits are still placeholders. Put the real names and links into assets/js/config.js and set demo: false to hide this note.",
       demoHide: "Got it",
       demoBadge: "demo",
       demoHint: "demo link: replace it in config.js",
@@ -82,6 +91,17 @@
       langSwitch: "Русская версия",
       langCode: "RU",
       watch: "Watch video",
+      watchClip: "Watch clip",
+      watchVod: "Watch VOD",
+      clipBadge: "Clip",
+      vodBadge: "VOD",
+      navGallery: "Videos & art",
+      clipFallback: "Stream clip",
+      vodFallback: "Stream recording",
+      view1: "view",
+      view2: "views",
+      view5: "views",
+      bannerAlt: "channel banner",
       madeNote: "A static site with no external services — reachable both in CIS and abroad.",
       liveNow: "Live now",
       offline: "Offline",
@@ -190,17 +210,27 @@
     var sec = document.getElementById("hero");
     if (!sec) return;
     clear(sec);
-    if (OWNER.hero) sec.style.setProperty("--hero-bg", "url('" + OWNER.hero + "')");
+    if (OWNER.banner) sec.style.setProperty("--hero-bg", "url('" + OWNER.banner + "')");
 
-    var art = el("figure", { class: "hero__art" }, [
-      OWNER.hero ? el("img", {
-        class: "hero__img", src: OWNER.hero, alt: tr(OWNER.heroAlt, (OWNER.name || "") + " — " + ui("heroArt")),
-        width: 896, height: 1195, decoding: "async", fetchpriority: "high"
-      }) : null,
-      OWNER.avatar ? el("img", {
-        class: "hero__avatar", src: OWNER.avatar, alt: "", width: 96, height: 96, decoding: "async"
-      }) : null
-    ]);
+    var banner = OWNER.banner
+      ? el("figure", { class: "hero__banner" }, [
+          el("img", {
+            class: "hero__banner-img", src: OWNER.banner,
+            alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
+            width: 1440, height: 480, decoding: "async", fetchpriority: "high"
+          })
+        ])
+      : null;
+
+    var avatar = OWNER.avatar
+      ? el("div", { class: "hero__avatar-wrap" }, [
+          el("img", {
+            class: "hero__avatar", src: OWNER.avatar, alt: OWNER.name || "",
+            width: 300, height: 300, decoding: "async",
+            onerror: function () { this.style.display = "none"; }
+          })
+        ])
+      : null;
 
     var list = el("ul", { class: "links" }, (CFG.links || []).map(function (l) {
       var accent = l.accent || "site";
@@ -230,7 +260,38 @@
       el("div", { class: "status", id: "heroStatus" })
     ]);
 
-    sec.appendChild(el("div", { class: "wrap hero__inner" }, [text, art]));
+    sec.appendChild(el("div", { class: "wrap" }, [
+      banner,
+      el("div", { class: "hero__inner" }, [avatar, text])
+    ]));
+  }
+
+  // карточки видео, которые приходят из status.json (клипы и записи эфиров)
+  function clipItems() {
+    var tw = live.twitch || {};
+    var list = []
+      .concat((tw.videos || []).filter(function (v) { return v && v.thumb; }))
+      .concat((tw.clips || []).filter(function (v) { return v && v.thumb; }));
+    var limit = Number((CFG.clips && CFG.clips.count) || 6);
+    return list.slice(0, limit).map(function (v) {
+      var isVod = v.kind === "vod";
+      return {
+        kind: isVod ? "vod" : "clip",
+        auto: true,
+        title: v.title || (isVod ? ui("vodFallback") : ui("clipFallback")),
+        alt: v.title || "",
+        thumb: v.thumb,
+        video: v.url,
+        date: v.date,
+        seconds: v.seconds,
+        views: v.views,
+        w: 640, h: 360
+      };
+    });
+  }
+
+  function galleryItems() {
+    return GALLERY.concat(clipItems());
   }
 
   function imageItems() {
@@ -240,10 +301,11 @@
   function renderFilters() {
     var box = clear(document.getElementById("filters"));
     if (!box) return;
+    var items = galleryItems();
     var used = {};
-    GALLERY.forEach(function (it) { if (it && it.kind) used[it.kind] = true; });
+    items.forEach(function (it) { if (it && it.kind) used[it.kind] = true; });
     var keys = Object.keys(KINDS).filter(function (k) {
-      return k === "all" ? GALLERY.length > 0 : used[k];
+      return k === "all" ? items.length > 0 : used[k];
     });
     if (keys.length < 2) { box.hidden = true; return; }
     box.hidden = false;
@@ -261,27 +323,36 @@
   function cardFor(item, index) {
     var kindLabel = item.kind && KINDS[item.kind] ? tr(KINDS[item.kind], item.kind) : "";
     var artist = item.artist || {};
+    var sub = [];
+    if (kindLabel) sub.push(el("span", { text: kindLabel }));
+    if (item.auto) {
+      if (item.date) sub.push(el("span", { text: formatShortDate(item.date) }));
+      if (item.seconds) sub.push(el("span", { text: formatDuration(item.seconds) }));
+      if (typeof item.views === "number") {
+        sub.push(el("span", { text: formatNum(item.views) + " " + plural(item.views, ui("view1"), ui("view2"), ui("view5")) }));
+      }
+    } else if (artist.name) {
+      sub.push(el("span", { text: artist.name }));
+    }
     var meta = el("span", { class: "card__meta" }, [
       el("span", { class: "card__title", text: tr(item.title, "—") }),
-      el("span", { class: "card__sub" }, [
-        el("span", { text: kindLabel }),
-        artist.name ? el("span", { class: "card__sep", "aria-hidden": "true", text: "·" }) : null,
-        artist.name ? el("span", { text: artist.name }) : null
-      ])
+      el("span", { class: "card__sub" }, sub)
     ]);
     var thumb = el("img", {
       class: "card__img", src: item.thumb || item.src, alt: tr(item.alt, tr(item.title, "")),
-      width: item.w || null, height: item.h || null, loading: "lazy", decoding: "async"
+      width: item.w || null, height: item.h || null, loading: "lazy", decoding: "async",
+      onerror: function () { this.style.visibility = "hidden"; }
     });
     var label = ui("open") + ": " + tr(item.title, "");
 
     if (item.video) {
       return el("a", {
-        class: "card card--video", href: item.video, target: "_blank", rel: "noopener noreferrer",
+        class: "card card--video" + (item.auto ? " card--wide" : ""),
+        href: item.video, target: "_blank", rel: "noopener noreferrer",
         "aria-label": label + " (" + ui("watch") + ")"
       }, [
         thumb, el("span", { class: "card__play", "aria-hidden": "true", text: "▶" }),
-        el("span", { class: "card__badge", text: ui("watch") }), meta
+        el("span", { class: "card__badge", text: item.kind === "vod" ? ui("vodBadge") : ui("clipBadge") }), meta
       ]);
     }
     return el("button", {
@@ -293,11 +364,12 @@
   function renderGrid() {
     var grid = clear(document.getElementById("grid"));
     if (!grid) return;
-    var items = GALLERY.filter(function (it) {
-      return it && (state.filter === "all" || it.kind === state.filter);
-    });
+    var all = galleryItems();
+    var items = all.filter(function (it) { return state.filter === "all" || it.kind === state.filter; });
+    var sec = document.getElementById("gallery");
+    if (sec) sec.hidden = all.length === 0;
     var empty = document.getElementById("galleryEmpty");
-    if (empty) empty.hidden = items.length > 0;
+    if (empty) empty.hidden = items.length > 0 || all.length === 0;
     items.forEach(function (item, i) {
       var card = cardFor(item, i);
       card.style.setProperty("--i", String(i));
@@ -308,8 +380,15 @@
   function renderGalleryHead() {
     var head = clear(document.getElementById("galleryHead"));
     if (!head) return;
-    head.appendChild(el("h2", { class: "section__title", text: ui("galleryTitle") }));
+    var clips = CFG.clips || {};
+    head.appendChild(el("h2", { class: "section__title", text: tr(clips.title, ui("galleryTitle")) }));
     head.appendChild(el("p", { class: "section__sub", text: ui("gallerySub") }));
+    if (clips.allUrl) {
+      head.appendChild(el("a", {
+        class: "section__link", href: clips.allUrl, target: "_blank", rel: "noopener noreferrer",
+        text: tr(clips.allLabel, ui("galleryTitle")) + " ↗"
+      }));
+    }
   }
 
   function creditItem(c) {
@@ -585,7 +664,7 @@
   var baseTitle = document.title;
   var live = {
     on: false, title: "", game: "", startedAt: null, viewers: null,
-    followers: null, last: null, tg: null, dc: null, ready: false
+    followers: null, last: null, tg: null, dc: null, twitch: null, ready: false
   };
   var newsScrolled = false;
 
@@ -631,10 +710,22 @@
         { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
     } catch (e) { return ""; }
   }
+  function formatShortDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString(state.lang === "ru" ? "ru-RU" : "en-GB");
+    } catch (e) { return ""; }
+  }
+  function formatDuration(seconds) {
+    var s = Math.max(0, Math.round(seconds || 0));
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    return h > 0 ? h + ":" + pad(m) + ":" + pad(sec) : m + ":" + pad(sec);
+  }
 
   function applyStatus(data) {
     if (!data) return;
     var tw = data.twitch || {};
+    live.twitch = tw;
     if (typeof tw.live === "boolean") live.on = tw.live;
     if (tw.live) {
       live.title = tw.title || live.title;
@@ -649,6 +740,8 @@
     live.ready = true;
     paintLive();
     renderNews();
+    renderFilters();
+    renderGrid();
   }
 
   // быстрая проверка (несколько секунд вместо пяти минут), необязательная

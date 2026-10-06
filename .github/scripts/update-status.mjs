@@ -27,6 +27,8 @@ const PUBLIC_TWITCH_CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko";
 const ROOT = process.cwd();
 const OUT_JSON = path.join(ROOT, "status.json");
 const AVATAR_FILE = path.join(ROOT, "assets", "img", "avatar-twitch.png");
+const BANNER_FILE = path.join(ROOT, "assets", "img", "banner-twitch.png");
+const VOD_COUNT = Number(process.env.VOD_COUNT || 6);
 
 const UA = { "User-Agent": "timora-site-status/1.0 (+https://github.com/Bell-igor/vtuber-catalog)" };
 
@@ -92,6 +94,7 @@ async function twitchViaIvr() {
     game: s?.game?.name || "",
     startedAt: s?.createdAt || null,
     avatar: u.logo || null,
+    banner: u.banner || null,
     followers: typeof u.followers === "number" ? u.followers : null,
     lastBroadcast: u.lastBroadcast
       ? { title: u.lastBroadcast.title || "", startedAt: u.lastBroadcast.startedAt || null }
@@ -135,6 +138,61 @@ async function twitchInfo() {
     if (result) return result;
   }
   return null;
+}
+
+/* ---------------------- последние эфиры и клипы --------------------------- */
+async function twitchVideos() {
+  const body = {
+    query:
+      `query{user(login:"${TWITCH_LOGIN}"){videos(first:${VOD_COUNT},type:ARCHIVE){` +
+      `edges{node{id title createdAt lengthSeconds viewCount previewThumbnailURL url}}}}}`
+  };
+  const data = await getJSON("https://gql.twitch.tv/gql", {
+    method: "POST",
+    headers: { "Client-Id": PUBLIC_TWITCH_CLIENT_ID, "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  const edges = data?.data?.user?.videos?.edges || [];
+  return edges
+    .map((e) => e.node)
+    .filter(Boolean)
+    .map((v) => ({
+      id: v.id,
+      kind: "vod",
+      title: v.title || "",
+      date: v.createdAt || null,
+      seconds: typeof v.lengthSeconds === "number" ? v.lengthSeconds : null,
+      views: typeof v.viewCount === "number" ? v.viewCount : null,
+      thumb: v.previewThumbnailURL || null,
+      url: v.url || `https://www.twitch.tv/videos/${v.id}`
+    }));
+}
+
+async function twitchClips() {
+  const body = {
+    query:
+      `query{user(login:"${TWITCH_LOGIN}"){clips(first:${VOD_COUNT}){` +
+      `edges{node{id title durationSeconds createdAt thumbnailURL viewCount url}}}}}`
+  };
+  const data = await getJSON("https://gql.twitch.tv/gql", {
+    method: "POST",
+    headers: { "Client-Id": PUBLIC_TWITCH_CLIENT_ID, "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  const edges = data?.data?.user?.clips?.edges || [];
+  return edges
+    .map((e) => e.node)
+    .filter(Boolean)
+    .map((c) => ({
+      id: c.id,
+      kind: "clip",
+      title: c.title || "",
+      date: c.createdAt || null,
+      seconds: typeof c.durationSeconds === "number" ? c.durationSeconds : null,
+      views: typeof c.viewCount === "number" ? c.viewCount : null,
+      thumb: c.thumbnailURL || null,
+      url: c.url || null
+    }));
 }
 
 /* ------------------------------ Telegram --------------------------------- */
@@ -220,21 +278,20 @@ async function discordInfo() {
   };
 }
 
-/* -------------------------------- аватар --------------------------------- */
-async function syncAvatar(url) {
-  if (!url) return false;
-  const small = url.replace(/-(\d+)x(\d+)\.(png|jpe?g)$/i, "-300x300.$3");
-  const res = await fetch(small, { headers: UA });
-  if (!res.ok) throw new Error(`аватар → HTTP ${res.status}`);
+/* --------------------------- аватар и баннер ------------------------------ */
+async function downloadIfChanged(url, file, label, shrink) {
+  const target = shrink ? url.replace(/-(\d+)x(\d+)\.(png|jpe?g)$/i, `-${shrink}.$3`) : url;
+  const res = await fetch(target, { headers: UA });
+  if (!res.ok) throw new Error(`${label} → HTTP ${res.status}`);
   const fresh = Buffer.from(await res.arrayBuffer());
-  const current = existsSync(AVATAR_FILE) ? await readFile(AVATAR_FILE) : null;
+  const current = existsSync(file) ? await readFile(file) : null;
   if (current && current.equals(fresh)) {
-    console.log("= аватар без изменений");
+    console.log(`= ${label} без изменений`);
     return true;
   }
-  await mkdir(path.dirname(AVATAR_FILE), { recursive: true });
-  await writeFile(AVATAR_FILE, fresh);
-  console.log("✓ аватар обновлён");
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, fresh);
+  console.log(`✓ ${label} обновлён`);
   return true;
 }
 
@@ -246,10 +303,12 @@ try {
   previous = {};
 }
 
-const [twitch, telegram, discord] = await Promise.all([
+const [twitch, telegram, discord, videos, clips] = await Promise.all([
   attempt("статус Twitch", twitchInfo),
   attempt("Telegram-анонсы", telegramInfo),
-  attempt("Discord-сервер", discordInfo)
+  attempt("Discord-сервер", discordInfo),
+  attempt("записи эфиров (VOD)", twitchVideos),
+  attempt("клипы", twitchClips)
 ]);
 
 const status = {
@@ -258,15 +317,21 @@ const status = {
   discord: discord || previous.discord || null
 };
 
-if (twitch?.avatar) {
-  await attempt("аватар Twitch", () => syncAvatar(twitch.avatar));
+if (status.twitch) {
+  status.twitch.videos = videos || status.twitch.videos || [];
+  status.twitch.clips = clips || status.twitch.clips || [];
+  if (twitch?.avatar) await attempt("аватар Twitch", () => downloadIfChanged(twitch.avatar, AVATAR_FILE, "аватар", "300x300"));
+  if (twitch?.banner) await attempt("баннер Twitch", () => downloadIfChanged(twitch.banner, BANNER_FILE, "баннер"));
+  delete status.twitch.avatar; // адреса картинок в файле не нужны
+  delete status.twitch.banner;
 }
-if (status.twitch) delete status.twitch.avatar; // адрес аватара в файле не нужен
 
 await writeFile(OUT_JSON, JSON.stringify(status, null, 2) + "\n", "utf8");
 
 console.log("—".repeat(40));
 console.log(`эфир: ${status.twitch?.live ? "ДА" : "нет"}${status.twitch?.live ? ` — ${status.twitch.title}` : ""}`);
+console.log(`записей эфиров: ${status.twitch?.videos?.length ?? 0}, клипов: ${status.twitch?.clips?.length ?? 0}`);
+console.log(`записей эфиров: ${status.twitch?.videos?.length ?? 0}`);
 console.log(`анонсов: ${status.telegram?.posts?.length ?? 0}, подписчиков в Telegram: ${status.telegram?.subscribers ?? "?"}`);
 console.log(`Discord: ${status.discord?.name ?? "?"} (${status.discord?.members ?? "?"} участников)`);
 console.log("status.json записан");

@@ -35,10 +35,9 @@ window.SITE = {
       ru: "Добро пожаловать! Здесь собраны арт, референсы моей модели и люди, благодаря которым всё это существует.",
       en: "Welcome! Here you'll find art, references of my model and the people who made all of it possible."
     },
-    // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
-    avatar: "assets/img/avatar-twitch.png",
-    // большая картинка справа на первом экране (обычно — арт модели в полный рост)
-    hero: "assets/img/gallery/model-wings.webp"
+    // аватар и баннер подтягиваются из Twitch автоматически (файлы обновляет GitHub)
+    avatar: "assets/img/avatar-twitch.webp",
+    banner: "assets/img/banner-twitch.webp"
   },
 
   /* ---------------- Ссылки на вас ----------------
@@ -57,74 +56,38 @@ window.SITE = {
   /* ---------------- Разделы галереи (кнопки-фильтры) ---------------- */
   kinds: {
     all:   { ru: "Всё",     en: "All" },
-    model: { ru: "Модель",  en: "Model" },
+    clip:  { ru: "Клипы",   en: "Clips" },
+    vod:   { ru: "Записи",  en: "VODs" },
     art:   { ru: "Арт",     en: "Art" },
-    video: { ru: "Видео",   en: "Video" },
+    model: { ru: "Модель",  en: "Model" },
     photo: { ru: "Фото",    en: "Photo" }
   },
 
-  /* ---------------- Галерея ----------------
-     kind   — раздел из списка kinds (model / art / video / photo);
-     thumb  — превью для сетки, src — большая картинка для просмотра;
-     artist — имя автора и ссылка на его соцсеть;
-     video  — если у элемента есть эта строка, карточка не открывает
-              картинку, а ведёт на видео (YouTube и т.п.).                 */
+  /* ---------------- Арт и модель ----------------
+     Здесь размещается арт по её модели. Пока список пуст — её арты ещё не
+     присылали. Когда файлы появятся, положите их в assets/img/gallery/
+     и добавьте блок по образцу из комментария ниже.                          */
   gallery: [
-    {
-      kind: "model",
-      title: { ru: "Модель в полный рост", en: "Full-body model" },
-      alt: { ru: "Крылатая модель в библиотеке с книгой и пером", en: "Winged model in a library with a book and a quill" },
-      thumb: "assets/img/gallery/model-wings-thumb.webp",
-      src: "assets/img/gallery/model-wings.webp",
-      w: 896, h: 1195,
-      artist: { name: "Имя художника", url: "#artist" },
-      note: { ru: "Пример карточки: замените автора и файл", en: "Sample card: replace artist and file" }
-    },
-    {
-      kind: "model",
-      title: { ru: "Референс: крылья", en: "Reference: wings" },
-      alt: { ru: "Модель в кресле, крылья раскрыты", en: "Model in an armchair with spread wings" },
-      thumb: "assets/img/gallery/model-seated-thumb.webp",
-      src: "assets/img/gallery/model-seated.webp",
-      w: 896, h: 1195,
-      artist: { name: "Имя художника", url: "#artist" }
-    },
-    {
-      kind: "model",
-      title: { ru: "Референс: основной костюм", en: "Reference: main outfit" },
-      alt: { ru: "Модель в жилете с пером и книгой", en: "Model in a vest holding a quill and a book" },
-      thumb: "assets/img/gallery/model-vest-thumb.webp",
-      src: "assets/img/gallery/model-vest.webp",
-      w: 896, h: 1195,
-      artist: { name: "Имя художника", url: "#artist" }
-    },
-    {
-      kind: "art",
-      title: { ru: "Иллюстрация: рабочий кабинет", en: "Illustration: the study" },
-      alt: { ru: "Иллюстрация с моделью в кабинете", en: "Illustration of the model in a study" },
-      thumb: "assets/img/gallery/model-study-thumb.webp",
-      src: "assets/img/gallery/model-study.webp",
-      w: 896, h: 1195,
-      artist: { name: "Имя художника", url: "#artist" }
-    },
-    {
-      kind: "art",
-      title: { ru: "Иллюстрация: светящийся глаз", en: "Illustration: glowing eye" },
-      alt: { ru: "Портрет модели со светящимся глазом", en: "Portrait of the model with a glowing eye" },
-      thumb: "assets/img/gallery/model-glow-thumb.webp",
-      src: "assets/img/gallery/model-glow.webp",
-      w: 896, h: 1195,
-      artist: { name: "Имя художника", url: "#artist" }
-    },
-    {
-      kind: "video",
-      title: { ru: "Дебютный стрим", en: "Debut stream" },
-      alt: { ru: "Превью видео", en: "Video thumbnail" },
-      thumb: "assets/img/gallery/model-wings-thumb.webp",
-      video: "#video",
-      artist: { name: "Монтаж: имя", url: "#editor" }
-    }
+    // {
+    //   kind: "art",                                  // art | model | photo
+    //   title: { ru: "Арт от Кая", en: "Art by Kai" },
+    //   alt: { ru: "Описание картинки — для незрячих и для поиска", en: "..." },
+    //   thumb: "assets/img/gallery/art-kai-thumb.webp",
+    //   src: "assets/img/gallery/art-kai.webp",
+    //   w: 896, h: 1195,
+    //   artist: { name: "Кай", url: "https://x.com/ник" }
+    // }
   ],
+
+  /* ---------------- Клипы и записи эфиров ----------------
+     Подтягиваются с Twitch автоматически: GitHub обновляет их каждые 5 минут.
+     Если у канала появятся записи эфиров, они встанут первыми.               */
+  clips: {
+    count: 6,
+    title: { ru: "Видео с эфиров", en: "Stream videos" },
+    allLabel: { ru: "Все видео на Twitch", en: "All videos on Twitch" },
+    allUrl: "https://www.twitch.tv/timoravoo/videos"
+  },
 
   /* ---------------- Кредитсы ----------------
      Добавляйте блоки { ... } внутрь items. Поля:
