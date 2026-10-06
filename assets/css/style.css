@@ -144,7 +144,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .model__layer { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* вариант с готовой анимацией: кадры уже с прозрачным фоном */
-.model--anim { aspect-ratio: auto; animation: none; max-width: 310px; }
+.model--anim { aspect-ratio: auto; animation: none; max-width: 330px; }
 .model__poster { position: relative; display: block; width: 100%; height: auto; }
 .model__anim {
   position: absolute; inset: 0; width: 100%; height: 100%;
