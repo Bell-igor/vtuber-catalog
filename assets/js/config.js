@@ -37,21 +37,25 @@ window.SITE = {
     },
     // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
     avatar: "assets/img/avatar-twitch.webp",
-    // баннер: кадр из её заставки, поверх него играет короткая видео-петля
+    // баннер: кадр из её заставки, поверх него играет видео-петля (бесшовная)
     banner: "assets/img/banner-zastavka.webp",
-    bannerVideo: "assets/img/banner-loop.mp4"
+    bannerVideo: "assets/img/banner-loop.mp4",
+    // если у видео появится звук — поставьте true, и в углу баннера
+    // появится кнопка «включить/выключить звук»
+    bannerSound: false
   },
 
   /* ---------------- Ссылки на вас ----------------
      accent — цвет значка: yt | twitch | tg | x | discord | vk | boosty | tiktok | inst | site | fetta | donate
      icon   — значок: twitch | telegram | discord | gift | coin | play | site
+     pinned — true: ссылка дополнительно закрепляется в шапке сайта и в подвале
      url: "#название" = заглушка, кнопка будет помечена как «демо».      */
   links: [
-    { label: "Twitch",         url: "https://www.twitch.tv/timoravoo",               accent: "twitch", icon: "twitch" },
-    { label: "Telegram",       url: "https://t.me/timora_tv",                        accent: "tg",     icon: "telegram" },
-    { label: "Discord",        url: "https://discord.gg/zgbhEWNeCZ",                 accent: "discord", icon: "discord" },
-    { label: "Фетта",          url: "https://fetta.app/u/timora",                    accent: "fetta",  icon: "gift" },
-    { label: "Донат",          url: "https://www.donationalerts.com/r/timoravoo",    accent: "donate", icon: "coin" }
+    { label: "Twitch",   url: "https://www.twitch.tv/timoravoo",            accent: "twitch",  icon: "twitch" },
+    { label: "Telegram", url: "https://t.me/timora_tv",                     accent: "tg",      icon: "telegram" },
+    { label: "Discord",  url: "https://discord.gg/zgbhEWNeCZ",              accent: "discord", icon: "discord" },
+    { label: "Фетта",    url: "https://fetta.app/u/timora",                 accent: "fetta",   icon: "gift", pinned: true },
+    { label: "Донат",    url: "https://www.donationalerts.com/r/timoravoo", accent: "donate",  icon: "coin", pinned: true }
     // Если появятся другие соцсети — добавьте строки по образцу выше:
     // { label: "YouTube", url: "https://youtube.com/@канал", accent: "yt", icon: "play" },
     // { label: "Boosty",  url: "https://boosty.to/ник",      accent: "boosty" }
@@ -138,6 +142,34 @@ window.SITE = {
     allLabel: { ru: "Все видео на Twitch", en: "All videos on Twitch" },
     allUrl: "https://www.twitch.tv/timoravoo/videos"
   },
+
+  /* ---------------- Модели (карусель в кредитсах) ----------------
+     Каждая модель — отдельный слайд: картинка + таблица авторов.
+     Добавить вторую модель: скопируйте блок { ... } и поменяйте данные. */
+  models: [
+    {
+      name: { ru: "Основная модель", en: "Main model" },
+      image: "assets/img/model-full.webp",
+      alt: {
+        ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
+        en: "Timora's full-body model: lilac dress, round glasses, headphones"
+      },
+      w: 640, h: 1280,
+      authors: [
+        { role: { ru: "Дизайн и арт модели", en: "Model design & art" }, name: "Имя художника", handle: "@artist", url: "#artist" },
+        { role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" }, name: "Имя риггера", handle: "@rigger", url: "#rigger" }
+      ]
+    }
+    // {
+    //   name: { ru: "Вторая модель", en: "Second model" },
+    //   image: "assets/img/model-2.webp",
+    //   alt: { ru: "Вторая модель Timora", en: "Timora's second model" },
+    //   w: 640, h: 1280,
+    //   authors: [
+    //     { role: { ru: "Арт", en: "Art" }, name: "Ник", handle: "@nick", url: "https://x.com/ник" }
+    //   ]
+    // }
+  ],
 
   /* ---------------- Кредитсы ----------------
      Добавляйте блоки { ... } внутрь items. Поля:

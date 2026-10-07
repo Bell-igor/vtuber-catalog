@@ -22,6 +22,12 @@
       creditsTitle: "Кредитсы",
       creditsSub: "Люди, благодаря которым всё это существует.",
       thanks: "Отдельное спасибо",
+      modelsTitle: "Модели",
+      authorsTitle: "Авторы модели",
+      prevModel: "Предыдущая модель",
+      nextModel: "Следующая модель",
+      soundOn: "Включить звук",
+      soundOff: "Выключить звук",
       empty: "В этом разделе пока ничего нет.",
       demoTitle: "Это демонстрационное наполнение.",
       demoText: "Кредитсы пока заполнены примерами. Впишите реальные имена и ссылки в файл assets/js/config.js, а потом поставьте demo: false — напоминание исчезнет.",
@@ -73,6 +79,12 @@
       creditsTitle: "Credits",
       creditsSub: "The people who make all of this possible.",
       thanks: "Special thanks",
+      modelsTitle: "Models",
+      authorsTitle: "Model credits",
+      prevModel: "Previous model",
+      nextModel: "Next model",
+      soundOn: "Turn sound on",
+      soundOff: "Turn sound off",
       empty: "Nothing here yet.",
       demoTitle: "This is demo content.",
       demoText: "The credits are still placeholders. Put the real names and links into assets/js/config.js and set demo: false to hide this note.",
@@ -173,6 +185,8 @@
     gift: "M4 9h16v10.6H4z M4 5.6h16V9H4z M12 5.6v14 M8.8 5.6c-2.3 0-2.6-2.6-.6-2.1 1.7.5 3.8 2.1 3.8 2.1s2.1-1.6 3.8-2.1c2-.5 1.7 2.1-.6 2.1",
     coin: "M12 3.4a8.6 8.6 0 110 17.2 8.6 8.6 0 010-17.2z M12 16.2s-3-1.9-3-3.9a1.7 1.7 0 013-1 1.7 1.7 0 013 1c0 2-3 3.9-3 3.9z",
     play: "M8.4 5.6l9.6 6.4-9.6 6.4z",
+    sound: "M4 9.6h3l4-3.6v12l-4-3.6H4z M15 8.6c1.5 1.6 1.5 5.4 0 7 M17.8 6.2c2.6 2.8 2.6 9 0 11.6",
+    mute: "M4 9.6h3l4-3.6v12l-4-3.6H4z M15.2 9.8l4.6 4.6 M19.8 9.8l-4.6 4.6",
     site: "M12 3.5a8.5 8.5 0 110 17 8.5 8.5 0 010-17z M3.5 12h17 M12 3.5c2.6 2.6 2.6 14.4 0 17-2.6-2.6-2.6-14.4 0-17z"
   };
   function iconSvg(name) {
@@ -189,6 +203,10 @@
   }
 
   /* --------------------------- каркас страницы ----------------------------- */
+  function pinnedLinks() {
+    return (CFG.links || []).filter(function (l) { return l && l.pinned && !isPlaceholder(l.url); });
+  }
+
   function renderNav() {
     var nameNode = document.getElementById("navName");
     if (nameNode) nameNode.textContent = OWNER.name || "VTuber";
@@ -199,10 +217,22 @@
       logo.onerror = function () { this.hidden = true; };
     }
     var links = clear(document.getElementById("navLinks"));
-    if (!links) return;
-    [["gallery", ui("navGallery")], ["credits", ui("navCredits")]].forEach(function (pair) {
-      links.appendChild(el("a", { class: "nav__link", href: "#" + pair[0], text: pair[1] }));
-    });
+    if (links) {
+      [["gallery", ui("navGallery")], ["credits", ui("navCredits")]].forEach(function (pair) {
+        links.appendChild(el("a", { class: "nav__link", href: "#" + pair[0], text: pair[1] }));
+      });
+    }
+    // закреплённые ссылки (донат, фетта и т.п.) видны и в шапке, и в подвале
+    var pinned = clear(document.getElementById("navPinned"));
+    if (pinned) {
+      pinnedLinks().forEach(function (l) {
+        pinned.appendChild(el("a", {
+          class: "iconlink accent--" + (l.accent || "site"),
+          href: l.url, target: "_blank", rel: "noopener noreferrer",
+          title: l.label || "", "aria-label": l.label || ""
+        }, [iconSvg(l.icon)]));
+      });
+    }
     var langBtn = document.getElementById("langBtn");
     if (langBtn) {
       langBtn.setAttribute("title", ui("langSwitch"));
@@ -266,6 +296,22 @@
         if (document.readyState === "complete") setTimeout(startBanner, 250);
         else window.addEventListener("load", function () { setTimeout(startBanner, 250); });
         vid.addEventListener("playing", function () { banner.classList.add("is-ready"); });
+        // кнопка звука — только если у видео он есть (config: bannerSound: true)
+        if (OWNER.bannerSound) {
+          var sbtn = el("button", {
+            class: "hero__sound", type: "button", "aria-pressed": "false", title: ui("soundOn"),
+            onclick: function () {
+              vid.muted = !vid.muted;
+              var on = !vid.muted;
+              sbtn.setAttribute("aria-pressed", on ? "true" : "false");
+              sbtn.title = on ? ui("soundOff") : ui("soundOn");
+              sbtn.setAttribute("aria-label", sbtn.title);
+              clear(sbtn).appendChild(iconSvg(on ? "sound" : "mute"));
+              if (on) { var p2 = vid.play(); if (p2 && p2.catch) p2.catch(function () { }); }
+            }
+          }, [iconSvg("mute")]);
+          banner.appendChild(sbtn);
+        }
       }
     }
 
@@ -496,9 +542,102 @@
     ]);
   }
 
+  /* ------------------------- карусель моделей ------------------------------ */
+  var modelsUI = { list: [], index: 0 };
+
+  function authorRow(a) {
+    var url = a.url;
+    var cells = [url && !isPlaceholder(url)
+      ? el("a", { href: url, target: "_blank", rel: "noopener noreferrer", text: a.name || "" })
+      : el("span", { class: "is-placeholder", text: a.name || "", title: ui("demoHint") })];
+    if (a.handle) cells.push(el("span", { class: "authors__handle", text: a.handle }));
+    return el("tr", {}, [el("th", { scope: "row", text: tr(a.role) }), el("td", {}, cells)]);
+  }
+
+  function modelsRender() {
+    var ui_ = document.getElementById("modelsBody");
+    if (!ui_) return;
+    var m = modelsUI.list[modelsUI.index];
+    if (!m) return;
+    var fig = clear(ui_.querySelector(".carousel__figure"));
+    fig.appendChild(el("img", {
+      class: "carousel__img", src: m.image, alt: tr(m.alt, tr(m.name, "")),
+      width: m.w || 640, height: m.h || 1280, decoding: "async", loading: "lazy"
+    }));
+    var info = clear(ui_.querySelector(".carousel__info"));
+    info.appendChild(el("h3", { class: "carousel__name", text: tr(m.name) }));
+    var rows = (m.authors || []).filter(Boolean);
+    info.appendChild(rows.length
+      ? el("table", { class: "authors" }, [
+          el("caption", { class: "authors__caption", text: ui("authorsTitle") }),
+          el("tbody", {}, rows.map(authorRow))
+        ])
+      : el("p", { class: "section__sub", text: ui("empty") }));
+    var count = ui_.querySelector(".carousel__count");
+    if (count) count.textContent = (modelsUI.index + 1) + " / " + modelsUI.list.length;
+    var dots = clear(ui_.querySelector(".carousel__dots"));
+    if (dots) {
+      modelsUI.list.forEach(function (mm, i) {
+        dots.appendChild(el("button", {
+          class: "carousel__dot" + (i === modelsUI.index ? " is-active" : ""), type: "button",
+          "aria-label": tr(mm.name) + " — " + (i + 1), "aria-current": i === modelsUI.index ? "true" : "false",
+          onclick: function () { modelsUI.index = i; modelsRender(); }
+        }));
+      });
+    }
+    var multi = modelsUI.list.length > 1;
+    ui_.querySelectorAll(".carousel__btn, .carousel__dots").forEach(function (n) { n.hidden = !multi; });
+  }
+
+  function modelsStep(dir) {
+    var n = modelsUI.list.length;
+    if (!n) return;
+    modelsUI.index = (modelsUI.index + dir + n) % n;
+    modelsRender();
+  }
+
+  function modelsBox() {
+    modelsUI.list = (CFG.models || []).filter(function (m) { return m && m.image; });
+    if (!modelsUI.list.length) return null;
+    var box = el("article", { class: "group group--models", id: "modelsBody", tabindex: "0" }, [
+      el("h3", { class: "group__title", text: ui("modelsTitle") }),
+      el("div", { class: "carousel" }, [
+        el("div", { class: "carousel__stage" }, [
+          el("figure", { class: "carousel__figure" }),
+          el("div", { class: "carousel__info" })
+        ]),
+        el("div", { class: "carousel__bar" }, [
+          el("button", { class: "carousel__btn", type: "button", "aria-label": ui("prevModel"), onclick: function () { modelsStep(-1); } }, "\u2039"),
+          el("span", { class: "carousel__count" }),
+          el("button", { class: "carousel__btn", type: "button", "aria-label": ui("nextModel"), onclick: function () { modelsStep(1); } }, "\u203A"),
+          el("ul", { class: "carousel__dots" })
+        ])
+      ])
+    ]);
+    // свайп и стрелки
+    var stage = box.querySelector(".carousel__stage");
+    var startX = null;
+    stage.addEventListener("pointerdown", function (ev) { startX = ev.clientX; });
+    stage.addEventListener("pointerup", function (ev) {
+      if (startX === null) return;
+      var d = ev.clientX - startX;
+      startX = null;
+      if (Math.abs(d) > 45) modelsStep(d < 0 ? 1 : -1);
+    });
+    box.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") modelsStep(-1);
+      if (ev.key === "ArrowRight") modelsStep(1);
+    });
+    modelsUI.index = Math.min(modelsUI.index, modelsUI.list.length - 1);
+    setTimeout(modelsRender, 0);
+    return box;
+  }
+
   function renderCredits() {
     var box = clear(document.getElementById("creditsBody"));
     if (!box) return;
+    var models = modelsBox();
+    if (models) box.appendChild(models);
     (CREDITS.sections || []).forEach(function (sec) {
       var items = (sec.items || []);
       box.appendChild(el("article", { class: "group" }, [
@@ -536,6 +675,19 @@
     if (!f) return;
     var parts = [];
     parts.push(el("p", { class: "footer__note", text: tr(FOOTER.note) }));
+    // ссылки со значками: сначала закреплённые (донат, фетта), потом остальные
+    var linksRow = el("ul", { class: "footer__socials" }, (CFG.links || []).filter(function (l) {
+      return l && !isPlaceholder(l.url);
+    }).sort(function (a, b) {
+      return (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0);
+    }).map(function (l) {
+      return el("li", {}, el("a", {
+        class: "iconlink accent--" + (l.accent || "site"),
+        href: l.url, target: "_blank", rel: "noopener noreferrer me",
+        title: l.label || "", "aria-label": l.label || ""
+      }, [iconSvg(l.icon), el("span", { class: "iconlink__label", text: l.label || "" })]));
+    }));
+    if (linksRow.children.length) parts.push(linksRow);
     var row = el("div", { class: "footer__row" }, [
       el("span", { class: "footer__copy", text: "© " + new Date().getFullYear() + " " + (OWNER.name || "") }),
       el("span", { class: "footer__made", text: ui("madeNote") })
