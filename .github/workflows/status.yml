@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "status-bot"
           git config user.email "status-bot@users.noreply.github.com"
-          ASSETS="status.json assets/img/avatar-twitch.png assets/img/banner-twitch.png assets/img/avatar-twitch.webp assets/img/banner-twitch.webp"
+          ASSETS="status.json assets/img/avatar-twitch.png assets/img/avatar-twitch.webp"
           CHANGED="$(git status --porcelain -- $ASSETS)"
           echo "изменения: [$CHANGED]"
           if [ -z "$CHANGED" ]; then

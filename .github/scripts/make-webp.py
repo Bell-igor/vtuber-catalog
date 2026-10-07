@@ -28,5 +28,4 @@ def convert(src_name, dst_name, quality, width=None):
     print(f"{dst_name}: {os.path.getsize(dst) // 1024} КБ, {im.size}")
 
 
-convert("banner-twitch.png", "banner-twitch.webp", 84, 1440)
 convert("avatar-twitch.png", "avatar-twitch.webp", 88, 300)

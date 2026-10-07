@@ -27,7 +27,6 @@ const PUBLIC_TWITCH_CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko";
 const ROOT = process.cwd();
 const OUT_JSON = path.join(ROOT, "status.json");
 const AVATAR_FILE = path.join(ROOT, "assets", "img", "avatar-twitch.png");
-const BANNER_FILE = path.join(ROOT, "assets", "img", "banner-twitch.png");
 const VOD_COUNT = Number(process.env.VOD_COUNT || 6);
 
 const UA = { "User-Agent": "timora-site-status/1.0 (+https://github.com/Bell-igor/vtuber-catalog)" };
@@ -321,7 +320,7 @@ if (status.twitch) {
   status.twitch.videos = videos || status.twitch.videos || [];
   status.twitch.clips = clips || status.twitch.clips || [];
   if (twitch?.avatar) await attempt("аватар Twitch", () => downloadIfChanged(twitch.avatar, AVATAR_FILE, "аватар", "300x300"));
-  if (twitch?.banner) await attempt("баннер Twitch", () => downloadIfChanged(twitch.banner, BANNER_FILE, "баннер"));
+  if (twitch?.avatar) await attempt("аватар Twitch", () => downloadIfChanged(twitch.avatar, AVATAR_FILE, "аватар"));
   delete status.twitch.avatar; // адреса картинок в файле не нужны
   delete status.twitch.banner;
 }
