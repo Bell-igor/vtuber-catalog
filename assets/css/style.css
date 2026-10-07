@@ -357,43 +357,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .group--thanks .chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .group--thanks .chip { font-size: 13px; text-transform: none; letter-spacing: 0; padding: 8px 16px; }
 
-/* ------------------- модели: карусель с таблицей авторов ------------------ */
-.group--models { padding: clamp(16px, 2.4vw, 26px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--panel); }
-.group--models:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.carousel { display: grid; gap: 14px; }
-.carousel__stage { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(16px, 3vw, 34px); align-items: start; }
-.carousel__figure {
-  margin: 0; border-radius: var(--radius); overflow: hidden;
-  background: radial-gradient(70% 60% at 50% 40%, rgba(242, 182, 207, 0.14), transparent 70%), var(--bg-2);
-  border: 1px solid var(--line);
-}
-.carousel__img { display: block; width: 100%; height: auto; }
-.carousel__info { display: grid; gap: 12px; align-content: start; }
-.carousel__name { font-family: var(--font-display); font-size: 22px; margin: 0; }
-.authors { width: 100%; border-collapse: collapse; font-size: 15px; }
-.authors__caption { text-align: left; color: var(--muted); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; padding-bottom: 8px; }
-.authors th, .authors td { text-align: left; padding: 9px 10px 9px 0; border-top: 1px solid var(--line); vertical-align: top; }
-.authors th { color: var(--muted); font-weight: 500; width: 46%; }
-.authors__handle { margin-left: 6px; color: var(--muted); }
-.carousel__bar { display: flex; align-items: center; gap: 10px; }
-.carousel__bar [hidden] { display: none; }
-.carousel__btn {
-  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+/* --------- модель в кредитсах: таблица авторов + фигурка и стрелки -------- */
+.group--model { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(8px, 1.4vw, 18px); align-items: center; }
+.modelblock__body { display: grid; gap: 16px; min-width: 0; }
+.modelblock__figure { margin: 0; justify-self: center; max-width: 300px; }
+.modelblock__img { display: block; width: 100%; height: auto; }
+.modelblock__arrow {
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
   border: 1px solid var(--line); background: var(--panel-2); color: var(--text);
-  font-size: 18px; line-height: 1;
+  font-size: 20px; line-height: 1; transition: border-color 0.2s ease, color 0.2s ease;
 }
-.carousel__btn:hover { border-color: var(--accent); color: var(--accent); }
-.carousel__count { font-size: 14px; color: var(--muted); min-width: 52px; text-align: center; }
-.carousel__dots { display: flex; gap: 8px; margin-left: auto; list-style: none; padding: 0; }
-.carousel__dot {
-  width: 9px; height: 9px; padding: 0; border-radius: 50%; cursor: pointer;
-  border: 1px solid var(--line-2); background: transparent;
-}
-.carousel__dot.is-active { background: var(--accent); border-color: var(--accent); }
+.modelblock__arrow:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.modelblock__arrow:disabled { opacity: 0.3; cursor: default; }
 @media (max-width: 720px) {
-  .carousel__stage { grid-template-columns: minmax(0, 1fr); }
-  .carousel__figure { max-width: 260px; margin: 0 auto; }
-  .nav__pinned { margin-left: auto; }
+  .group--model { grid-template-columns: minmax(0, 1fr); }
+  .modelblock__arrow { display: none; }
   .nav__pinned .iconlink { padding: 7px 9px; }
 }
 a.chip:hover { border-color: var(--accent); color: var(--accent); }

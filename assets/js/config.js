@@ -180,6 +180,7 @@ window.SITE = {
     sections: [
       {
         id: "model",
+        model: true,        // сюда же подставляется фигурка модели со стрелками по бокам
         title: { ru: "Модель и дизайн персонажа", en: "Model & character design" },
         items: [
           {

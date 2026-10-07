@@ -323,13 +323,13 @@
         el("span", { class: "model__glow", "aria-hidden": "true" }),
         el("img", {
           class: "model__poster", src: MODEL.poster || MODEL.full, alt: tr(MODEL.alt, OWNER.name || ""),
-          width: 320, height: 638, decoding: "async"
+          width: 299, height: 640, decoding: "async"
         }),
         el("span", { class: "model__shadow", "aria-hidden": "true" })
       ]);
       var animImg = el("img", {
         class: "model__anim", alt: "", "aria-hidden": "true",
-        width: 320, height: 638, decoding: "async",
+        width: 299, height: 640, decoding: "async",
         onload: function () { animBox.classList.add("is-ready"); }
       });
       animBox.appendChild(animImg);
@@ -542,110 +542,50 @@
     ]);
   }
 
-  /* ------------------------- карусель моделей ------------------------------ */
-  var modelsUI = { list: [], index: 0 };
+  /* ------------------- блок модели: фигурка + стрелки ---------------------- */
+  var modelUI = { index: 0 };
 
-  function authorRow(a) {
-    var url = a.url;
-    var cells = [url && !isPlaceholder(url)
-      ? el("a", { href: url, target: "_blank", rel: "noopener noreferrer", text: a.name || "" })
-      : el("span", { class: "is-placeholder", text: a.name || "", title: ui("demoHint") })];
-    if (a.handle) cells.push(el("span", { class: "authors__handle", text: a.handle }));
-    return el("tr", {}, [el("th", { scope: "row", text: tr(a.role) }), el("td", {}, cells)]);
-  }
-
-  function modelsRender() {
-    var ui_ = document.getElementById("modelsBody");
-    if (!ui_) return;
-    var m = modelsUI.list[modelsUI.index];
-    if (!m) return;
-    var fig = clear(ui_.querySelector(".carousel__figure"));
-    fig.appendChild(el("img", {
-      class: "carousel__img", src: m.image, alt: tr(m.alt, tr(m.name, "")),
-      width: m.w || 640, height: m.h || 1280, decoding: "async", loading: "lazy"
-    }));
-    var info = clear(ui_.querySelector(".carousel__info"));
-    info.appendChild(el("h3", { class: "carousel__name", text: tr(m.name) }));
-    var rows = (m.authors || []).filter(Boolean);
-    info.appendChild(rows.length
-      ? el("table", { class: "authors" }, [
-          el("caption", { class: "authors__caption", text: ui("authorsTitle") }),
-          el("tbody", {}, rows.map(authorRow))
-        ])
-      : el("p", { class: "section__sub", text: ui("empty") }));
-    var count = ui_.querySelector(".carousel__count");
-    if (count) count.textContent = (modelsUI.index + 1) + " / " + modelsUI.list.length;
-    var dots = clear(ui_.querySelector(".carousel__dots"));
-    if (dots) {
-      modelsUI.list.forEach(function (mm, i) {
-        dots.appendChild(el("button", {
-          class: "carousel__dot" + (i === modelsUI.index ? " is-active" : ""), type: "button",
-          "aria-label": tr(mm.name) + " — " + (i + 1), "aria-current": i === modelsUI.index ? "true" : "false",
-          onclick: function () { modelsUI.index = i; modelsRender(); }
-        }));
-      });
+  function modelBlock(inner) {
+    var models = (CFG.models || []).filter(function (m) { return m && m.image; });
+    var body = el("div", { class: "modelblock__body" }, inner);
+    if (models.length) {
+      body.appendChild(el("figure", { class: "modelblock__figure" }, el("img", {
+        class: "modelblock__img", src: models[0].image, alt: tr(models[0].alt, ""),
+        width: models[0].w || 640, height: models[0].h || 1280, decoding: "async", loading: "lazy"
+      })));
     }
-    var multi = modelsUI.list.length > 1;
-    ui_.querySelectorAll(".carousel__btn, .carousel__dots").forEach(function (n) { n.hidden = !multi; });
-  }
-
-  function modelsStep(dir) {
-    var n = modelsUI.list.length;
-    if (!n) return;
-    modelsUI.index = (modelsUI.index + dir + n) % n;
-    modelsRender();
-  }
-
-  function modelsBox() {
-    modelsUI.list = (CFG.models || []).filter(function (m) { return m && m.image; });
-    if (!modelsUI.list.length) return null;
-    var box = el("article", { class: "group group--models", id: "modelsBody", tabindex: "0" }, [
-      el("h3", { class: "group__title", text: ui("modelsTitle") }),
-      el("div", { class: "carousel" }, [
-        el("div", { class: "carousel__stage" }, [
-          el("figure", { class: "carousel__figure" }),
-          el("div", { class: "carousel__info" })
-        ]),
-        el("div", { class: "carousel__bar" }, [
-          el("button", { class: "carousel__btn", type: "button", "aria-label": ui("prevModel"), onclick: function () { modelsStep(-1); } }, "\u2039"),
-          el("span", { class: "carousel__count" }),
-          el("button", { class: "carousel__btn", type: "button", "aria-label": ui("nextModel"), onclick: function () { modelsStep(1); } }, "\u203A"),
-          el("ul", { class: "carousel__dots" })
-        ])
-      ])
-    ]);
-    // свайп и стрелки
-    var stage = box.querySelector(".carousel__stage");
-    var startX = null;
-    stage.addEventListener("pointerdown", function (ev) { startX = ev.clientX; });
-    stage.addEventListener("pointerup", function (ev) {
-      if (startX === null) return;
-      var d = ev.clientX - startX;
-      startX = null;
-      if (Math.abs(d) > 45) modelsStep(d < 0 ? 1 : -1);
-    });
-    box.addEventListener("keydown", function (ev) {
-      if (ev.key === "ArrowLeft") modelsStep(-1);
-      if (ev.key === "ArrowRight") modelsStep(1);
-    });
-    modelsUI.index = Math.min(modelsUI.index, modelsUI.list.length - 1);
-    setTimeout(modelsRender, 0);
-    return box;
+    var multi = models.length > 1;
+    var prev = el("button", { class: "modelblock__arrow", type: "button", "aria-label": ui("prevModel") }, "\u2039");
+    var next = el("button", { class: "modelblock__arrow", type: "button", "aria-label": ui("nextModel") }, "\u203A");
+    // пока модель одна стрелки неактивны; появятся ещё — начнут листать
+    prev.disabled = !multi;
+    next.disabled = !multi;
+    function show(step) {
+      if (models.length < 2) return;
+      modelUI.index = (modelUI.index + step + models.length) % models.length;
+      var m = models[modelUI.index];
+      var img = body.querySelector(".modelblock__img");
+      if (img) { img.src = m.image; img.alt = tr(m.alt, ""); }
+    }
+    prev.addEventListener("click", function () { show(-1); });
+    next.addEventListener("click", function () { show(1); });
+    return el("article", { class: "group group--model" }, [prev, body, next]);
   }
 
   function renderCredits() {
     var box = clear(document.getElementById("creditsBody"));
     if (!box) return;
-    var models = modelsBox();
-    if (models) box.appendChild(models);
     (CREDITS.sections || []).forEach(function (sec) {
       var items = (sec.items || []);
-      box.appendChild(el("article", { class: "group" }, [
+      var inner = [
         el("h3", { class: "group__title", text: tr(sec.title) }),
         items.length
           ? el("ul", { class: "credit-list" }, items.map(creditItem))
           : el("p", { class: "section__sub", text: ui("empty") })
-      ]));
+      ];
+      box.appendChild(sec.model
+        ? modelBlock(inner)
+        : el("article", { class: "group" }, inner));
     });
     var thanks = (CREDITS.thanks || []).filter(Boolean);
     if (thanks.length) {
