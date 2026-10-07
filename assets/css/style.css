@@ -29,6 +29,7 @@
   --c-yt: #ff4646; --c-twitch: #a970ff; --c-tg: #37aee2; --c-x: #dfe3ea;
   --c-discord: #6b76ff; --c-vk: #5b8cf7; --c-boosty: #ff7a45; --c-tiktok: #29e0d6;
   --c-inst: #e4608f; --c-site: #e8a13c;
+  --c-fetta: #57c9a5; --c-donate: #ff7a2f;
 }
 
 * { box-sizing: border-box; }
@@ -121,13 +122,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero .wrap { position: relative; z-index: 1; }
 
-/* её баннер канала — главная картинка первого экрана */
-.hero__banner { margin: 0 0 clamp(22px, 3vw, 36px); padding-top: clamp(18px, 3vh, 34px); }
+/* её заставка — главная картинка первого экрана, поверх неё играет видео */
+.hero__banner { position: relative; margin: clamp(18px, 3vh, 34px) 0 clamp(22px, 3vw, 36px); }
 .hero__banner-img {
-  width: 100%; height: auto; border-radius: var(--radius-lg);
+  display: block; width: 100%; height: auto; border-radius: var(--radius-lg);
   border: 1px solid var(--line-2);
   box-shadow: var(--shadow), 0 0 90px rgba(232, 161, 60, 0.12);
 }
+.hero__banner-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; border-radius: var(--radius-lg);
+  opacity: 0; transition: opacity 0.8s ease;
+}
+.hero__banner.is-ready .hero__banner-video { opacity: 1; }
 
 .hero__inner {
   display: grid; grid-template-columns: minmax(0, 344px) minmax(0, 1fr);
@@ -226,6 +233,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .accent--discord { --accent: var(--c-discord); } .accent--vk { --accent: var(--c-vk); }
 .accent--boosty { --accent: var(--c-boosty); } .accent--tiktok { --accent: var(--c-tiktok); }
 .accent--inst { --accent: var(--c-inst); } .accent--site { --accent: var(--c-site); }
+.accent--fetta { --accent: var(--c-fetta); } .accent--donate { --accent: var(--c-donate); }
+
+/* значки в кнопках-ссылках */
+.icon {
+  width: 18px; height: 18px; flex: none;
+  fill: none; stroke: var(--accent, currentColor); stroke-width: 1.7;
+  stroke-linecap: round; stroke-linejoin: round;
+}
 
 .chip {
   display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px;
@@ -268,6 +283,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .card:hover .card__img { transform: scale(1.045); filter: brightness(0.82); }
 .card--wide .card__img { aspect-ratio: 16 / 9; }
+.card--contain .card__img {
+  object-fit: contain;
+  background: radial-gradient(circle at 50% 42%, rgba(232, 161, 60, 0.12), rgba(242, 182, 207, 0.05) 45%, transparent 72%);
+}
 .card__meta {
   display: block; padding: 12px 14px 14px;
   background: linear-gradient(180deg, rgba(21, 18, 42, 0.2), rgba(21, 18, 42, 0.85));
@@ -486,9 +505,10 @@ html.is-live .nav { border-bottom-color: rgba(255, 79, 122, 0.35); }
   html { scroll-behavior: auto; }
   .card { animation: none; }
   .model, .model__layer--head, .model__layer--hand, .model--anim { animation: none; }
-  /* при «уменьшить движение» показываем статичный кадр вместо анимации */
+  /* при «уменьшить движение» показываем статичные кадры вместо видео */
   .model--anim.is-ready .model__anim { opacity: 0; }
   .model--anim.is-ready .model__poster { opacity: 1; }
+  .hero__banner-video { display: none; }
   .livepill, .livepill__dot, .status.is-live .status__dot { animation: none; }
   .card__img, .lb__img { transition: none !important; }
   .btn:hover, .credit:hover, .card:hover, .news:hover { transform: none; }

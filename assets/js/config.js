@@ -35,22 +35,26 @@ window.SITE = {
       ru: "Добро пожаловать! Здесь собраны арт, референсы моей модели и люди, благодаря которым всё это существует.",
       en: "Welcome! Here you'll find art, references of my model and the people who made all of it possible."
     },
-    // аватар и баннер подтягиваются из Twitch автоматически (файлы обновляет GitHub)
+    // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
     avatar: "assets/img/avatar-twitch.webp",
-    banner: "assets/img/banner-twitch.webp"
+    // баннер: кадр из её заставки, поверх него играет короткая видео-петля
+    banner: "assets/img/banner-zastavka.webp",
+    bannerVideo: "assets/img/banner-loop.mp4"
   },
 
   /* ---------------- Ссылки на вас ----------------
-     accent — цвет кнопки: yt | twitch | tg | x | discord | vk | boosty | tiktok | inst | site
+     accent — цвет значка: yt | twitch | tg | x | discord | vk | boosty | tiktok | inst | site | fetta | donate
+     icon   — значок: twitch | telegram | discord | gift | coin | play | site
      url: "#название" = заглушка, кнопка будет помечена как «демо».      */
   links: [
-    { label: "Twitch",   url: "https://www.twitch.tv/timoravoo", accent: "twitch" },
-    { label: "Telegram", url: "https://t.me/timora_tv",          accent: "tg" },
-    { label: "Discord",  url: "https://discord.gg/zgbhEWNeCZ",   accent: "discord" }
+    { label: "Twitch",         url: "https://www.twitch.tv/timoravoo",               accent: "twitch", icon: "twitch" },
+    { label: "Telegram",       url: "https://t.me/timora_tv",                        accent: "tg",     icon: "telegram" },
+    { label: "Discord",        url: "https://discord.gg/zgbhEWNeCZ",                 accent: "discord", icon: "discord" },
+    { label: "Фетта",          url: "https://fetta.app/u/timora",                    accent: "fetta",  icon: "gift" },
+    { label: "Донат",          url: "https://www.donationalerts.com/r/timoravoo",    accent: "donate", icon: "coin" }
     // Если появятся другие соцсети — добавьте строки по образцу выше:
-    // { label: "YouTube", url: "https://youtube.com/@канал", accent: "yt" },
-    // { label: "Boosty",  url: "https://boosty.to/ник",      accent: "boosty" },
-    // { label: "X",       url: "https://x.com/ник",          accent: "x" }
+    // { label: "YouTube", url: "https://youtube.com/@канал", accent: "yt", icon: "play" },
+    // { label: "Boosty",  url: "https://boosty.to/ник",      accent: "boosty" }
   ],
 
   /* ---------------- Разделы галереи (кнопки-фильтры) ---------------- */
@@ -100,6 +104,17 @@ window.SITE = {
       src: "assets/img/model-full.webp",
       w: 640, h: 1280
       // автора модели впишите, когда будет известен:
+      // artist: { name: "Ник художника", url: "https://x.com/ник" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Чиби-анимация", en: "Chibi animation" },
+      alt: { ru: "Анимированный чиби-портрет Timora", en: "Animated chibi portrait of Timora" },
+      thumb: "assets/img/art-chibi-thumb.webp",
+      src: "assets/img/art-chibi.webp",
+      w: 294, h: 320,
+      contain: true      // картинка с прозрачным фоном — показываем её целиком
+      // автора арта впишите, когда будет известен:
       // artist: { name: "Ник художника", url: "https://x.com/ник" }
     }
     // Другие арты добавляйте по образцу:

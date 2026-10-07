@@ -165,6 +165,29 @@
     return el("span", { class: "chip chip--demo", text: ui("demoBadge"), title: ui("demoHint") });
   }
 
+  /* ------------------------------- значки --------------------------------- */
+  var ICONS = {
+    twitch: "M4 4h16v9.4l-3.2 3.2h-3.3L11 19.4v-2.8H6.2L4 14.4z M10 7.2v4.4 M14 7.2v4.4",
+    telegram: "M21.4 3.2L2.6 10.7l5 1.9 1.7 5.6 3.2-3.6 4.7 3.5z M7.6 12.6l13.8-9.4-9.4 12.6",
+    discord: "M4 5.6h16v10.2h-8.4L7 20v-4.2H4z M9 9.6v2.6 M15 9.6v2.6",
+    gift: "M4 9h16v10.6H4z M4 5.6h16V9H4z M12 5.6v14 M8.8 5.6c-2.3 0-2.6-2.6-.6-2.1 1.7.5 3.8 2.1 3.8 2.1s2.1-1.6 3.8-2.1c2-.5 1.7 2.1-.6 2.1",
+    coin: "M12 3.4a8.6 8.6 0 110 17.2 8.6 8.6 0 010-17.2z M12 16.2s-3-1.9-3-3.9a1.7 1.7 0 013-1 1.7 1.7 0 013 1c0 2-3 3.9-3 3.9z",
+    play: "M8.4 5.6l9.6 6.4-9.6 6.4z",
+    site: "M12 3.5a8.5 8.5 0 110 17 8.5 8.5 0 010-17z M3.5 12h17 M12 3.5c2.6 2.6 2.6 14.4 0 17-2.6-2.6-2.6-14.4 0-17z"
+  };
+  function iconSvg(name) {
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("class", "icon");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    var path = document.createElementNS(NS, "path");
+    path.setAttribute("d", ICONS[name] || ICONS.site);
+    svg.appendChild(path);
+    return svg;
+  }
+
   /* --------------------------- каркас страницы ----------------------------- */
   function renderNav() {
     var nameNode = document.getElementById("navName");
@@ -218,15 +241,33 @@
     clear(sec);
     if (OWNER.banner) sec.style.setProperty("--hero-bg", "url('" + OWNER.banner + "')");
 
-    var banner = OWNER.banner
-      ? el("figure", { class: "hero__banner" }, [
-          el("img", {
-            class: "hero__banner-img", src: OWNER.banner,
-            alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
-            width: 1440, height: 480, decoding: "async", fetchpriority: "high"
-          })
-        ])
-      : null;
+    var banner = null;
+    if (OWNER.banner) {
+      banner = el("figure", { class: "hero__banner" }, [
+        el("img", {
+          class: "hero__banner-img", src: OWNER.banner,
+          alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
+          width: 1600, height: 900, decoding: "async", fetchpriority: "high"
+        })
+      ]);
+      // поверх кадра — короткая видео-петля (загружается после отрисовки страницы)
+      if (OWNER.bannerVideo) {
+        var vid = el("video", {
+          class: "hero__banner-video", muted: true, loop: true, playsinline: true,
+          preload: "none", "aria-hidden": "true", tabindex: "-1"
+        });
+        vid.muted = true;
+        banner.appendChild(vid);
+        var startBanner = function () {
+          vid.src = OWNER.bannerVideo;
+          var pr = vid.play();
+          if (pr && pr.catch) pr.catch(function () { });
+        };
+        if (document.readyState === "complete") setTimeout(startBanner, 250);
+        else window.addEventListener("load", function () { setTimeout(startBanner, 250); });
+        vid.addEventListener("playing", function () { banner.classList.add("is-ready"); });
+      }
+    }
 
     // модель: готовая анимация (машет рукой) или сборка из слоёв
     var MODEL = CFG.model || {};
@@ -276,7 +317,7 @@
 
     var list = el("ul", { class: "links" }, (CFG.links || []).map(function (l) {
       var accent = l.accent || "site";
-      var inner = [el("span", { class: "links__dot", "aria-hidden": "true" }), el("span", { text: l.label || "" })];
+      var inner = [l.icon ? iconSvg(l.icon) : el("span", { class: "links__dot", "aria-hidden": "true" }), el("span", { text: l.label || "" })];
       if (isPlaceholder(l.url)) {
         inner.push(demoChip());
         return el("li", {}, el("span", {
@@ -398,7 +439,7 @@
       ]);
     }
     return el("button", {
-      class: "card", type: "button", "aria-label": label,
+      class: "card" + (item.contain ? " card--contain" : ""), type: "button", "aria-label": label,
       onclick: function () { openLightbox(item); }
     }, [thumb, el("span", { class: "card__zoom", "aria-hidden": "true", text: "⤢" }), meta]);
   }
