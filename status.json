@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "БУ! Ис... испугайся, пожалуйста... | !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-07T15:00:08Z",
     "followers": 3337,
     "lastBroadcast": {
       "title": "БУ! Ис... испугайся, пожалуйста... | !funpay !сервер",
-      "startedAt": "2026-10-04T18:45:55.802665Z"
+      "startedAt": "2026-10-07T15:00:15.337164Z"
     },
     "videos": [],
     "clips": [
@@ -69,7 +69,7 @@
         "title": "03.10.2026 для стрика",
         "date": "2026-10-03T18:29:23Z",
         "seconds": 5,
-        "views": 128,
+        "views": 130,
         "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/620dc1b3-5bf3-42cd-b2c1-bdddc1680924/landscape/thumb/thumb-0000000000-1920x1080.jpg",
         "url": "https://www.twitch.tv/timoravoo/clip/HeadstrongPeacefulCookieHumbleLife-3vz5t_Sp_yQlnmi2"
       }
@@ -80,25 +80,25 @@
     "subscribers": 429,
     "posts": [
       {
+        "id": 1935,
+        "url": "https://t.me/timora_tv/1935",
+        "date": "2026-10-07T15:02:30+00:00",
+        "text": "БУ! Ис... испугайся, пожалуйста... У нас тут... Стримчик начался с:\nhttps://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/WFeVDSIgnJ8AsFYhvs9Ci8zzBsucTJKRSt1sKNpUy0X9F31Ui_Za9qljD-jXOnxIymuPY1dAf4YWicXHA_4xnoJ2SnfgS_teZBxovqXAedBL7KXzoAdKL1UEeHb8kNcN4kqqBjio4vJeK_llZoky2694pYJaETXhSqpAttoOCXZzCcrb6vqaX1JmfBsxrCWM3fe2CyRS-obrhOKb9O7eDWdhjZIe6MbRd3nnSuwu32yotUGntQELLh4NKmdwWvyJjZkTKmR1o_hXRdHtTTwGvFqjw9WCunlRGaGEqZl2-4a_p-I87m0KNX0Q2MuTf6158zsMUxWVTb4kvKHCdpzEiw.jpg"
+      },
+      {
+        "id": 1934,
+        "url": "https://t.me/timora_tv/1934",
+        "date": "2026-10-07T15:01:49+00:00",
+        "text": "БУ! Ис... испугайся, пожалуйста... У нас тут... Стримчик начался с:\nhttps://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/DeO4R_sPbqSxCOixOCCbW7nvPhGSyErd5fX7fRy2Ut45dIjwY36oZirrN87wUFN5Uu0btfmhuPmjA2BOAHGATjn2uA_GxDrSp89yXvXkyotN9Xxnm-jTrOJkBO_fDd9KCmLORPRCBn2NyXFqwo4RflLoiBuhrV97L1ROwhMLloom1ZudQseMZi8KVjv-_J6Hnjef9gyMT-ZKLRa8UnX2It6LrZeGEql2i3YhCmiNYiS9Ryvh6J1aqsecr0cU3ECN8YUQ9G9-ipg-eeyEIwTOjWwVq0QhpZsJBmwyNi8lKp5cMCZcoXARbmm82bJRcYPpxllCroYdx0u34o6Gk1GSvA.jpg"
+      },
+      {
         "id": 1933,
         "url": "https://t.me/timora_tv/1933",
         "date": "2026-10-07T13:07:44+00:00",
         "text": "Доброго утра, морковные 🥰\nСегодня по плану у нас коллаб, ну мы с вами в 18:00 стартанём, поболтаем то да сё, а в 19 пойдём играть в хорроры 🖐\n\nЗабыла, кстати, расписание сделать личное х)\nИсправлюсь! А так жду сегодня вас :з",
         "photo": "https://cdn4.telesco.pe/file/GDxO0N_vuAGRWiYl9RDXcHdRC_J2oxMcQWtypiOhi86J3_9PhLSXezIv-0P9v1Xv_xZuUCwk2HHFYCtRjETFDksnSpXTbD4hYlnry_EG3iVaniRh33cahlmlBmQvlqxi5JC8tCeQLLMSfzjqbxD0O8QnYl1aHhPMQxnEIqKTGt5ztiQ80rEdaHz-rtDUoPUfobJEyPWURAs-2AC1b2J5C1egsZybmdropl7hpvCWJEP48dCCP5fADV5Dc9jmVFp-H3tLuLmmy2XntTK6CPgnt14ce-W0rQt0HuXnXLksbivPimokK_GKwiHAJAkBeZ0VGeKgDFxpB2Fm_-HepafVGw.jpg"
-      },
-      {
-        "id": 1932,
-        "url": "https://t.me/timora_tv/1932",
-        "date": "2026-10-07T12:39:29+00:00",
-        "text": "сегодня на стриме у нас получилось сделать неплохие тимородвижения, а в пятницу уже будем их корректировать с самого утра ❤️",
-        "photo": "https://cdn4.telesco.pe/file/UZ97CLtYjN1iIxDcnStsH-tHq28ky9xjYRrAVwUOsapWy_Pb3_Y9Vy1JwdLL-mTsVLekxGs0MR9L6VqY2xCuGY1m-vayME1YF4MMDZA1zzW1PQy0x2wL-3U96nfYhcsbY3IlILumOV-YczAr-ydEK02dRIpnPtU6skd5kv0ACjmuf-ggajQ_PWJqSb1hET_eer_GwYsm__evmwo0lQ04_fpCEPxwHkF3JiM3KTT8gslBA2AsyL-13l-k-RziqADwrBd7VnKtDHhzqqUy2mbcUjQLwbdpINtyyCSCRotqzZ8Jq3jtdyFe7wll4pfTuaXWHRC7AlSXQm80mM0xNXMFxw"
-      },
-      {
-        "id": 1931,
-        "url": "https://t.me/timora_tv/1931",
-        "date": "2026-10-07T00:29:20+00:00",
-        "text": "Я тут придумала одну маленькую штуку ✨💡\n\nИногда у меня копится что-то, что УЖАСНО хочется вам показать, но официально выкладывать ещё рано: кусочки артов, обновления модели, новые штуки для стримов, проекты, всякие процессы и прочие секретики.\nпоэтому хочу попробовать спойлеры за звёздочки ⭐️\n\nВажный момент: я не собираюсь прятать за оплатой обычные новости и важные анонсы. всё это вы всё равно увидите бесплатно, когда придёт время.\n\nЗвёздочки - это буквально возможность сказать: \"Тимора, дай…",
-        "photo": "https://cdn4.telesco.pe/file/GlZZzh2NAGoSRw2Z5AuWTqQ5Wuly1q7TPdDVQEjmVqPp0ZXZ9wsn91GJ1H1_LWW4mv7A58RSwaFcxx2QdRUGaoIlLE2-9ehrCVZG9blDeV1hdJ2_Ir68e6fIEfXqCOc7U_8VdfEF8jqu68kg35qbLxGNufNZBY-xsJtqAQqPv66y4SEXOUv_Cf-ZXWFtWH12xk4baSAE99U2kNWuUNxBrvXpTebXcaJLV4UTUODGyoh_QrceIMt3IeOXkkGOmNBmydJikKBgTRsUpFD_trhEXMQcOGI8C-p_5M7z9cVJHOewb4t34o4JWAdItNfpwMVJxoQEvFQoohZCdVtm1sOeKw.jpg"
       }
     ]
   },
