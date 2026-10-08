@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Выживаем, трогаем кубы и тд | !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-08T15:00:20Z",
     "followers": 3340,
     "lastBroadcast": {
-      "title": "БУ! Ис... испугайся, пожалуйста... | !funpay !сервер",
-      "startedAt": "2026-10-07T18:41:21.268018Z"
+      "title": "Выживаем, трогаем кубы и тд | !funpay !сервер",
+      "startedAt": "2026-10-08T15:00:26.186216Z"
     },
     "videos": [],
     "clips": [
@@ -80,6 +80,13 @@
     "subscribers": 435,
     "posts": [
       {
+        "id": 1942,
+        "url": "https://t.me/timora_tv/1942",
+        "date": "2026-10-08T15:01:57+00:00",
+        "text": "Выживаем, трогаем кубы и тд\nhttps://www.twitch.tv/timoravoo\nhttps://www.twitch.tv/timoravoo\nhttps://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/DsxwDJFOstCm9QB2CR63s7G-We2lqEZwExvqyE15dfEXdDxfSkVbl6aDoglXJasK84VAhDuyTp3zqYzV4F0LFaMJiaSWrEE-kiyMpHDoAd-6feLWUUSVdkbrNyYKgZYoyGkBN6oJWuyRSrfwRQNoMu0NK5UBQrykFOFiGcNciS2euSgG-lU9Qv3e41mJHcKWDm3YqVKmrcaKf6jNNq-46dB7kUuxHoweue2EmgrDp2gQZWhLgOKVvp6Q2JKO-OB00_iLFepEVsR7xqMJb8fMIlLLKDCZWWrrnxEdYKi5C3DC0yY0JYbRenKEhdrShQVpvbfHwy06fTClOUmT2PkZCQ.jpg"
+      },
+      {
         "id": 1941,
         "url": "https://t.me/timora_tv/1941",
         "date": "2026-10-08T13:57:00+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-08T07:50:20+00:00",
         "text": "📑🖤🖤🖤🖤🖤🖤🖤🖤 🖤🖤🖤🖤🖤🖤🖤 🖤🖤🖤 🖤🖤🖤🖤🖤🖤🖤🖤\n\nПоследние дни мы много обсуждали терминологию витубинга: дебюты, редебюты, аутфиты и всё то, что разные части сообщества иногда понимают совершенно по-разному.\nИ я решила попробовать сделать из этого что-то полезное.\n\nХочу собрать живой справочник терминов СНГ-витубинга: не \"как говорить правильно\", не свод правил и не попытку всех привести к одному словарю, а базу, где можно посмотреть, что означает термин, какие у него есть варианты…",
         "photo": "https://cdn4.telesco.pe/file/GYPOVWWyOIqHwxNRvXh7avrg_VKHdGG97kCo-0brlMjHflIeUHvMaM_HBJfrt38fUdPcSlF6CahYZB4mBflW3lP5I_nZu5jmy3S5O2fjHNEEh_tw-ViGGFZ_iSFqJ88rkA6g0qm1_I8sBS0hrftfzWoRZr_rE6EXNJufU5GJpRIfEj3eRVI4kzsZQ20nsvyRRs9J2E_CtTwX2VTwoqB8J6mBV0oiwPEN384tlyIbTJAg0qw64nqc05Yu9kHhIuUr-Y4gIGvGFoydGijjuPjg0DpqSfDXVhfCqfIrspoJrrF42ye-kg7f2dyP3k8XVy2-rSnJ_15X-wyt40I0HZH2Hw.jpg"
-      },
-      {
-        "id": 1939,
-        "url": "https://t.me/timora_tv/1939",
-        "date": "2026-10-08T06:04:51+00:00",
-        "text": "🙂 🔠🔠🔠🔠🔠🔠 🔠🔠🔠🔠🔠\nуже сегодня наше приключение на замечательном сервере продолжится 🤪\n\n➡️ Встретимся с вами в 18:00 по МСК на моём канале: https://www.twitch.tv/timoravoo\n\nХотите присоединиться? Тогда вот полезная информация и ссылки:\n\n💠 можно играть с лицензией и без\n💠 JAVA 1.20.4\n\n💠Вики сервера: https://wiki.dragonlight.space/dragonlight\n💠ДС сервера: https://discord.dragonlight.space/\n💠ТГК сервера: https://t.me/DragonLight_Group\n\nАдмины сервера очень дружелюбные и всегда готовы…",
-        "photo": "https://cdn4.telesco.pe/file/v8K4O4x09tBiV2iiNG10J4JR_l5TNBYiN3Va2Ki-TtbmDmUBa8OSyFgSnw6rjrebUhGcXCa09JAMLnKSybo6E36Bf_J7Y0KpkUrDKs_a63UgCsWEfZ5yDnWQEYao2rATf_6KCTANSXOmi67DMZ8JDqTb3PFFQIWq13fr0wvA1FZjBxoh84ORJzT-lRWcYXdl72LdYb2OnVPD4xbc5rrGNyHjRLOnDrO-8xPTQ0oSlCa67J4snrVBEiRWj29TNYaH1KGmTEoJDBtWlIzrdH_VY4hgUvQik0XGo7gxXx0aULuU6swsHuz8mxsPQX7hw31LEFI8ls9Ev6z4dH_RU14lgQ.jpg"
       }
     ]
   },
