@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Выживаем, трогаем кубы и тд | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-08T15:00:20Z",
-    "followers": 3355,
+    "startedAt": null,
+    "followers": 3359,
     "lastBroadcast": {
       "title": "Выживаем, трогаем кубы и тд | !funpay !сервер",
-      "startedAt": "2026-10-08T15:00:26.186216Z"
+      "startedAt": "2026-10-08T20:44:45.574179Z"
     },
     "videos": [],
     "clips": [
@@ -80,11 +80,11 @@
     "subscribers": 435,
     "posts": [
       {
-        "id": 1942,
-        "url": "https://t.me/timora_tv/1942",
-        "date": "2026-10-08T15:01:57+00:00",
-        "text": "Выживаем, трогаем кубы и тд\nhttps://www.twitch.tv/timoravoo\nhttps://www.twitch.tv/timoravoo\nhttps://www.twitch.tv/timoravoo",
-        "photo": "https://cdn4.telesco.pe/file/DsxwDJFOstCm9QB2CR63s7G-We2lqEZwExvqyE15dfEXdDxfSkVbl6aDoglXJasK84VAhDuyTp3zqYzV4F0LFaMJiaSWrEE-kiyMpHDoAd-6feLWUUSVdkbrNyYKgZYoyGkBN6oJWuyRSrfwRQNoMu0NK5UBQrykFOFiGcNciS2euSgG-lU9Qv3e41mJHcKWDm3YqVKmrcaKf6jNNq-46dB7kUuxHoweue2EmgrDp2gQZWhLgOKVvp6Q2JKO-OB00_iLFepEVsR7xqMJb8fMIlLLKDCZWWrrnxEdYKi5C3DC0yY0JYbRenKEhdrShQVpvbfHwy06fTClOUmT2PkZCQ.jpg"
+        "id": 1943,
+        "url": "https://t.me/timora_tv/1943",
+        "date": "2026-10-08T20:47:29+00:00",
+        "text": "спойлер \nполучается, будем дорисовывать ( где-то в ноябре, после картиночки с тыквами ) 👀\n#YuF_art@moon_beast_yui",
+        "photo": "https://cdn4.telesco.pe/file/dJxUlIcF1UxWbAK-3lAGuIeRBC43ykp-cUod1meojVIUdyiyCV-WJuoOTixIBCBS8LBa9b6KJVYKcRpo0_UbRYlM8-CP3oL8Bs_3hX5T0lgsMLrn71SrErPKpWD15HSM5Zfdc4ufM5IOnhImS6BZdl4gHvRS0fa11JBuEqSLAA8oHhZvJPY0q5tqx-LBAmm_Abp5sJLviv9LZMQjGfGEO-NxS4Hpb8nJRcQK1U3OmVE30aS1qZD7z-pCwWF0kWshVg76Tar-wZ4r-Fs-UjyleEsnXVOqLYwn6HSUjVWV_wFLpJOgM7y2OJB8x4XLMlQRU1w3VeLtqfQmUERQasHwgg.jpg"
       },
       {
         "id": 1941,
