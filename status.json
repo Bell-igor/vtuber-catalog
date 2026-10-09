@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "МАЙНКРАФТ - это когда ты помогаешь в три часа ночи зайти в игру чаттерсу, чтобы играть всю ночь, а вам вставать в шесть | !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-09T15:00:11Z",
     "followers": 3359,
     "lastBroadcast": {
       "title": "МАЙНКРАФТ - это когда ты помогаешь в три часа ночи зайти в игру чаттерсу, чтобы играть всю ночь, а вам вставать в шесть | !funpay !сервер",
-      "startedAt": "2026-10-08T20:44:45.574179Z"
+      "startedAt": "2026-10-09T15:00:18.438534Z"
     },
     "videos": [],
     "clips": [
@@ -59,7 +59,7 @@
         "title": "03.10.2026 для стрика",
         "date": "2026-10-03T18:29:23Z",
         "seconds": 5,
-        "views": 138,
+        "views": 139,
         "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/620dc1b3-5bf3-42cd-b2c1-bdddc1680924/landscape/thumb/thumb-0000000000-1920x1080.jpg",
         "url": "https://www.twitch.tv/timoravoo/clip/HeadstrongPeacefulCookieHumbleLife-3vz5t_Sp_yQlnmi2"
       },
@@ -80,6 +80,13 @@
     "subscribers": 435,
     "posts": [
       {
+        "id": 1947,
+        "url": "https://t.me/timora_tv/1947",
+        "date": "2026-10-09T15:00:14+00:00",
+        "text": "МАЙНКРАФТ - это когда ты помогаешь в три часа ночи зайти в игру чаттерсу, чтобы играть всю ночь, а вам вставать в шесть\n\nСТРИМ ОНЛАЙН - https://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/kSvf4zHTArfAqAW_ltLwOOZOpXQrHooSub2OhM5hiI6ZsYGkvPYA3UXsWcAaFsRn6SgjlCxBmjscy-5-pAlpc1oOxWEl7FH5vumF4RKmO35-G85l7Ag6bUO6wbfZ2X5L2qtmX5HvOedmwxtwg_RjCY-ZXOHTjJNGgjVKGn0QOHWBq1hV0T_SAzxOPYtCSYnrdPlj7J_DpJRA1lKdRzsidKM-SWgtib_tUU-FfKoBuUu7CG7Rj1c7ZRSt3VhcmcB19XfKoVBV36_5EbCU6_F3MowQNmRDWewn9r4CC3n9NbOtBK3sVw1NRO9vifzLa3roG0HsmM5PvpOKaDQZ3Ab78Q.jpg"
+      },
+      {
         "id": 1946,
         "url": "https://t.me/timora_tv/1946",
         "date": "2026-10-09T12:02:41+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-08T22:12:11+00:00",
         "text": "",
         "photo": "https://cdn4.telesco.pe/file/ia1J1ZS4TPzpFui2xLtLlEIUAWcIE92sJmwpKsPpjgoBRzgnGImQOyHfJ5kDvNyNeM3-qG3hUkCEu9SA2cj_JzpmM58UbCg1nB5WE_ienkMlZJKyCKnL8drKgi57lbmhS-z3eS2bxzhg0Em57qfNU_wc2qxx2f0Apu7p-6CR5auTuqpLiGbD-nyUNTkaHo5QQ6eKtYzNeiFaFg3pvQXrdrzHujNuVj02R258---1sdA2-owlX5WgdjCMABh4uC-Yv4rejnasbxQvu0ndWGE08_LxCqZOOfFCTPElMjEC-17WcUIKN0uMq1iTPfHqs9KfnDc7RoI34OP0auZMPS5Reg.jpg"
-      },
-      {
-        "id": 1943,
-        "url": "https://t.me/timora_tv/1943",
-        "date": "2026-10-08T20:47:29+00:00",
-        "text": "спойлер \nполучается, будем дорисовывать ( где-то в ноябре, после картиночки с тыквами ) 👀\n#YuF_art@moon_beast_yui",
-        "photo": "https://cdn4.telesco.pe/file/dJxUlIcF1UxWbAK-3lAGuIeRBC43ykp-cUod1meojVIUdyiyCV-WJuoOTixIBCBS8LBa9b6KJVYKcRpo0_UbRYlM8-CP3oL8Bs_3hX5T0lgsMLrn71SrErPKpWD15HSM5Zfdc4ufM5IOnhImS6BZdl4gHvRS0fa11JBuEqSLAA8oHhZvJPY0q5tqx-LBAmm_Abp5sJLviv9LZMQjGfGEO-NxS4Hpb8nJRcQK1U3OmVE30aS1qZD7z-pCwWF0kWshVg76Tar-wZ4r-Fs-UjyleEsnXVOqLYwn6HSUjVWV_wFLpJOgM7y2OJB8x4XLMlQRU1w3VeLtqfQmUERQasHwgg.jpg"
       }
     ]
   },
