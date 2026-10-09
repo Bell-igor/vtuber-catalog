@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "МАЙНКРАФТ - это когда ты помогаешь в три часа ночи зайти в игру чаттерсу, чтобы играть всю ночь, а вам вставать в шесть | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-09T15:00:11Z",
-    "followers": 3364,
+    "startedAt": null,
+    "followers": 3365,
     "lastBroadcast": {
       "title": "МАЙНКРАФТ - это когда ты помогаешь в три часа ночи зайти в игру чаттерсу, чтобы играть всю ночь, а вам вставать в шесть | !funpay !сервер",
-      "startedAt": "2026-10-09T15:00:18.438534Z"
+      "startedAt": "2026-10-09T18:12:12.801981Z"
     },
     "videos": [],
     "clips": [
