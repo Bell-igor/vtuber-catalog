@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ВОЗВРАЩЕНИЕ! И самый настоящий хоррор - Валорант | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-10T15:00:17Z",
+    "startedAt": null,
     "followers": 3366,
     "lastBroadcast": {
       "title": "ВОЗВРАЩЕНИЕ! И самый настоящий хоррор - Валорант | !funpay !сервер",
-      "startedAt": "2026-10-10T15:00:24.409759Z"
+      "startedAt": "2026-10-10T17:18:14.259707Z"
     },
     "videos": [],
     "clips": [
