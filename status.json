@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "ВОЗВРАЩЕНИЕ! И самый настоящий хоррор - Валорант | !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-10T15:00:17Z",
     "followers": 3365,
     "lastBroadcast": {
       "title": "ВОЗВРАЩЕНИЕ! И самый настоящий хоррор - Валорант | !funpay !сервер",
-      "startedAt": "2026-10-09T18:12:12.801981Z"
+      "startedAt": "2026-10-10T15:00:24.409759Z"
     },
     "videos": [],
     "clips": [
@@ -80,11 +80,11 @@
     "subscribers": 438,
     "posts": [
       {
-        "id": 1950,
-        "url": "https://t.me/timora_tv/1950",
-        "date": "2026-10-10T13:06:07+00:00",
-        "text": "👾 Moon_Beast_Yui завёл стрим\n✨DONATONE. DAY 0. аукцион, обзоры ваших фото ✨\n\nИграет в: Just Chatting\ntwitch.tv/moon_beast_yui",
-        "photo": "https://cdn4.telesco.pe/file/GmZqtmzkoMZ8pRgWwSk4s2d9-C5_FeOY96Fk2bZtyY0iikR_PM6Edi2l1EUT7wMqAuarDmwMcb8jo9uZgueevHmR2aLDuhLxcebq4mziZzWm7Jtu7KZyhfWKbsSxWt2PRbO62_9PM9y-0IZEVpoDbtqkpAO_jaRs_2MJxKxUrZy2Iw5QSQqJR1qECqkAGsAFAVOdaUeMNAQsVVaP6IFralyqljgTNt4eXUuBbfOD_--1lmZ8CFKA-IZt06rAbGtpV-UvpIaltQi2QgMhlJ0hWj4eCx7haEdR-woapMIKwO5FI356rMmfU4_F1Zyjl_Z_8bi35HahaMcMCGPlpnXQ2Q.jpg"
+        "id": 1951,
+        "url": "https://t.me/timora_tv/1951",
+        "date": "2026-10-10T15:01:12+00:00",
+        "text": "ВОЗВРАЩЕНИЕ! И самый настоящий хоррор - Валорант\nhttps://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/qB-cZDUY15qwvA1LoztzVsdn7u1dEP2ffMNxn1cup5lKYCw2scDCflnLHiVtsJ-QmzyT7yvxR0JVXoMA56XAmDPgUtmiYIeMd9u2jvQxEGz403eyLcMvQOfVADGz161FmdVAw8U0G4MN-Yecxk8AdfsVBH2Ihb_urd-or2d-jauJP0z5ejuDBNoAH40UrUk9-T7AR81WMsEz3sMEXaml6zzwp8il2Q0xNkAnIiR0-18DhJbmPORpW4AB7Lj06UCODXjDv9gKeJdV4qyXVz4gEqpVCrp4oLNfDV0ct-W_NVZx2edsacpsTIpX6sNThKXYMAYo7cA7K9I6SsB-5P7Wiw.jpg"
       },
       {
         "id": 1948,
