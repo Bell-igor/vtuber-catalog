@@ -6,7 +6,7 @@
     "title": "",
     "game": "",
     "startedAt": null,
-    "followers": 3365,
+    "followers": 3366,
     "lastBroadcast": {
       "title": "",
       "startedAt": "2026-10-10T17:18:14.259707Z"
@@ -80,6 +80,13 @@
     "subscribers": 437,
     "posts": [
       {
+        "id": 1963,
+        "url": "https://t.me/timora_tv/1963",
+        "date": "2026-10-13T18:45:14+00:00",
+        "text": "итак, сегодня на стриме закончили основную работу по модели тиморика! ещё раз проверили, что бы все левые параметры были слева, а правые - справа, настроили тогглы и заполнили текстурный атлас 👍\n\nдальше остаются только проверки в витубстудии, а все неточности и правки будут пофикшены уже в оффлайн режиме! 🤓\n\nв четверг уже будет работа над следующей моделькой 👀",
+        "photo": "https://cdn4.telesco.pe/file/aaAEQcFrIKZ0Hh-4l4ZCTS3F3j-RFaa4DPn77w-RWIpgYa96xspp0qIQIdkGQiWhbUzKNqkr7X1CYJ1cE2SmCfKFcjoXiBIVqxCMfH41GuO5NvSH4Q4eJKNe6T1jDEs_H67PH3-hELnkz5LDlGcCtoVEoMf_92zigEpvXv59f0VLNtGK3Ja2vcsTh1b7MsIzPYep9k8fFvICMNUCdclBVdvUPIKQQ8Zn74kqZlVsoDKtRv1eszRZpsznRHuAyJ3nya0VihqjtQN9cMVmGvP0llD9WSzslf21fEQFxVSljDV3syePNe0wXvixeebVNFIP03F0erv5KX1MrFVUz59s1g.jpg"
+      },
+      {
         "id": 1962,
         "url": "https://t.me/timora_tv/1962",
         "date": "2026-10-13T14:02:43+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-13T07:44:57+00:00",
         "text": "▫️😈😈😈😈😈😈😈😈😈🙏\n\nЭта неделя будет... Полна сюрпризов, наверное х)\nВ среду у нас пройдёт первый киберспортивный турнир среди СНГ-витуберш по игре 3 в ряд, а затем мы три дня будем спасаться от криперов, зомби и уплаты налогов, чтобы однажды прийти к власти на РП-сервере Майнкрафта...\n\nНо это не всё.\nПотому что в четверг перед игрой я хочу показать вам хэллоуинскую моделечку призрачной Тиморы :з \n\nВ общем... Такие дела. Увидимся ▫️\n\n▫️ KSB muzic - Конец",
         "photo": "https://cdn4.telesco.pe/file/KkeKckxhv2JO3viIE_-wQVyq3F1CItI5z2_SZpLKd4OuIbc3FZ_nguRv2jr4KOyyyXPuKz6vvgCmSBI2QOYf1iuUPvgu9vULT_cvIOLDm18L-lg_EQkYJqnvllB0V7WDXTuwaF4tlaOIeto-I3pzU24gWvFcJ0i8Jft2mf3cwtQbu700Oq6csjYOk7s4YS8JqFvr44s_yzDrTokUvciia8WvPC5vzwQNDochSYg7nJG91X4FJCXoIIDTMHYchOCdMjCZGoApCnrvozPP28aXnJ--qFjvADper2t3tuLsjdbhBkPaWkxsv4UdFzlNGLO4OhmCtp__cLzb9kKAj2iM4A.jpg"
-      },
-      {
-        "id": 1960,
-        "url": "https://t.me/timora_tv/1960",
-        "date": "2026-10-12T14:10:35+00:00",
-        "text": "⚪️😈😈😈😈😈😈😈😈 😈😈😈😈😈😈😈😈😈\nбонгокэт, но это Мормоття\n\nЛюстраленд заставила Мормоттю сидеть и работать вместе со мной! ▫️\nА так как я знаю, что у нашей вуду-морковки есть фанаты, то вот инструкция для установки:\n\n▫️скачиваете с гитхаба в разделе Releases zip\nhttps://github.com/swoonqx/TypingPet\n▫️архив распаковываете в одну папку: в нём 3 стандартных изображения и .exe\n▫️скачиваете изображения Мормотти и добавляете в папку:…",
-        "photo": "https://cdn4.telesco.pe/file/UXAcfznais5bExyyH0epY_8Iv7b0jpihf_x_fEUfLwUZE8-zEZol9QYipr0gKFCb0vdPvjuZirG8uawVLfcb32ARdMVncxFYWDm0Ayjg0qmaPY_azERXjjwIZTy6K6VFZbTgsaYildwMU-CSkjEbl_q2v0YMZMSDkn4QqfKvcA7oLqPSNGT2ABrpJwD4S84UOvs5N_kYCQpjHKOdQf83LYbgp65J5kY35DX_3lc1xx1kfu8T1h_D2YfAatWRz_O7fM3vH0SOlV6aIKYzSkbk63xVpuKHaF06jpy5fCCkWEnfM0zyhIVWzBQ9fBMNaamhx_uzLN0vr2BHbLChwKlr3A.jpg"
       }
     ]
   },
