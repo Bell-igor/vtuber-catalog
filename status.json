@@ -8,7 +8,7 @@
     "startedAt": null,
     "followers": 3364,
     "lastBroadcast": {
-      "title": "",
+      "title": "✦ ТУРНИР ПО ТРИ В РЯД ⟡ киберспорт из дурки | !funpay",
       "startedAt": "2026-10-10T17:18:14.259707Z"
     },
     "videos": [],
@@ -77,28 +77,28 @@
   },
   "telegram": {
     "channel": "timora_tv",
-    "subscribers": 437,
+    "subscribers": 436,
     "posts": [
+      {
+        "id": 1968,
+        "url": "https://t.me/timora_tv/1968",
+        "date": "2026-10-14T11:03:08+00:00",
+        "text": "Суета...",
+        "photo": "https://cdn4.telesco.pe/file/cEmj4p7UtVTzJcvJihvu_Uj4wRjQX0WVBxDl_w21gVKHkzrL6lRv-3bSO-SGWz4QSqQ6Jzo6pTlbXSlDkThxQA13s5zuLPeWhZYhItMYD8i2SYZ7BjznqtclIP1dRN9oFEh1KGKCcp4R8v9p0w0dH1z3tHvZlb-PB5r70_cGcGFUiaj4ywaR4x9MNmwFoYPtpPVMUEztEP8wFswKP9hrTqIZwnSTULyQWslRQkfl-YTPYdue7bo7hi64naeGr-OcVlsuJzd_sXYGjEN08ycYxVQ6_iRie5y7XLWpyX-i__drqUpCleKDq96Sg03m4B7zAZZKVwwoQdDpC4xeKAPnpA.jpg"
+      },
+      {
+        "id": 1967,
+        "url": "https://t.me/timora_tv/1967",
+        "date": "2026-10-14T11:02:56+00:00",
+        "text": "",
+        "photo": "https://cdn4.telesco.pe/file/oLuVjklw_THpC9zoK--mmCCwMs1mG3YFvZoMCjZrlMWvqQgUWKsnvi7DcQZEYGzkb1z3s6ZPRGRz5xqdPVGsrqWvC9hvZOYN7KFSvLBy6Sq7PmcdllHtv-iqacFZCMbHgcLtdTc5s6lsf5JpoxukCM5l-p9PZByVV4v6mY56G9d1S9Ojo58GlAM2h88VeZkyfeTbMpjHpNxM6djn3q8JWa3q5Nw1xvhS1N4oU-x8ZJu5bJFmGO73VqSqOn5wMHhTNZTep5oLUMRR9v2XdXI5dHdBcZy-BYGhWCRGIp_l9-ZCbBlCE5q1j7RzbH9WxVT8I4wU4l2xHXF_dckaCndeuQ.jpg"
+      },
       {
         "id": 1965,
         "url": "https://t.me/timora_tv/1965",
         "date": "2026-10-14T10:33:59+00:00",
         "text": "Хотел вечером дропнуть ну ладно сейчас держите",
         "photo": "https://cdn4.telesco.pe/file/uh3tWGzmqKASIpsZ5JF8R9sEBRxLhc1KrUF83TuxjUnogl-HXWe6yCpJN6SbHEEgldVxIxkmgQO1b50EV4HfUlTxnhOGZVP26kB928hQaBBaYEJzkxnc46Usy7nSb1E8GnWJQH_xG05-gy0CBg2X998cNCtq8oqytJRSmNMKgMHWUXKsa-RsxspqhtrS3giT2O_A26IiHJvYzVNxNsnLQW5fWxmt5Hz3OAWccxIkuUWgoLwFj8WgvRM2qO8Q9_cwpxkxCg9b6t7QwZjl-Ii9wyHWO9pVC1U19a4H0gDWg40zCFqDrtYLBCNwH3nTx9CsfAaD2-6xgVgjowKoVoXDbg.jpg"
-      },
-      {
-        "id": 1964,
-        "url": "https://t.me/timora_tv/1964",
-        "date": "2026-10-14T08:47:21+00:00",
-        "text": "СЕГОДНЯ. 18:00. \nhttps://www.twitch.tv/timoravoo",
-        "photo": "https://cdn4.telesco.pe/file/Ako0FNnBu1B7_1QCstjlxUeMEtRwnjCvjbbevNGkdOFwgkeOhFKry6SoCXXm-StMLl1VIzT_YfWgehNpNMYOZSWfbbRij1qMc02sUYDkq61uLsRLlSWKpcPfqc7DGX8o8jnVJ4o__1E7ZMH-Kcc3iWIf03atUxTP9VAIs7f5QKLkyZxiL4DfxyTvIZXv2LBmZwKz3B9l_DmLy0owhr9G3pqJEnHQgpc6hwuyZJXjKUutA4NokpNk7MJn4QZqQR9Q3Ss0X91Jgv0y40pM9Vd4cYWSPOwFf2VqcUd0LUWfOdnnc-Z5yP34wOBcEM6HbMqc6vppxeXNKG6vjW0fTdYXQw.jpg"
-      },
-      {
-        "id": 1963,
-        "url": "https://t.me/timora_tv/1963",
-        "date": "2026-10-13T18:45:14+00:00",
-        "text": "итак, сегодня на стриме закончили основную работу по модели тиморика! ещё раз проверили, что бы все левые параметры были слева, а правые - справа, настроили тогглы и заполнили текстурный атлас 👍\n\nдальше остаются только проверки в витубстудии, а все неточности и правки будут пофикшены уже в оффлайн режиме! 🤓\n\nв четверг уже будет работа над следующей моделькой 👀",
-        "photo": "https://cdn4.telesco.pe/file/aaAEQcFrIKZ0Hh-4l4ZCTS3F3j-RFaa4DPn77w-RWIpgYa96xspp0qIQIdkGQiWhbUzKNqkr7X1CYJ1cE2SmCfKFcjoXiBIVqxCMfH41GuO5NvSH4Q4eJKNe6T1jDEs_H67PH3-hELnkz5LDlGcCtoVEoMf_92zigEpvXv59f0VLNtGK3Ja2vcsTh1b7MsIzPYep9k8fFvICMNUCdclBVdvUPIKQQ8Zn74kqZlVsoDKtRv1eszRZpsznRHuAyJ3nya0VihqjtQN9cMVmGvP0llD9WSzslf21fEQFxVSljDV3syePNe0wXvixeebVNFIP03F0erv5KX1MrFVUz59s1g.jpg"
       }
     ]
   },
