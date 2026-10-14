@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "✦ ТУРНИР ПО ТРИ В РЯД ⟡ киберспорт из дурки | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-14T15:00:28Z",
+    "startedAt": null,
     "followers": 3371,
     "lastBroadcast": {
       "title": "✦ ТУРНИР ПО ТРИ В РЯД ⟡ киберспорт из дурки | !funpay",
-      "startedAt": "2026-10-14T15:00:33.368452Z"
+      "startedAt": "2026-10-14T18:56:21.301354Z"
     },
     "videos": [],
     "clips": [
