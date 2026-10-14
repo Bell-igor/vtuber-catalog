@@ -12,12 +12,80 @@
       "startedAt": "2026-10-10T17:18:14.259707Z"
     },
     "videos": [],
-    "clips": []
+    "clips": [
+      {
+        "id": "3046402664",
+        "kind": "clip",
+        "title": "Милота",
+        "date": "2023-08-16T17:03:15Z",
+        "seconds": 40,
+        "views": 309,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/ff5ced9d-5644-4d2d-975c-78cfa5d7d6ed/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/FreezingFurryAlbatrossPhilosoraptor-nsFi8VBAr71zQ4xv"
+      },
+      {
+        "id": "1192999838",
+        "kind": "clip",
+        "title": "ммм, какие стоны",
+        "date": "2024-09-23T17:47:18Z",
+        "seconds": 6,
+        "views": 189,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/831cbfec-57e7-4782-bc24-d289a4cdcd67/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/BoxyDifferentWebDuDudu-DolxyN4eUO56i5go"
+      },
+      {
+        "id": "2764847703",
+        "kind": "clip",
+        "title": "Помощник",
+        "date": "2026-09-26T13:10:42Z",
+        "seconds": 28,
+        "views": 176,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/d36ba974-a666-4f40-a348-0170e7b68f0a/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/LachrymoseBlatantCrocodileFeelsBadMan-T5Q8ttYj-AWCznKA"
+      },
+      {
+        "id": "911914658",
+        "kind": "clip",
+        "title": "епта",
+        "date": "2026-06-08T19:22:55Z",
+        "seconds": 14,
+        "views": 144,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/2dd97125-364e-4023-b319-8e5ee674c248/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/ConfidentTriumphantDragonfruitOneHand-uZ2kjIBeNubcEOXu"
+      },
+      {
+        "id": "1082398239",
+        "kind": "clip",
+        "title": "03.10.2026 для стрика",
+        "date": "2026-10-03T18:29:23Z",
+        "seconds": 5,
+        "views": 142,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/620dc1b3-5bf3-42cd-b2c1-bdddc1680924/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/HeadstrongPeacefulCookieHumbleLife-3vz5t_Sp_yQlnmi2"
+      },
+      {
+        "id": "1095141366",
+        "kind": "clip",
+        "title": "Он же дракон XD",
+        "date": "2024-02-09T19:46:46Z",
+        "seconds": 22,
+        "views": 131,
+        "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/88bf93f6-57f9-4bb1-ac6d-bb3c792ac72d/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+        "url": "https://www.twitch.tv/timoravoo/clip/SteamyNurturingWombatKappaWealth-EALHfL0onLYkbYqE"
+      }
+    ]
   },
   "telegram": {
     "channel": "timora_tv",
     "subscribers": 437,
     "posts": [
+      {
+        "id": 1965,
+        "url": "https://t.me/timora_tv/1965",
+        "date": "2026-10-14T10:33:59+00:00",
+        "text": "Хотел вечером дропнуть ну ладно сейчас держите",
+        "photo": "https://cdn4.telesco.pe/file/uh3tWGzmqKASIpsZ5JF8R9sEBRxLhc1KrUF83TuxjUnogl-HXWe6yCpJN6SbHEEgldVxIxkmgQO1b50EV4HfUlTxnhOGZVP26kB928hQaBBaYEJzkxnc46Usy7nSb1E8GnWJQH_xG05-gy0CBg2X998cNCtq8oqytJRSmNMKgMHWUXKsa-RsxspqhtrS3giT2O_A26IiHJvYzVNxNsnLQW5fWxmt5Hz3OAWccxIkuUWgoLwFj8WgvRM2qO8Q9_cwpxkxCg9b6t7QwZjl-Ii9wyHWO9pVC1U19a4H0gDWg40zCFqDrtYLBCNwH3nTx9CsfAaD2-6xgVgjowKoVoXDbg.jpg"
+      },
       {
         "id": 1964,
         "url": "https://t.me/timora_tv/1964",
@@ -31,13 +99,6 @@
         "date": "2026-10-13T18:45:14+00:00",
         "text": "итак, сегодня на стриме закончили основную работу по модели тиморика! ещё раз проверили, что бы все левые параметры были слева, а правые - справа, настроили тогглы и заполнили текстурный атлас 👍\n\nдальше остаются только проверки в витубстудии, а все неточности и правки будут пофикшены уже в оффлайн режиме! 🤓\n\nв четверг уже будет работа над следующей моделькой 👀",
         "photo": "https://cdn4.telesco.pe/file/aaAEQcFrIKZ0Hh-4l4ZCTS3F3j-RFaa4DPn77w-RWIpgYa96xspp0qIQIdkGQiWhbUzKNqkr7X1CYJ1cE2SmCfKFcjoXiBIVqxCMfH41GuO5NvSH4Q4eJKNe6T1jDEs_H67PH3-hELnkz5LDlGcCtoVEoMf_92zigEpvXv59f0VLNtGK3Ja2vcsTh1b7MsIzPYep9k8fFvICMNUCdclBVdvUPIKQQ8Zn74kqZlVsoDKtRv1eszRZpsznRHuAyJ3nya0VihqjtQN9cMVmGvP0llD9WSzslf21fEQFxVSljDV3syePNe0wXvixeebVNFIP03F0erv5KX1MrFVUz59s1g.jpg"
-      },
-      {
-        "id": 1962,
-        "url": "https://t.me/timora_tv/1962",
-        "date": "2026-10-13T14:02:43+00:00",
-        "text": "Приснилось, что я в уголовном розыске в нескольких странах.\nМозг с утра пораньше адреналина подкинуть решил х)\nА что вам интересного снилось за последнее время?",
-        "photo": "https://cdn4.telesco.pe/file/LLYgC8X42VYYddsoUbFRvEK_U99HH9AfSg1lxsIUmFYAccTRIhE9_zWr93DSYVSN6TjFgOdz7t0YB7_4jup0coypwZnyqejvj7fP3R0rCzjWQ8m9TiN3hfiWc5i9hP4SNNjQBGnwuoEaeNXTgwzxWDBsCw0E515htaFGs6wqNuIPByPTa_7NYYZALBUMFHyjt3aOCsPMtVO5RZrE4aIhfN--mNnqJfY0FueYPuImL9z4sHasj_Z-aJmjIjY_yGS9wvOT2_fP2LpNZHyAn0buXy43RJ_1FQsf4u7R6vJmwv8xkwPtYN7TsdSc2y45XJWtEQw9JNAXX5d9t-EnHe_nqg.jpg"
       }
     ]
   },
