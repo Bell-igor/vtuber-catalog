@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "МОЙ ПЕРЕХОД В МИР ИНОЙ. И МАЙНКРАФТ| !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-15T15:00:29Z",
     "followers": 3374,
     "lastBroadcast": {
-      "title": "Не забудь название | !funpay",
-      "startedAt": "2026-10-14T18:56:21.301354Z"
+      "title": "МОЙ ПЕРЕХОД В МИР ИНОЙ. И МАЙНКРАФТ| !funpay !сервер",
+      "startedAt": "2026-10-15T15:00:36.54994Z"
     },
     "videos": [],
     "clips": [
@@ -80,6 +80,13 @@
     "subscribers": 437,
     "posts": [
       {
+        "id": 1974,
+        "url": "https://t.me/timora_tv/1974",
+        "date": "2026-10-15T15:00:31+00:00",
+        "text": "Стрим. Чёт показываю и играю в Майн на Dragon Light\nhttps://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/v5NP4pJK5HfADhTSMOAAgcP19Sj-jqFSzNOMfoSvIKTATN4z4X4j2k2ennu9r-iTtc-w8t7RD8HWrMBDnU6qPlxfMV6nDYPAP4D8frpcsejZ-cViPLxIrbsPVsp8CdKclKRUuH839L_6GTiR2beUYvVMVIpz7nC2S6d1dIcZlb_viwVu9fos_URzAmI9R2dGDGYkvy_vxpeIv6ud9zuaB1gm61Qj_8ItpzvQgUhduyqoVqt_z7O__U4cct8gXnNUS-0FARO_kSkLw-afIEC-ztUDSj_DCdswAYs0A64cZ2Qh_3xzMFZ2TnhM_lPTi0ZTXH5CjIH_Owy9MxrG8f7tyg.jpg"
+      },
+      {
         "id": 1973,
         "url": "https://t.me/timora_tv/1973",
         "date": "2026-10-15T09:31:03+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-15T07:38:40+00:00",
         "text": "Мне нужен увлажнитель воздуха, это капец х.х\nА как у вас утро началось?",
         "photo": "https://cdn4.telesco.pe/file/rN5x9Nk_4jnPNj5JjR0tj6mBAqVM51EQ-XWDuLuWZf6RauFnxwp4vp6UTmpxAqc6q22cDVi5Yps67iT4piwWgxFOtOK-jzq7aFZwNeoJLAdRruFPrQ2qhhCEWt6BigSnZIt-1rnmLZAzFvWst-pISq15SWEWtBQMIGxTMNZqkYY8_o2_5IZnyB43Xw_N-khK6C3rMMm41kHTBqqvAwp-ZlQeerjcPfHfhqYrLPkS-RFuikE8WL1YyINUm2-JX_KiUP3FYK6OI-w_vdvdeoB9NO8pPQxNO4XBrM7_sYCfLfiguZKPvXWWjorp-PrPE77NWQ2dVTuvYx_N1VutjAiXjw.jpg"
-      },
-      {
-        "id": 1971,
-        "url": "https://t.me/timora_tv/1971",
-        "date": "2026-10-15T06:46:33+00:00",
-        "text": "утренний ворк-ворк тутачки: https://www.twitch.tv/ankalanki",
-        "photo": "https://cdn4.telesco.pe/file/Y6RNRABJD9tqc3D4hoyizHdiHtX5QxlqTF9dmYNqqHBeIJ8xTt199BB9tTHmr8T6_7wATl56R7Y5rsr7o10E-1m_ObUjfNTeL7zd0hMShj1Mz5LZA2bpLk6L3HyT-fJPg69nE3xAKWfFnCzkigOXHyV-ZVFSn0dUMP52g3V_clN09ILgtq77_yiGUGMYSx4uLRWVXMsYTq-TsRFZ8u6AFcb5C4gLAo521LfIOCsAtLYYf3AJvrhO5tfTvJKLib1JBpe_uR-eC8zrNGMiihVBYVouleFi0gz-F-MUUkz1LJJtfSuKLLR6VeO3q85j-bAxVcWc--4EYI9MwguP9ZR7tg.jpg"
       }
     ]
   },
