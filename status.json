@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "МОЙ ПЕРЕХОД В МИР ИНОЙ. И МАЙНКРАФТ| !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-15T15:00:29Z",
-    "followers": 3380,
+    "startedAt": null,
+    "followers": 3381,
     "lastBroadcast": {
       "title": "МОЙ ПЕРЕХОД В МИР ИНОЙ. И МАЙНКРАФТ| !funpay !сервер",
-      "startedAt": "2026-10-15T15:00:36.54994Z"
+      "startedAt": "2026-10-15T19:50:32.091563Z"
     },
     "videos": [],
     "clips": [
