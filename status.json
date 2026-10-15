@@ -80,6 +80,13 @@
     "subscribers": 437,
     "posts": [
       {
+        "id": 1975,
+        "url": "https://t.me/timora_tv/1975",
+        "date": "2026-10-15T19:57:31+00:00",
+        "text": "Кто был на стриме, слышал мой поток мыслей. Вооот... Короче такие дела. Добро пожаловать в загробный мир, морковные 🤪\nИ не пугайтесь. Смерть - это лишь переходная фаза.",
+        "photo": "https://cdn4.telesco.pe/file/X3-mq7mvFiOd1O97jV8lzdXeHX9n8rLUzvmSNyUHE7Ck4eVpHMkB169FkccxjauPiYzoRwgJc-LurA_i1fk4sSQGFTCD1O9Qu98pcs-qsYbLI62A7M4Vzp87cMZlK2N4rvHU2Nctv8qRboF84tVQML5y1AzHhCVFcWStBJCpRV07BFV_VCPmRvIVT-Ip3P3YZoFXM6c4V1_OO_7Hw2TGQGV7L4dlbCr3E2Yu-Nu7DpFdZV2RukUqzSG98Ovz-AvlY-vEzyfRpk1-LYdCyvxMNfAlNrCZxokadrEz543maqzA9Lirs0NEyj1b93AH_4rcXivTwW7X32zw6uDSUb9BPw.jpg"
+      },
+      {
         "id": 1974,
         "url": "https://t.me/timora_tv/1974",
         "date": "2026-10-15T15:00:31+00:00",
@@ -92,19 +99,12 @@
         "date": "2026-10-15T09:31:03+00:00",
         "text": "Я тут это... К Шеди с Зефиркой на Валорант подсосалась, а они стримят о.о\nhttps://www.twitch.tv/shadyspirit_\n https://www.twitch.tv/krolik_zeffirka",
         "photo": "https://cdn4.telesco.pe/file/RaYI415zWHdkNevaYXZ5Zp0l_fjL5rnqs3c3BxIBfrG_pNrO-ryWaEuwYtqPSkovqGXCAkk9pxFGaqYDA6iZZmkPXBbO_tP7Wil_jJp0IpJPAb4ZERF7l7VLcsc--kNCXz80F2Bqqto5UmC4qmy0-qtJNMcjdmDC0vB8ZPE6LvMh69vuSK3XB31Te8kyize6Vy-tgzEGAQl9Ye67CR2wpOvqQC7Vpo-5VyE2S3maDaqmsAoBHHabLnRTiT4yz3R2asekzgI0BBvWap3E6Pm6GxqoZZq3m4QFeciytc3gMw6wJEaECGzIwVuXFYxxSVTk8NFy5bBTc_saFRN2maNhGA.jpg"
-      },
-      {
-        "id": 1972,
-        "url": "https://t.me/timora_tv/1972",
-        "date": "2026-10-15T07:38:40+00:00",
-        "text": "Мне нужен увлажнитель воздуха, это капец х.х\nА как у вас утро началось?",
-        "photo": "https://cdn4.telesco.pe/file/rN5x9Nk_4jnPNj5JjR0tj6mBAqVM51EQ-XWDuLuWZf6RauFnxwp4vp6UTmpxAqc6q22cDVi5Yps67iT4piwWgxFOtOK-jzq7aFZwNeoJLAdRruFPrQ2qhhCEWt6BigSnZIt-1rnmLZAzFvWst-pISq15SWEWtBQMIGxTMNZqkYY8_o2_5IZnyB43Xw_N-khK6C3rMMm41kHTBqqvAwp-ZlQeerjcPfHfhqYrLPkS-RFuikE8WL1YyINUm2-JX_KiUP3FYK6OI-w_vdvdeoB9NO8pPQxNO4XBrM7_sYCfLfiguZKPvXWWjorp-PrPE77NWQ2dVTuvYx_N1VutjAiXjw.jpg"
       }
     ]
   },
   "discord": {
     "name": "ПЛОХОЕ ВЛИЯНИЕ",
-    "members": 58,
+    "members": 59,
     "icon": "https://cdn.discordapp.com/icons/1552303841855406151/a_c23164569b433d2ef1eea7e3eb4a7aaf.png?size=128",
     "invite": "https://discord.gg/zgbhEWNeCZ"
   }
