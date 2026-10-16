@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Майнкрафт и неупокоенные души... Сколько раз придётся погибнуть, чтобы получить пару алмов?| !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-16T14:58:20Z",
+    "startedAt": null,
     "followers": 3390,
     "lastBroadcast": {
       "title": "Майнкрафт и неупокоенные души... Сколько раз придётся погибнуть, чтобы получить пару алмов?| !funpay !сервер",
-      "startedAt": "2026-10-16T14:58:25.052973Z"
+      "startedAt": "2026-10-16T19:41:12.874714Z"
     },
     "videos": [],
     "clips": [
