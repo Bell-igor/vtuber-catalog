@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Майнкрафт и неупокоенные души... Сколько раз придётся погибнуть, чтобы получить пару алмов?| !funpay !сервер",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-10-16T14:58:20Z",
     "followers": 3381,
     "lastBroadcast": {
       "title": "Майнкрафт и неупокоенные души... Сколько раз придётся погибнуть, чтобы получить пару алмов?| !funpay !сервер",
-      "startedAt": "2026-10-15T19:50:32.091563Z"
+      "startedAt": "2026-10-16T14:58:25.052973Z"
     },
     "videos": [],
     "clips": [
@@ -80,6 +80,13 @@
     "subscribers": 437,
     "posts": [
       {
+        "id": 1976,
+        "url": "https://t.me/timora_tv/1976",
+        "date": "2026-10-16T14:55:00+00:00",
+        "text": "Майнкрафт и неупокоенные души... Сколько раз придётся погибнуть, чтобы получить пару алмов?",
+        "photo": "https://cdn4.telesco.pe/file/EnlW6q546VvHxEdBqrOtuBibOzgrbBIc0JfrSi4W8LbE0UBRH7zpTlPn8CSFGVljjoma8FiL3YvOH1-VFeSXQv4lbK6qNnp1jec6WDsPe77WkqEdnQh9SQRl5xCc-Ipe4FSMw70bu50tJz5EpUCAMhKpoxN0uso2BKswjrdAlHb54r97Kjg9ZhU_lWRUoZEE2zvT0t-ydKeDp9oGTu2XXOBd5MN8Jv2bxXgrjMH8khuJ1ZRI-Xt-zV0cpZUsxXklOZkuCVvUBNXnZ6OE-aSKSDhe8PyWYn2Q7KO3UFTNpBrIHBaSSg_PZPlYnoBCT8kcOjq4wCzueCzhmDvUFgBwEQ.jpg"
+      },
+      {
         "id": 1975,
         "url": "https://t.me/timora_tv/1975",
         "date": "2026-10-15T19:57:31+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-15T15:00:31+00:00",
         "text": "Стрим. Чёт показываю и играю в Майн на Dragon Light\nhttps://www.twitch.tv/timoravoo",
         "photo": "https://cdn4.telesco.pe/file/hye0zwurUwVYkZsMIHpS7zAp4CnOG00yusesz9NEifZuBbPgoBHUs3VccR0dsy63JXqPBQxrVaeOXfLo8WWnFODG-cJh4IC_-93piHPuuUDOk4hV1ZBtd1lxPT8_raXKx8uOfPP6XXcATjdteE4ghuL0ZTZI-shCmFH_cPqO2DF6Fx6gue24aK1yIXi4dnSdDp2kefGVRmWYng7P6DdN3Jfzv9tHmV0w2aW69r9R6zAytGj4rs68O1bIWe22KtQHxwi0gUBeOSQGgMpQH6Xx0f55GFi4bH1D9cTY3Trk146734KkicxjXxkbewnGqXOC3ixx4oyoNWIaN1M_t3b4xw.jpg"
-      },
-      {
-        "id": 1973,
-        "url": "https://t.me/timora_tv/1973",
-        "date": "2026-10-15T09:31:03+00:00",
-        "text": "Я тут это... К Шеди с Зефиркой на Валорант подсосалась, а они стримят о.о\nhttps://www.twitch.tv/shadyspirit_\n https://www.twitch.tv/krolik_zeffirka",
-        "photo": "https://cdn4.telesco.pe/file/LhxUUKdIXHWFu1ZEaVamL0bzs4OZU1M5LfAyee6M4q6WflEmtXtCtl04pGVCTJ88esdiqmyUzR2KN1mminFC3agyN9DQWDkpX0xUmN5wxG3fbTJmKWxlmhOUthM9e6RdJ8rSpqnwTyE1HiYy1xswVV_FsOZSQVx9e6A9nXk-KODKGLhMzeMY-HWrFayfMlIgwGM5Q1Srk0XZLFHOSRf0L7kBt0lW5oWQohkbKwvggskIwOMyvVMpUmpB_nlF3wOSY0Gerlxr25_oNQ8kK9l-7C1J1CRJTNDrwSgft2lYvQx8_XnG3oF3AgfS8I2tNM5Asc46e4Ju1kK3VXr9IKYMdw.jpg"
       }
     ]
   },
