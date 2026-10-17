@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Майнкрафт с призраком кролика... Что может пойти не так? | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-17T14:57:28Z",
-    "followers": 3397,
+    "startedAt": null,
+    "followers": 3396,
     "lastBroadcast": {
       "title": "Майнкрафт с призраком кролика... Что может пойти не так? | !funpay !сервер",
-      "startedAt": "2026-10-17T14:57:33.271581Z"
+      "startedAt": "2026-10-17T19:17:46.548325Z"
     },
     "videos": [],
     "clips": [
