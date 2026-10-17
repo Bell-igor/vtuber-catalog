@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Майнкрафт с призраком кролика... Что может пойти не так? | !funpay !сервер",
     "game": "",
-    "startedAt": null,
-    "followers": 3390,
+    "startedAt": "2026-10-17T14:57:28Z",
+    "followers": 3391,
     "lastBroadcast": {
       "title": "Майнкрафт с призраком кролика... Что может пойти не так? | !funpay !сервер",
-      "startedAt": "2026-10-16T19:41:12.874714Z"
+      "startedAt": "2026-10-17T14:57:33.271581Z"
     },
     "videos": [],
     "clips": [
@@ -80,6 +80,13 @@
     "subscribers": 436,
     "posts": [
       {
+        "id": 1980,
+        "url": "https://t.me/timora_tv/1980",
+        "date": "2026-10-17T14:55:00+00:00",
+        "text": "Майнкрафт с призраком кролика... Что может пойти не так?\nСтрим онлайн: https://www.twitch.tv/timoravoo",
+        "photo": "https://cdn4.telesco.pe/file/mYmyLMWA-eKfeizFd9hpP1h3bPsktT1ktowrVlZNY1oI6uX_ryt_D6GXOsvqhID0SZnNj6bRSI65rX_1leVZki-hwQw_JkJG6cArOa8FsAbAKAJerg9jJD9B0ld-5u8MuYLspa23HIYR2S-7FWxZBMuQCi-LeU0W8eXEumwnglbHoNvCj4EWZRzSlfNGWcn4ux5ZhedAaSPrjDbuPApaMxw9s3bKo0Ju5Z8EvdHEBILebwUD1f-9kwlk4xylUfSJjJwX7PE3luJWAacBbt95uCfi-jFLLMCoXAyIGxYJ_qpyu6SMarstKInPq1-QwhKJMhtw3v_aVyJ1AIJM7UQVEg.jpg"
+      },
+      {
         "id": 1979,
         "url": "https://t.me/timora_tv/1979",
         "date": "2026-10-17T13:06:48+00:00",
@@ -92,13 +99,6 @@
         "date": "2026-10-17T05:29:00+00:00",
         "text": "утренний ворк-ворк тутачки: https://www.twitch.tv/ankalanki\n\nтеперь с микронаградами канала!",
         "photo": "https://cdn4.telesco.pe/file/eprrIMGKZovVOwaeSekREU6EgP441as6__aOBgRXp8txfZiacJuij5cztbh63ucYDpNAw4Mxf3f-UEWdeWIRBJec-gKP6gQXQpEgi5vf-6jdBFkkj_JRJQ4GJv40vEDuIY78Y1ppeNrFpNKesAe7Yoe47gUxjMagoSEwc_efhKQqQwFzEuHrdXBAnJoKlR06RRySxBN9J2yXuk-2fr8su_1zpdbep8yUdIz0MkkEUE6TPreR4Fmqab5nbVHj6lIgur0ahwHCkICuTzgyTLeO8B01fPWMeYBkdGr92BNDmn_hNg5kg2nYlZqLlWSq-0pf4r_Jx1lRzZjnpvJkNMpWXA.jpg"
-      },
-      {
-        "id": 1977,
-        "url": "https://t.me/timora_tv/1977",
-        "date": "2026-10-16T19:45:35+00:00",
-        "text": "Устала чуточку, но пойду ща смотреть ужастик и отдыхать :з \nА если хотите посидеть под чей-нибудь стримчик, у нас Надзиратель начал стримить! Давайте поддержим его 🐇\nhttps://www.twitch.tv/had3upatejib\nhttps://www.twitch.tv/had3upatejib\nhttps://www.twitch.tv/had3upatejib",
-        "photo": "https://cdn4.telesco.pe/file/albfK-3YBZwYRK4KMivMsKjFpDO7C2_Teq3chR6sEtYPei8tAMy-KK3kolEsmOOchykuh-CLfOKg_uKie_LPdWGOUX-wizEcdxXIkAUdzSKYQneC3L4kTS0nYdzaApoRnO5lqJLdMk2t_KtLuAA5GCy5CHdWEa806OsVtjvyZkiKFGyGJj3wFRrgfGPjSwrQOm2N6CHxli3zLMS5e-WdUsL-N_1D_mOzu-V-cNNa75raIJdDL4PA2U8HMGPhmnqUytH7xP0dTW1EHh_QCQ46aujoUfGe4A0a7LXF1zj_PVjpR9pu-AJP_i5MMiv7km6rSzt-pLRrEMBB75T98Tg3QQ.jpg"
       }
     ]
   },
