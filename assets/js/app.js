@@ -23,6 +23,9 @@
       creditsSub: "Люди, благодаря которым всё это существует.",
       thanks: "Отдельное спасибо",
       modelsTitle: "Модели",
+      worksTitle: "Модель и арты",
+      kindModel: "Модель",
+      kindArt: "Арт",
       authorsTitle: "Авторы модели",
       prevModel: "Предыдущая модель",
       nextModel: "Следующая модель",
@@ -80,6 +83,9 @@
       creditsSub: "The people who make all of this possible.",
       thanks: "Special thanks",
       modelsTitle: "Models",
+      worksTitle: "Model & art",
+      kindModel: "Model",
+      kindArt: "Art",
       authorsTitle: "Model credits",
       prevModel: "Previous model",
       nextModel: "Next model",
@@ -555,50 +561,88 @@
     ]);
   }
 
-  /* ------------------- блок модели: фигурка + стрелки ---------------------- */
-  var modelUI = { index: 0 };
+  /* --------- карусель кредитсов: модель и арты, стрелки по бокам ----------- */
+  var crsl = { index: 0, slides: [] };
 
-  function modelBlock(inner) {
-    var models = (CFG.models || []).filter(function (m) { return m && m.image; });
-    var body = el("div", { class: "modelblock__body" }, inner);
-    if (models.length) {
-      body.appendChild(el("figure", { class: "modelblock__figure" }, el("img", {
-        class: "modelblock__img", src: models[0].image, alt: tr(models[0].alt, ""),
-        width: models[0].w || 640, height: models[0].h || 1280, decoding: "async", loading: "lazy"
-      })));
-    }
-    var multi = models.length > 1;
-    var prev = el("button", { class: "modelblock__arrow", type: "button", "aria-label": ui("prevModel") }, "\u2039");
-    var next = el("button", { class: "modelblock__arrow", type: "button", "aria-label": ui("nextModel") }, "\u203A");
-    // пока модель одна стрелки неактивны; появятся ещё — начнут листать
-    prev.disabled = !multi;
-    next.disabled = !multi;
-    function show(step) {
-      if (models.length < 2) return;
-      modelUI.index = (modelUI.index + step + models.length) % models.length;
-      var m = models[modelUI.index];
-      var img = body.querySelector(".modelblock__img");
-      if (img) { img.src = m.image; img.alt = tr(m.alt, ""); }
-    }
-    prev.addEventListener("click", function () { show(-1); });
-    next.addEventListener("click", function () { show(1); });
-    return el("article", { class: "group group--model" }, [prev, body, next]);
+  function crslRender() {
+    var box = document.getElementById("creditsCarousel");
+    if (!box) return;
+    var s = crsl.slides[crsl.index];
+    if (!s) return;
+    var fig = clear(box.querySelector(".crsl__figure"));
+    fig.appendChild(el("img", {
+      class: "crsl__img", src: s.image, alt: tr(s.alt, tr(s.title, "")),
+      width: s.w || 640, height: s.h || 1280, decoding: "async"
+    }));
+    var info = clear(box.querySelector(".crsl__info"));
+    info.appendChild(el("p", { class: "crsl__kind", text: s.kind === "model" ? ui("kindModel") : ui("kindArt") }));
+    info.appendChild(el("h3", { class: "crsl__title", text: tr(s.title) }));
+    var authors = (s.authors || []).filter(Boolean);
+    info.appendChild(authors.length
+      ? el("ul", { class: "credit-list crsl__authors" }, authors.map(creditItem))
+      : el("p", { class: "section__sub", text: ui("empty") }));
+    var count = box.querySelector(".crsl__count");
+    if (count) count.textContent = (crsl.index + 1) + " / " + crsl.slides.length;
+    var multi = crsl.slides.length > 1;
+    ["crsl__arrow--prev", "crsl__arrow--next"].forEach(function (cls) {
+      var b = box.querySelector("." + cls);
+      if (b) b.disabled = !multi;
+    });
+  }
+
+  function crslStep(dir) {
+    var n = crsl.slides.length;
+    if (n < 2) return;
+    crsl.index = (crsl.index + dir + n) % n;
+    crslRender();
+  }
+
+  function carouselBlock() {
+    crsl.slides = (CREDITS.carousel || []).filter(function (s) { return s && s.image; });
+    if (!crsl.slides.length) return null;
+    var prev = el("button", { class: "crsl__arrow crsl__arrow--prev", type: "button", "aria-label": ui("prevModel") }, "\u2039");
+    var next = el("button", { class: "crsl__arrow crsl__arrow--next", type: "button", "aria-label": ui("nextModel") }, "\u203A");
+    prev.addEventListener("click", function () { crslStep(-1); });
+    next.addEventListener("click", function () { crslStep(1); });
+    var stage = el("div", { class: "crsl__stage" }, [
+      el("figure", { class: "crsl__figure" }),
+      el("div", { class: "crsl__info" })
+    ]);
+    // свайп на телефоне
+    var startX = null;
+    stage.addEventListener("pointerdown", function (ev) { startX = ev.clientX; });
+    stage.addEventListener("pointerup", function (ev) {
+      if (startX === null) return;
+      var d = ev.clientX - startX;
+      startX = null;
+      if (Math.abs(d) > 45) crslStep(d < 0 ? 1 : -1);
+    });
+    var box = el("article", { class: "group group--crsl", id: "creditsCarousel", tabindex: "0" }, [
+      el("h3", { class: "group__title", text: ui("worksTitle") }),
+      el("div", { class: "crsl" }, [prev, stage, next]),
+      el("div", { class: "crsl__bar" }, el("span", { class: "crsl__count" }))
+    ]);
+    box.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") crslStep(-1);
+      if (ev.key === "ArrowRight") crslStep(1);
+    });
+    setTimeout(crslRender, 0);
+    return box;
   }
 
   function renderCredits() {
     var box = clear(document.getElementById("creditsBody"));
     if (!box) return;
+    var cr = carouselBlock();
+    if (cr) box.appendChild(cr);
     (CREDITS.sections || []).forEach(function (sec) {
       var items = (sec.items || []);
-      var inner = [
+      box.appendChild(el("article", { class: "group" }, [
         el("h3", { class: "group__title", text: tr(sec.title) }),
         items.length
           ? el("ul", { class: "credit-list" }, items.map(creditItem))
           : el("p", { class: "section__sub", text: ui("empty") })
-      ];
-      box.appendChild(sec.model
-        ? modelBlock(inner)
-        : el("article", { class: "group" }, inner));
+      ]));
     });
     var thanks = (CREDITS.thanks || []).filter(Boolean);
     if (thanks.length) {

@@ -177,139 +177,114 @@ window.SITE = {
        role  — что человек сделал; name — имя/ник; url — ссылка на соцсеть;
        handle — подпись ссылки (необязательно);
        note  — примечание (необязательно).                              */
+  /* ---------------- Кредитсы ----------------
+     carousel — карусель: стрелки по бокам листают слайды. У каждого слайда
+     картинка и свои авторы (роль, имя, ник, ссылка).
+     sections — обычные разделы-списки.                                     */
   credits: {
-    sections: [
+    carousel: [
       {
-        id: "model",
-        model: true,        // сюда же подставляется фигурка модели со стрелками по бокам
-        title: { ru: "Модель и дизайн персонажа", en: "Model & character design" },
-        items: [
-          {
-            role: { ru: "Дизайн и арт модели", en: "Model design & art" },
-            name: "Имя художника",
-            handle: "@artist",
-            url: "#artist",
-            placeholder: true
-          },
-          {
-            role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" },
-            name: "Имя риггера",
-            handle: "@rigger",
-            url: "#rigger",
-            placeholder: true
-          }
+        kind: "model",
+        title: { ru: "Основная модель", en: "Main model" },
+        image: "assets/img/model-full.webp",
+        w: 640, h: 1280,
+        alt: {
+          ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
+          en: "Timora's full-body model: lilac dress, round glasses, headphones"
+        },
+        authors: [
+          { role: { ru: "Дизайн и арт модели", en: "Model design & art" }, name: "Имя художника", handle: "@artist", url: "#artist", placeholder: true },
+          { role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" }, name: "Имя риггера", handle: "@rigger", url: "#rigger", placeholder: true }
         ]
       },
+      {
+        kind: "art",
+        title: { ru: "Хэллоуин", en: "Halloween" },
+        image: "assets/img/gallery/art-halloween.webp",
+        w: 800, h: 533,
+        alt: { ru: "Чиби-Тимора сидит на скамейке в осеннем лесу среди тыкв и призраков", en: "Chibi Timora on a bench in an autumn forest with pumpkins and ghosts" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Sher", handle: "@SherryDebeste", url: "https://blipsu.com/@SherryDebeste" }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Лунный дух", en: "Moon spirit" },
+        image: "assets/img/gallery/art-moon.webp",
+        w: 680, h: 800,
+        alt: { ru: "Тимора-призрак парит на фоне полной луны с морковкой в руке", en: "Ghost Timora floats in front of the full moon holding a carrot" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Manunya", note: { ru: "подпись автора на арте", en: "artist's signature" } }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Звонок", en: "The call" },
+        image: "assets/img/gallery/art-call.webp",
+        w: 800, h: 800,
+        alt: { ru: "Экран телефона: перевёрнутое лицо Тиморы и кнопки принять и отклонить", en: "Phone screen: upside-down Timora face with call and decline buttons" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Weritasse", handle: "@Weritasse", url: "https://blipsu.com/@Weritasse" }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Ритуал", en: "Ritual" },
+        image: "assets/img/gallery/art-ritual.webp",
+        w: 566, h: 800,
+        alt: { ru: "Тимора в чёрной шапке и рваном свитере сидит со свечами и книгой", en: "Timora in a black beanie and ripped sweater sits with candles and a book" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Alex Bermuda", handle: "@alex__bermuda", url: "https://www.artstation.com/alex__bermuda" }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Осень", en: "Autumn" },
+        image: "assets/img/gallery/art-autumn.webp",
+        w: 800, h: 800,
+        alt: { ru: "Чиби-Тимора в красном шарфе сидит у дерева в осеннем лесу", en: "Chibi Timora in a red scarf sits by a tree in an autumn forest" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "crystalLu", handle: "@crystalLuArt", url: "https://t.me/crystalLuArt" }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Осенняя прогулка", en: "Autumn walk" },
+        image: "assets/img/gallery/art-autumn-walk.webp",
+        w: 600, h: 800,
+        alt: { ru: "Чиби-Тимора в чёрной шапке и жёлтых ботинках рядом с белой лисой", en: "Chibi Timora in a black beanie and yellow boots next to a white fox" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Автор не указан", note: { ru: "уточняется", en: "to be confirmed" } }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Мир!", en: "Peace!" },
+        image: "assets/img/gallery/art-peace.webp",
+        w: 800, h: 800,
+        alt: { ru: "Чиби-Тимора в лиловой шапке показывает два пальца", en: "Chibi Timora in a lilac beanie making a peace sign" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "ssenya195", handle: "@ssenya195", url: "https://blipsu.com/@ssenya195" }]
+      },
+      {
+        kind: "art",
+        title: { ru: "Скетч", en: "Sketch" },
+        image: "assets/img/gallery/art-sketch.webp",
+        w: 600, h: 800,
+        alt: { ru: "Карандашный скетч Тиморы в шапке с зайчиком", en: "Pencil sketch of Timora in a beanie with a bunny pin" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Автор не указан", note: { ru: "уточняется", en: "to be confirmed" } }]
+      },
+      {
+        kind: "art",
+        title: { ru: "В ладони", en: "In the palm" },
+        image: "assets/img/gallery/art-inhand.webp",
+        w: 600, h: 800,
+        alt: { ru: "Чиби-Тимора свернулась в ладони, в очках", en: "Chibi Timora curled up in a hand, wearing glasses" },
+        authors: [{ role: { ru: "Арт", en: "Art" }, name: "Автор не указан", note: { ru: "уточняется", en: "to be confirmed" } }]
+      }
+    ],
+    sections: [
       {
         id: "visual",
         title: { ru: "Оформление", en: "Visual assets" },
         items: [
-          {
-            role: { ru: "Логотип и emotes", en: "Logo & emotes" },
-            name: "Имя художника",
-            handle: "@emotes",
-            url: "#emotes",
-            placeholder: true
-          },
-          {
-            role: { ru: "Оверлеи, панели, экраны", en: "Overlays, panels, screens" },
-            name: "Имя дизайнера",
-            handle: "@overlays",
-            url: "#overlays",
-            placeholder: true
-          }
+          { role: { ru: "Логотип и emotes", en: "Logo & emotes" }, name: "Имя художника", handle: "@emotes", url: "#emotes", placeholder: true },
+          { role: { ru: "Оверлеи, панели, экраны", en: "Overlays, panels, screens" }, name: "Имя дизайнера", handle: "@overlays", url: "#overlays", placeholder: true }
         ]
       },
       {
         id: "media",
         title: { ru: "Звук и видео", en: "Audio & video" },
         items: [
-          {
-            role: { ru: "Музыка и интро", en: "Music & intro" },
-            name: "Имя композитора",
-            handle: "@music",
-            url: "#music",
-            placeholder: true
-          },
-          {
-            role: { ru: "Монтаж видео", en: "Video editing" },
-            name: "Имя монтажёра",
-            handle: "@editing",
-            url: "#editing",
-            placeholder: true
-          }
-        ]
-      },
-      /* --- арты по персонажу: название работы и автор со ссылкой ---
-         img — превью слева; note — название работы.                     */
-      {
-        id: "art",
-        title: { ru: "Арты и иллюстрации", en: "Art & illustrations" },
-        items: [
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Sher",
-            handle: "@SherryDebeste",
-            url: "https://blipsu.com/@SherryDebeste",
-            note: { ru: "Хэллоуин", en: "Halloween" },
-            img: "assets/img/gallery/art-halloween-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Manunya",
-            note: { ru: "Лунный дух (подпись автора на арте)", en: "Moon spirit (artist's signature)" },
-            img: "assets/img/gallery/art-moon-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Weritasse",
-            handle: "@Weritasse",
-            url: "https://blipsu.com/@Weritasse",
-            note: { ru: "Звонок", en: "The call" },
-            img: "assets/img/gallery/art-call-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Alex Bermuda",
-            handle: "@alex__bermuda",
-            url: "https://www.artstation.com/alex__bermuda",
-            note: { ru: "Ритуал", en: "Ritual" },
-            img: "assets/img/gallery/art-ritual-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "crystalLu",
-            handle: "@crystalLuArt",
-            url: "https://t.me/crystalLuArt",
-            note: { ru: "Осень", en: "Autumn" },
-            img: "assets/img/gallery/art-autumn-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "ssenya195",
-            handle: "@ssenya195",
-            url: "https://blipsu.com/@ssenya195",
-            note: { ru: "Мир!", en: "Peace!" },
-            img: "assets/img/gallery/art-peace-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Автор не указан",
-            note: { ru: "Осенняя прогулка", en: "Autumn walk" },
-            img: "assets/img/gallery/art-autumn-walk-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Автор не указан",
-            note: { ru: "Скетч", en: "Sketch" },
-            img: "assets/img/gallery/art-sketch-thumb.webp"
-          },
-          {
-            role: { ru: "Арт", en: "Art" },
-            name: "Автор не указан",
-            note: { ru: "В ладони", en: "In the palm" },
-            img: "assets/img/gallery/art-inhand-thumb.webp"
-          }
+          { role: { ru: "Музыка и интро", en: "Music & intro" }, name: "Имя композитора", handle: "@music", url: "#music", placeholder: true },
+          { role: { ru: "Монтаж видео", en: "Video editing" }, name: "Имя монтажёра", handle: "@editing", url: "#editing", placeholder: true }
         ]
       }
     ],
