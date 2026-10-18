@@ -37,8 +37,9 @@ window.SITE = {
     },
     // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
     avatar: "assets/img/avatar-twitch.webp",
-    // баннер: её картинка с логотипом Timora (статичная, без видео)
-    banner: "assets/img/banner-timora.webp",
+    // баннер: её осенний арт; поверх него летят листья (bannerLeaves)
+    banner: "assets/img/banner-autumn.webp",
+    bannerLeaves: true,
     // если захочется вернуть видео поверх баннера — раскомментируйте строку:
     // bannerVideo: "assets/img/banner-loop.mp4",
     // если у видео есть звук — поставьте true, появится кнопка «звук вкл/выкл»

@@ -208,6 +208,48 @@
     return svg;
   }
 
+  /* ------------------- падающие листья на баннере -------------------------- */
+  var LEAF_COLORS = ["#e0853c", "#f0a54a", "#c8562a", "#eec25e", "#d1702f", "#b8451f"];
+  var LEAF_PATHS = [
+    "M12 2.4c-3.7 3-6 6.6-6 10.4 0 4 2.6 7.2 6 9.2 3.4-2 6-5.2 6-9.2 0-3.8-2.3-7.4-6-10.4z",
+    "M12 3c4.4 2.2 7 5.6 7 9.2 0 4.4-3.1 7.6-7 9.8-3.9-2.2-7-5.4-7-9.8C5 8.6 7.6 5.2 12 3z"
+  ];
+
+  function leafNode(i) {
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS(NS, "path");
+    path.setAttribute("d", LEAF_PATHS[i % LEAF_PATHS.length]);
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function leavesLayer(count) {
+    var box = el("div", { class: "leaves", "aria-hidden": "true" });
+    for (var i = 0; i < count; i++) {
+      var size = 11 + Math.random() * 13;
+      var dur = 10 + Math.random() * 10;
+      var x = Math.random() * 97;
+      var drift = (Math.random() * 2 - 1) * 70;
+      var rot = Math.random() * 360;
+      var leaf = el("span", {
+        class: "leaf",
+        style: "--x:" + x.toFixed(1) + "%;"
+          + "--size:" + size.toFixed(0) + "px;"
+          + "--dur:" + dur.toFixed(1) + "s;"
+          + "--delay:-" + (Math.random() * dur).toFixed(1) + "s;"
+          + "--drift:" + drift.toFixed(0) + "px;"
+          + "--c:" + LEAF_COLORS[i % LEAF_COLORS.length] + ";"
+          + "--rot:" + rot.toFixed(0) + "deg"
+      });
+      leaf.appendChild(leafNode(i));
+      box.appendChild(leaf);
+    }
+    return box;
+  }
+
   /* --------------------------- каркас страницы ----------------------------- */
   function pinnedLinks() {
     return (CFG.links || []).filter(function (l) { return l && l.pinned && !isPlaceholder(l.url); });
@@ -283,9 +325,11 @@
         el("img", {
           class: "hero__banner-img", src: OWNER.banner,
           alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
-          width: 1200, height: 630, decoding: "async", fetchpriority: "high"
+          width: 1188, height: 437, decoding: "async", fetchpriority: "high"
         })
       ]);
+      // поверх картинки летят осенние листья (CSS-анимация, без видео)
+      if (OWNER.bannerLeaves) banner.appendChild(leavesLayer(22));
       // поверх кадра — короткая видео-петля (загружается после отрисовки страницы)
       if (OWNER.bannerVideo) {
         var vid = el("video", {
