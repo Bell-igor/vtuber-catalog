@@ -329,13 +329,13 @@
         el("span", { class: "model__glow", "aria-hidden": "true" }),
         el("img", {
           class: "model__poster", src: MODEL.poster || MODEL.full, alt: tr(MODEL.alt, OWNER.name || ""),
-          width: 299, height: 640, decoding: "async"
+          width: 300, height: 379, decoding: "async"
         }),
         el("span", { class: "model__shadow", "aria-hidden": "true" })
       ]);
       var animImg = el("img", {
         class: "model__anim", alt: "", "aria-hidden": "true",
-        width: 299, height: 640, decoding: "async",
+        width: 300, height: 379, decoding: "async",
         onload: function () { animBox.classList.add("is-ready"); }
       });
       animBox.appendChild(animImg);

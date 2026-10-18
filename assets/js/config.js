@@ -27,21 +27,21 @@ window.SITE = {
     role: { ru: "VTuber · TimoraVoo", en: "VTuber · TimoraVoo" },
     // короткий слоган
     tagline: {
-      ru: "Стримы, чтение книг и общение с чатом",
-      en: "Streams, book reading and chatting with you"
+      ru: "Стримы, ивенты и общение с чатом",
+      en: "Streams, events and chatting with you"
     },
     // пара предложений о себе (можно оставить пустым)
     about: {
-      ru: "Добро пожаловать! Здесь собраны арт, референсы моей модели и люди, благодаря которым всё это существует.",
+      ru: "Добро пожаловать! Здесь собраны арты, референсы моей модели и люди, благодаря которым всё это существует.",
       en: "Welcome! Here you'll find art, references of my model and the people who made all of it possible."
     },
     // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
     avatar: "assets/img/avatar-twitch.webp",
-    // баннер: кадр из её заставки, поверх него играет видео-петля (бесшовная)
+    // баннер: статичный кадр из её заставки (видео на первом экране выключено)
     banner: "assets/img/banner-zastavka.webp",
-    bannerVideo: "assets/img/banner-loop.mp4",
-    // если у видео появится звук — поставьте true, и в углу баннера
-    // появится кнопка «включить/выключить звук»
+    // если захочется вернуть видео поверх баннера — раскомментируйте строку:
+    // bannerVideo: "assets/img/banner-loop.mp4",
+    // если у видео есть звук — поставьте true, появится кнопка «звук вкл/выкл»
     bannerSound: false
   },
 
@@ -72,15 +72,11 @@ window.SITE = {
   },
 
   /* ---------------- Модель на первом экране ----------------
-     Три слоя одной картинки: тело, голова и кисть. Голова поворачивается
-     влево-вправо, кисть машет. Точки вращения — в процентах от картинки:
-     шея и центр кисти. Если модель заменят, новые проценты смотрите
-     в инструменте tools/build-model.py.                                     */
+     Готовая анимация модели (моргает и шевелится). Если убрать строку
+     animation — соберётся простой вариант из слоёв ниже (тело, голова, кисть). */
   model: {
-    // готовая анимация: она поднимает руку и машет. Петля сходится сама,
-    // поэтому «обрыва» нет. Если убрать эту строку — соберётся из слоёв ниже.
-    animation: "assets/img/model-idle.webp",
-    poster: "assets/img/model-idle-poster.webp",
+    animation: "assets/img/model-blink.webp",
+    poster: "assets/img/model-blink-poster.webp",
     body: "assets/img/model-body.webp",
     head: "assets/img/model-head.webp",
     hand: "assets/img/model-hand.webp",
@@ -89,7 +85,7 @@ window.SITE = {
     handPivot: [30.6, 38.4],   // плечо руки, которая машет
     headAngle: 7,              // градус поворота головы (для варианта из слоёв)
     handAngle: 12,             // градус взмаха руки (для варианта из слоёв)
-    alt: { ru: "Модель Timora в полный рост", en: "Timora's full-body model" }
+    alt: { ru: "Модель Timora", en: "Timora's model" }
   },
 
   /* ---------------- Арт и модель ----------------
@@ -144,39 +140,6 @@ window.SITE = {
     allUrl: "https://www.twitch.tv/timoravoo/videos"
   },
 
-  /* ---------------- Модели (карусель в кредитсах) ----------------
-     Каждая модель — отдельный слайд: картинка + таблица авторов.
-     Добавить вторую модель: скопируйте блок { ... } и поменяйте данные. */
-  models: [
-    {
-      name: { ru: "Основная модель", en: "Main model" },
-      image: "assets/img/model-full.webp",
-      alt: {
-        ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
-        en: "Timora's full-body model: lilac dress, round glasses, headphones"
-      },
-      w: 640, h: 1280,
-      authors: [
-        { role: { ru: "Дизайн и арт модели", en: "Model design & art" }, name: "Имя художника", handle: "@artist", url: "#artist" },
-        { role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" }, name: "Имя риггера", handle: "@rigger", url: "#rigger" }
-      ]
-    }
-    // {
-    //   name: { ru: "Вторая модель", en: "Second model" },
-    //   image: "assets/img/model-2.webp",
-    //   alt: { ru: "Вторая модель Timora", en: "Timora's second model" },
-    //   w: 640, h: 1280,
-    //   authors: [
-    //     { role: { ru: "Арт", en: "Art" }, name: "Ник", handle: "@nick", url: "https://x.com/ник" }
-    //   ]
-    // }
-  ],
-
-  /* ---------------- Кредитсы ----------------
-     Добавляйте блоки { ... } внутрь items. Поля:
-       role  — что человек сделал; name — имя/ник; url — ссылка на соцсеть;
-       handle — подпись ссылки (необязательно);
-       note  — примечание (необязательно).                              */
   /* ---------------- Кредитсы ----------------
      carousel — карусель: стрелки по бокам листают слайды. У каждого слайда
      картинка и свои авторы (роль, имя, ник, ссылка).
@@ -185,16 +148,16 @@ window.SITE = {
     carousel: [
       {
         kind: "model",
-        title: { ru: "Основная модель", en: "Main model" },
-        image: "assets/img/model-full.webp",
-        w: 640, h: 1280,
+        title: { ru: "Хэллоуин-модель", en: "Halloween model" },
+        image: "assets/img/model-sheet.webp",
+        w: 691, h: 566,
         alt: {
-          ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
-          en: "Timora's full-body model: lilac dress, round glasses, headphones"
+          ru: "Лист модели: чиби-Тимора в белом костюме призрака, варианты глаз и эмоций",
+          en: "Model sheet: chibi Timora in a white ghost outfit, eye and emotion variants"
         },
         authors: [
-          { role: { ru: "Дизайн и арт модели", en: "Model design & art" }, name: "Имя художника", handle: "@artist", url: "#artist", placeholder: true },
-          { role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" }, name: "Имя риггера", handle: "@rigger", url: "#rigger", placeholder: true }
+          { role: { ru: "Арт модели", en: "Model art" }, name: "Weritasse", handle: "@Weritasse", url: "https://blipsu.com/@Weritasse" },
+          { role: { ru: "Риггинг", en: "Rigging" }, name: "Orin", note: { ru: "rig: Orin", en: "rig: Orin" } }
         ]
       },
       {
