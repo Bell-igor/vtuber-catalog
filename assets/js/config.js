@@ -150,7 +150,7 @@ window.SITE = {
         kind: "model",
         title: { ru: "Хэллоуин-модель", en: "Halloween model" },
         image: "assets/img/model-sheet.webp",
-        w: 691, h: 566,
+        w: 1280, h: 720,
         alt: {
           ru: "Лист модели: чиби-Тимора в белом костюме призрака, варианты глаз и эмоций",
           en: "Model sheet: chibi Timora in a white ghost outfit, eye and emotion variants"
