@@ -6,7 +6,7 @@
     "title": "",
     "game": "",
     "startedAt": null,
-    "followers": 3405,
+    "followers": 3406,
     "lastBroadcast": {
       "title": "Витуберский турнир, но Тимора участник... Вот бы чуточку удачи | !funpay",
       "startedAt": "2026-10-18T17:03:33.999206Z"
@@ -80,13 +80,6 @@
     "subscribers": 435,
     "posts": [
       {
-        "id": 1983,
-        "url": "https://t.me/timora_tv/1983",
-        "date": "2026-10-18T15:02:30+00:00",
-        "text": "Витуберский турнир, но Тимора участник... Вот бы чуточку удачи \nСтрим онлайн: www.twitch.tv/timoravoo",
-        "photo": "https://cdn4.telesco.pe/file/tnhp6ZnuYdwoGoWRj2Z8F0zziCQZkMK8L3iWdSt7x8GtRcoHa5Lq8CJJhxNgJ-k_T8Z1nR_73U5lVJ9w1SCNEIVP5QNI-jt_K7nj0G4vq2vfs09gX_aTYapWrp7kEh-H8XLpBovnBzaipfOw7o2AbKIaJuVouyHrW3RffE9GlUYKZlawci8DZpvhDXZd_Eph0jPZlWPutSCzUWMLflrT7M6-nAUxwX6vhpQJEA5JgdA4rthsK366xozDYVvZAiG5Pvsb15DMX4MweUoKJZRX3Hdk4DM7M2YnZt_pIoj7gIKI031e_QmROg6WaRuwmaMmODJkWj62NquyaGvPX_8YVQ.jpg"
-      },
-      {
         "id": 1982,
         "url": "https://t.me/timora_tv/1982",
         "date": "2026-10-18T09:57:44+00:00",
@@ -99,6 +92,13 @@
         "date": "2026-10-17T19:25:29+00:00",
         "text": "Спасибо Баночке за арт, а вам за стрим! И отдельное большое спасибо за помощь с постройкой дороги :з \n\nЗавтра у нас будет стрим, я участвую в турнире, так что приходите подсмотреть и поболеть за меня, я буду очень рада\n\nИ заранее сладких снов! 🥰",
         "photo": "https://cdn4.telesco.pe/file/tc-zAMX89s1JA2gd7hi11IpKBi9KM1Q-8jrpfhpINT6eip22-Jp23b-dLH9Izi3S0e2AXwKD4Hy2JupYJBFcSRXKW8LVohh1wbxiqXhdzZ-MJ-qnr0Ru5NptBmKNJcETZtOCzxfp6QEQbWgjcmmthxLEa7VPKpFNnW41h26OJP6EcQUkPo9dG6C2aJY-1C0eqLyaN8g0B8OxdsuPMG_ZOObNkoguAOMZTNfx3zCK4SQDmj-0gsfifgwGnWZMjpELMJqEXshCvRnig-SnLM5RhPMZtaSmW_7dyeyqg_ZyH-i4rFY2PJL9qVv6TUf6J9Fa0KFAVkLg-dwui46V14kdRQ.jpg"
+      },
+      {
+        "id": 1979,
+        "url": "https://t.me/timora_tv/1979",
+        "date": "2026-10-17T13:06:48+00:00",
+        "text": "",
+        "photo": "https://cdn4.telesco.pe/file/lS3bOQUNAHSWpcdtUFeYn3Mmi8uKsJJ7zxdJ0gck_usLDHXz__htRfBrgRWh-Vb3c8OC0agH6sFY3ryW3uZWQhntizSfES3xc9e3va9DXBvEbq6Wmsdfxue-UeS5PoPyRfNN7MTz3XyjUc96JsyaCT4IBp7NBdNHPAZ5ne8Uuaa51VCDw6GSnFegtZ7uSR5DM-JKuJ02shU9GDKhB624gZ1SJx25zEZmbhwZzfrPpewb_4StzPOCGf7Gf-bEljHf7GgcXohi7Q3JaQ3apTKcLYk6nL7GfG49MrNRcg3v5BAa0caZ0eOPRfvyLHup_8pwFMeEK2z_55KmOt2S59s9hw.jpg"
       }
     ]
   },
