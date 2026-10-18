@@ -148,6 +148,20 @@ window.SITE = {
     carousel: [
       {
         kind: "model",
+        title: { ru: "Модель в полный рост", en: "Full-body model" },
+        image: "assets/img/model-full.webp",
+        w: 640, h: 1280,
+        alt: {
+          ru: "Модель Timora в полный рост: лиловое платье, круглые очки, наушники",
+          en: "Timora's full-body model: lilac dress, round glasses, headphones"
+        },
+        authors: [
+          { role: { ru: "Арт модели", en: "Model art" }, name: "Имя художника", handle: "@artist", url: "#artist", placeholder: true },
+          { role: { ru: "Риггинг (Live2D / 3D)", en: "Rigging (Live2D / 3D)" }, name: "Имя риггера", handle: "@rigger", url: "#rigger", placeholder: true }
+        ]
+      },
+      {
+        kind: "model",
         title: { ru: "Хэллоуин-модель", en: "Halloween model" },
         image: "assets/img/model-sheet.webp",
         w: 1280, h: 720,
