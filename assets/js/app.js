@@ -283,7 +283,7 @@
         el("img", {
           class: "hero__banner-img", src: OWNER.banner,
           alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
-          width: 1600, height: 900, decoding: "async", fetchpriority: "high"
+          width: 1200, height: 630, decoding: "async", fetchpriority: "high"
         })
       ]);
       // поверх кадра — короткая видео-петля (загружается после отрисовки страницы)
