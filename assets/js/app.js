@@ -527,18 +527,31 @@
         class: "credit__link", href: c.url, target: "_blank", rel: "noopener noreferrer",
         text: (c.handle || c.url.replace(/^https?:\/\/(www\.)?/, "")) + " ↗"
       }));
-    } else {
+    } else if (typeof c.url === "string" && c.url.charAt(0) === "#") {
+      // заглушка вида "#artist" — помечаем как демо
       links.push(el("span", { class: "credit__link is-placeholder", title: ui("demoHint"),
         text: c.handle || ui("demoBadge") }));
       links.push(demoChip());
+    } else if (c.handle) {
+      links.push(el("span", { class: "credit__link is-placeholder", text: c.handle }));
     }
-    return el("li", { class: "credit" }, [
+    var body = [
       el("p", { class: "credit__role", text: tr(c.role) }),
       el("p", { class: "credit__who" }, [
         el("span", { class: "credit__name", text: c.name || "—" }),
         links
       ]),
       tr(c.note) ? el("p", { class: "credit__note", text: tr(c.note) }) : null
+    ];
+    // у артов слева показываем превью картинки
+    return el("li", { class: "credit" + (c.img ? " credit--art" : "") }, [
+      c.img
+        ? el("img", {
+            class: "credit__img", src: c.img, alt: "", width: 56, height: 56,
+            loading: "lazy", decoding: "async", "aria-hidden": "true"
+          })
+        : null,
+      el("div", { class: "credit__text" }, body)
     ]);
   }
 

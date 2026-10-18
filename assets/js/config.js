@@ -120,8 +120,91 @@ window.SITE = {
       contain: true      // картинка с прозрачным фоном — показываем её целиком
       // автора арта впишите, когда будет известен:
       // artist: { name: "Ник художника", url: "https://x.com/ник" }
+    },
+
+    /* --- арты по персонажу (авторы — в кредитсах ниже) --- */
+    {
+      kind: "art",
+      title: { ru: "Хэллоуин", en: "Halloween" },
+      alt: { ru: "Чиби-Тимора сидит на скамейке в осеннем лесу среди тыкв и призраков", en: "Chibi Timora on a bench in an autumn forest with pumpkins and ghosts" },
+      thumb: "assets/img/gallery/art-halloween-thumb.webp",
+      src: "assets/img/gallery/art-halloween.webp",
+      w: 1200, h: 800,
+      artist: { name: "Sher", url: "https://blipsu.com/@SherryDebeste" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Лунный дух", en: "Moon spirit" },
+      alt: { ru: "Тимора-призрак парит на фоне полной луны с морковкой в руке", en: "Ghost Timora floats in front of the full moon holding a carrot" },
+      thumb: "assets/img/gallery/art-moon-thumb.webp",
+      src: "assets/img/gallery/art-moon.webp",
+      w: 1021, h: 1200,
+      artist: { name: "Manunya" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Звонок", en: "The call" },
+      alt: { ru: "Экран телефона: перевёрнутое лицо Тиморы и кнопки принять и отклонить", en: "Phone screen: upside-down Timora face with call and decline buttons" },
+      thumb: "assets/img/gallery/art-call-thumb.webp",
+      src: "assets/img/gallery/art-call.webp",
+      w: 1200, h: 1200,
+      artist: { name: "Weritasse", url: "https://blipsu.com/@Weritasse" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Ритуал", en: "Ritual" },
+      alt: { ru: "Тимора в чёрной шапке и рваном свитере сидит со свечами и книгой", en: "Timora in a black beanie and ripped sweater sits with candles and a book" },
+      thumb: "assets/img/gallery/art-ritual-thumb.webp",
+      src: "assets/img/gallery/art-ritual.webp",
+      w: 849, h: 1200,
+      artist: { name: "Alex Bermuda", url: "https://www.artstation.com/alex__bermuda" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Осень", en: "Autumn" },
+      alt: { ru: "Чиби-Тимора в красном шарфе сидит у дерева в осеннем лесу", en: "Chibi Timora in a red scarf sits by a tree in an autumn forest" },
+      thumb: "assets/img/gallery/art-autumn-thumb.webp",
+      src: "assets/img/gallery/art-autumn.webp",
+      w: 1200, h: 1200,
+      artist: { name: "crystalLu", url: "https://t.me/crystalLuArt" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Осенняя прогулка", en: "Autumn walk" },
+      alt: { ru: "Чиби-Тимора в чёрной шапке и жёлтых ботинках рядом с белой лисой", en: "Chibi Timora in a black beanie and yellow boots next to a white fox" },
+      thumb: "assets/img/gallery/art-autumn-walk-thumb.webp",
+      src: "assets/img/gallery/art-autumn-walk.webp",
+      w: 900, h: 1200,
+      artist: { name: "Автор не указан", url: "#unknown" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Мир!", en: "Peace!" },
+      alt: { ru: "Чиби-Тимора в лиловой шапке показывает два пальца", en: "Chibi Timora in a lilac beanie making a peace sign" },
+      thumb: "assets/img/gallery/art-peace-thumb.webp",
+      src: "assets/img/gallery/art-peace.webp",
+      w: 1200, h: 1200,
+      artist: { name: "ssenya195", url: "https://blipsu.com/@ssenya195" }
+    },
+    {
+      kind: "art",
+      title: { ru: "Скетч", en: "Sketch" },
+      alt: { ru: "Карандашный скетч Тиморы в шапке с зайчиком", en: "Pencil sketch of Timora in a beanie with a bunny pin" },
+      thumb: "assets/img/gallery/art-sketch-thumb.webp",
+      src: "assets/img/gallery/art-sketch.webp",
+      w: 900, h: 1200,
+      artist: { name: "Автор не указан", url: "#unknown" }
+    },
+    {
+      kind: "art",
+      title: { ru: "В ладони", en: "In the palm" },
+      alt: { ru: "Чиби-Тимора свернулась в ладони, в очках", en: "Chibi Timora curled up in a hand, wearing glasses" },
+      thumb: "assets/img/gallery/art-inhand-thumb.webp",
+      src: "assets/img/gallery/art-inhand.webp",
+      w: 900, h: 1200,
+      artist: { name: "Автор не указан", url: "#unknown" }
     }
-    // Другие арты добавляйте по образцу:
+    // Другие арты добавляйте по образцу выше:
     // {
     //   kind: "art",                                  // art | model | photo
     //   title: { ru: "Арт от Кая", en: "Art by Kai" },
@@ -236,6 +319,78 @@ window.SITE = {
             handle: "@editing",
             url: "#editing",
             placeholder: true
+          }
+        ]
+      },
+      /* --- арты по персонажу: название работы и автор со ссылкой ---
+         img — превью слева; note — название работы.                     */
+      {
+        id: "art",
+        title: { ru: "Арты и иллюстрации", en: "Art & illustrations" },
+        items: [
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Sher",
+            handle: "@SherryDebeste",
+            url: "https://blipsu.com/@SherryDebeste",
+            note: { ru: "Хэллоуин", en: "Halloween" },
+            img: "assets/img/gallery/art-halloween-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Manunya",
+            note: { ru: "Лунный дух (подпись автора на арте)", en: "Moon spirit (artist's signature)" },
+            img: "assets/img/gallery/art-moon-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Weritasse",
+            handle: "@Weritasse",
+            url: "https://blipsu.com/@Weritasse",
+            note: { ru: "Звонок", en: "The call" },
+            img: "assets/img/gallery/art-call-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Alex Bermuda",
+            handle: "@alex__bermuda",
+            url: "https://www.artstation.com/alex__bermuda",
+            note: { ru: "Ритуал", en: "Ritual" },
+            img: "assets/img/gallery/art-ritual-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "crystalLu",
+            handle: "@crystalLuArt",
+            url: "https://t.me/crystalLuArt",
+            note: { ru: "Осень", en: "Autumn" },
+            img: "assets/img/gallery/art-autumn-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "ssenya195",
+            handle: "@ssenya195",
+            url: "https://blipsu.com/@ssenya195",
+            note: { ru: "Мир!", en: "Peace!" },
+            img: "assets/img/gallery/art-peace-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Автор не указан",
+            note: { ru: "Осенняя прогулка", en: "Autumn walk" },
+            img: "assets/img/gallery/art-autumn-walk-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Автор не указан",
+            note: { ru: "Скетч", en: "Sketch" },
+            img: "assets/img/gallery/art-sketch-thumb.webp"
+          },
+          {
+            role: { ru: "Арт", en: "Art" },
+            name: "Автор не указан",
+            note: { ru: "В ладони", en: "In the palm" },
+            img: "assets/img/gallery/art-inhand-thumb.webp"
           }
         ]
       }
