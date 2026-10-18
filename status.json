@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Витуберский турнир, но Тимора участник... Вот бы чуточку удачи | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-18T15:16:53Z",
-    "followers": 3404,
+    "startedAt": null,
+    "followers": 3405,
     "lastBroadcast": {
       "title": "Витуберский турнир, но Тимора участник... Вот бы чуточку удачи | !funpay",
-      "startedAt": "2026-10-18T15:17:02.492015Z"
+      "startedAt": "2026-10-18T17:03:33.999206Z"
     },
     "videos": [],
     "clips": [
@@ -19,7 +19,7 @@
         "title": "Милота",
         "date": "2023-08-16T17:03:15Z",
         "seconds": 40,
-        "views": 309,
+        "views": 310,
         "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/ff5ced9d-5644-4d2d-975c-78cfa5d7d6ed/landscape/thumb/thumb-0000000000-1920x1080.jpg",
         "url": "https://www.twitch.tv/timoravoo/clip/FreezingFurryAlbatrossPhilosoraptor-nsFi8VBAr71zQ4xv"
       },
