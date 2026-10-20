@@ -37,8 +37,8 @@ window.SITE = {
     },
     // аватар подтягивается из Twitch автоматически (файл обновляет GitHub)
     avatar: "assets/img/avatar-twitch.webp",
-    // баннер: её осенний арт; поверх него летят листья (bannerLeaves)
-    banner: "assets/img/banner-autumn.webp",
+    // баннер: её хэллоуинский арт; поверх него летят листья (bannerLeaves)
+    banner: "assets/img/banner-halloween.webp",
     bannerLeaves: true,
     // если захочется вернуть видео поверх баннера — раскомментируйте строку:
     // bannerVideo: "assets/img/banner-loop.mp4",

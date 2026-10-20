@@ -325,7 +325,7 @@
         el("img", {
           class: "hero__banner-img", src: OWNER.banner,
           alt: (OWNER.name || "") + " — " + ui("bannerAlt"),
-          width: 1188, height: 437, decoding: "async", fetchpriority: "high"
+          width: 1280, height: 853, decoding: "async", fetchpriority: "high"
         })
       ]);
       // поверх картинки летят осенние листья (CSS-анимация, без видео)
