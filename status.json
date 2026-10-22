@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Майнкрафт с чуть-чуть кашляющим кроликом, который хочет обнимашек и алмазную кирку | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-22T14:59:43Z",
-    "followers": 3415,
+    "startedAt": null,
+    "followers": 3417,
     "lastBroadcast": {
       "title": "Майнкрафт с чуть-чуть кашляющим кроликом, который хочет обнимашек и алмазную кирку | !funpay !сервер",
-      "startedAt": "2026-10-22T14:59:49.952038Z"
+      "startedAt": "2026-10-22T19:56:56.012691Z"
     },
     "videos": [],
     "clips": [
