@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Майнкрафт с чуть-чуть кашляющим кроликом, который хочет обнимашек и алмазную кирку | !funpay !сервер",
     "game": "",
-    "startedAt": null,
-    "followers": 3406,
+    "startedAt": "2026-10-22T14:59:43Z",
+    "followers": 3407,
     "lastBroadcast": {
-      "title": "После выходной кролик снова рвется в бой  | !funpay",
-      "startedAt": "2026-10-18T17:03:33.999206Z"
+      "title": "Майнкрафт с чуть-чуть кашляющим кроликом, который хочет обнимашек и алмазную кирку | !funpay !сервер",
+      "startedAt": "2026-10-22T14:59:49.952038Z"
     },
     "videos": [],
     "clips": [
@@ -104,7 +104,7 @@
   },
   "discord": {
     "name": "ПЛОХОЕ ВЛИЯНИЕ",
-    "members": 64,
+    "members": 65,
     "icon": "https://cdn.discordapp.com/icons/1552303841855406151/a_c23164569b433d2ef1eea7e3eb4a7aaf.png?size=128",
     "invite": "https://discord.gg/zgbhEWNeCZ"
   }
