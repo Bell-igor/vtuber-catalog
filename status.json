@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Проходим хоррор... Только не пугайте меня сильно т.т | !funpay",
     "game": "",
-    "startedAt": null,
-    "followers": 3417,
+    "startedAt": "2026-10-23T14:59:37Z",
+    "followers": 3416,
     "lastBroadcast": {
-      "title": "Майнкрафт с чуть-чуть кашляющим кроликом, который хочет обнимашек и алмазную кирку | !funpay !сервер",
-      "startedAt": "2026-10-22T19:56:56.012691Z"
+      "title": "Проходим хоррор... Только не пугайте меня сильно т.т | !funpay",
+      "startedAt": "2026-10-23T14:59:42.799063Z"
     },
     "videos": [],
     "clips": [
