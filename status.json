@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Проходим хоррор... Только не пугайте меня сильно т.т | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-23T14:59:37Z",
-    "followers": 3416,
+    "startedAt": null,
+    "followers": 3418,
     "lastBroadcast": {
       "title": "Проходим хоррор... Только не пугайте меня сильно т.т | !funpay",
-      "startedAt": "2026-10-23T14:59:42.799063Z"
+      "startedAt": "2026-10-23T18:07:01.602581Z"
     },
     "videos": [],
     "clips": [
