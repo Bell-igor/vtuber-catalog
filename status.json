@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ПРОБЕЛОДЕСАНТНИКИ 2 | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-25T14:59:43Z",
-    "followers": 3423,
+    "startedAt": null,
+    "followers": 3426,
     "lastBroadcast": {
       "title": "ПРОБЕЛОДЕСАНТНИКИ 2 | !funpay",
-      "startedAt": "2026-10-25T14:59:50.478724Z"
+      "startedAt": "2026-10-25T20:49:26.324198Z"
     },
     "videos": [],
     "clips": [
