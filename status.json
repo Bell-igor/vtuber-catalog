@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Майнкрафтим на Dragon Light и просто уютно сидим | !funpay !сервер",
     "game": "",
-    "startedAt": null,
-    "followers": 3427,
+    "startedAt": "2026-10-30T14:59:20Z",
+    "followers": 3426,
     "lastBroadcast": {
-      "title": "ПРОБЕЛОДЕСАНТНИКИ 2 | !funpay",
-      "startedAt": "2026-10-25T20:49:26.324198Z"
+      "title": "Майнкрафтим на Dragon Light и просто уютно сидим | !funpay !сервер",
+      "startedAt": "2026-10-30T14:59:26.128656Z"
     },
     "videos": [],
     "clips": [
