@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Майнкрафтим на Dragon Light и просто уютно сидим | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-10-30T14:59:20Z",
-    "followers": 3426,
+    "startedAt": null,
+    "followers": 3427,
     "lastBroadcast": {
       "title": "Майнкрафтим на Dragon Light и просто уютно сидим | !funpay !сервер",
-      "startedAt": "2026-10-30T14:59:26.128656Z"
+      "startedAt": "2026-10-30T20:11:12.921224Z"
     },
     "videos": [],
     "clips": [
@@ -104,7 +104,7 @@
   },
   "discord": {
     "name": "ПЛОХОЕ ВЛИЯНИЕ",
-    "members": 68,
+    "members": 69,
     "icon": "https://cdn.discordapp.com/icons/1552303841855406151/a_c23164569b433d2ef1eea7e3eb4a7aaf.png?size=128",
     "invite": "https://discord.gg/zgbhEWNeCZ"
   }
