@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "VALORANT, но стример не умеет стрелять, инстапикает и охраняет лоутаб | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-01T15:00:16Z",
+    "startedAt": null,
     "followers": 3432,
     "lastBroadcast": {
       "title": "VALORANT, но стример не умеет стрелять, инстапикает и охраняет лоутаб | !funpay",
-      "startedAt": "2026-11-01T15:00:23.763775Z"
+      "startedAt": "2026-11-01T19:22:14.492845Z"
     },
     "videos": [],
     "clips": [
