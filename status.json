@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Стример сонный, не судите стого | !funpay",
     "game": "",
-    "startedAt": null,
+    "startedAt": "2026-11-05T15:00:39Z",
     "followers": 3431,
     "lastBroadcast": {
-      "title": "ДЛЯ АВТОРИЗАЦИИ В ЧАТЕ ПОМУРЧИТЕ СТРИМЕРУ В ГС | !funpay",
-      "startedAt": "2026-11-04T19:50:02.713585Z"
+      "title": "Стример сонный, не судите стого | !funpay",
+      "startedAt": "2026-11-05T15:00:46.608984Z"
     },
     "videos": [],
     "clips": [
