@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Стример сонный, не судите стого | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-05T15:00:39Z",
+    "startedAt": null,
     "followers": 3431,
     "lastBroadcast": {
-      "title": "Стример сонный, не судите стого | !funpay",
-      "startedAt": "2026-11-05T15:00:46.608984Z"
+      "title": "ЛЕГЕНДС НЕВЕР ДААААЙ | !funpay",
+      "startedAt": "2026-11-05T19:53:01.280579Z"
     },
     "videos": [],
     "clips": [
@@ -104,7 +104,7 @@
   },
   "discord": {
     "name": "ПЛОХОЕ ВЛИЯНИЕ",
-    "members": 69,
+    "members": 71,
     "icon": "https://cdn.discordapp.com/icons/1552303841855406151/a_c23164569b433d2ef1eea7e3eb4a7aaf.png?size=128",
     "invite": "https://discord.gg/zgbhEWNeCZ"
   }
