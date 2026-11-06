@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Хорроры и подпивасный кролик | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-06T14:59:36Z",
-    "followers": 3432,
+    "startedAt": null,
+    "followers": 3431,
     "lastBroadcast": {
       "title": "Хорроры и подпивасный кролик | !funpay",
-      "startedAt": "2026-11-06T14:59:42.783089Z"
+      "startedAt": "2026-11-06T18:14:14.849695Z"
     },
     "videos": [],
     "clips": [
@@ -29,7 +29,7 @@
         "title": "ммм, какие стоны",
         "date": "2024-09-23T17:47:18Z",
         "seconds": 6,
-        "views": 189,
+        "views": 190,
         "thumb": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/831cbfec-57e7-4782-bc24-d289a4cdcd67/landscape/thumb/thumb-0000000000-1920x1080.jpg",
         "url": "https://www.twitch.tv/timoravoo/clip/BoxyDifferentWebDuDudu-DolxyN4eUO56i5go"
       },
