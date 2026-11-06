@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "Хорроры и подпивасный кролик | !funpay",
     "game": "",
-    "startedAt": null,
-    "followers": 3431,
+    "startedAt": "2026-11-06T14:59:36Z",
+    "followers": 3432,
     "lastBroadcast": {
-      "title": "ЛЕГЕНДС НЕВЕР ДААААЙ | !funpay",
-      "startedAt": "2026-11-05T19:53:01.280579Z"
+      "title": "Хорроры и подпивасный кролик | !funpay",
+      "startedAt": "2026-11-06T14:59:42.783089Z"
     },
     "videos": [],
     "clips": [
