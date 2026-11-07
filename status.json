@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ЗА ДЕМОКРАТИЮ! А ещё со Всемирным Мужским Днём, пацаны | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-07T14:59:53Z",
-    "followers": 3434,
+    "startedAt": null,
+    "followers": 3433,
     "lastBroadcast": {
       "title": "ЗА ДЕМОКРАТИЮ! А ещё со Всемирным Мужским Днём, пацаны | !funpay",
-      "startedAt": "2026-11-07T14:59:58.662197Z"
+      "startedAt": "2026-11-07T19:37:07.134209Z"
     },
     "videos": [],
     "clips": [
