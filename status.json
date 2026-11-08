@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "Умираю от криперов на DragonLight | !funpay !сервер",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-08T15:00:07Z",
+    "startedAt": null,
     "followers": 3434,
     "lastBroadcast": {
       "title": "Умираю от криперов на DragonLight | !funpay !сервер",
-      "startedAt": "2026-11-08T15:00:14.967222Z"
+      "startedAt": "2026-11-08T20:12:14.917048Z"
     },
     "videos": [],
     "clips": [
