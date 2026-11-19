@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ТУРНИР ПО \"САПЁРУ\" СРЕДИ СНГ-ВИТУБЕРОВ | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-18T14:59:35Z",
-    "followers": 3449,
+    "startedAt": null,
+    "followers": 3450,
     "lastBroadcast": {
       "title": "ТУРНИР ПО \"САПЁРУ\" СРЕДИ СНГ-ВИТУБЕРОВ | !funpay",
-      "startedAt": "2026-11-18T14:59:40.536911Z"
+      "startedAt": "2026-11-18T18:44:03.153776Z"
     },
     "videos": [],
     "clips": [
