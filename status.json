@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": false,
-    "title": "",
+    "live": true,
+    "title": "ХОРРОР-ВЫХОДНЫЕ | да чего вы боитесь? ничего же страшного! АААА!!! | !funpay",
     "game": "",
-    "startedAt": null,
-    "followers": 3450,
+    "startedAt": "2026-11-21T15:00:11Z",
+    "followers": 3448,
     "lastBroadcast": {
-      "title": "ЭТО НЕ ПОРАЖЕНИЕ, ЭТО ПРОКАЧКА | Kenshi, а потом Valorant| !funpay",
-      "startedAt": "2026-11-20T20:35:19.706575Z"
+      "title": "ХОРРОР-ВЫХОДНЫЕ | да чего вы боитесь? ничего же страшного! АААА!!! | !funpay",
+      "startedAt": "2026-11-21T15:00:16.555847Z"
     },
     "videos": [],
     "clips": [
