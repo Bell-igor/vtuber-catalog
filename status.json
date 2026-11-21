@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ХОРРОР-ВЫХОДНЫЕ | да чего вы боитесь? ничего же страшного! АААА!!! | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-21T15:00:11Z",
+    "startedAt": null,
     "followers": 3448,
     "lastBroadcast": {
       "title": "ХОРРОР-ВЫХОДНЫЕ | да чего вы боитесь? ничего же страшного! АААА!!! | !funpay",
-      "startedAt": "2026-11-21T15:00:16.555847Z"
+      "startedAt": "2026-11-21T16:45:41.846607Z"
     },
     "videos": [],
     "clips": [
