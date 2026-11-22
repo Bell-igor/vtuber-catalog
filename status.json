@@ -2,14 +2,14 @@
   "twitch": {
     "login": "timoravoo",
     "displayName": "TimoraVoo",
-    "live": true,
-    "title": "ХОРРОР-ВЫХОДНЫЕ | !funpay",
+    "live": false,
+    "title": "",
     "game": "",
-    "startedAt": "2026-11-22T15:00:12Z",
-    "followers": 3445,
+    "startedAt": null,
+    "followers": 3446,
     "lastBroadcast": {
       "title": "ХОРРОР-ВЫХОДНЫЕ | !funpay",
-      "startedAt": "2026-11-22T15:00:19.070537Z"
+      "startedAt": "2026-11-22T16:56:14.991777Z"
     },
     "videos": [],
     "clips": [
@@ -104,7 +104,7 @@
   },
   "discord": {
     "name": "ПЛОХОЕ ВЛИЯНИЕ",
-    "members": 96,
+    "members": 97,
     "icon": "https://cdn.discordapp.com/icons/1552303841855406151/a_c23164569b433d2ef1eea7e3eb4a7aaf.png?size=128",
     "invite": "https://discord.gg/zgbhEWNeCZ"
   }
